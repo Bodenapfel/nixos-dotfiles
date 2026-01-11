@@ -5,6 +5,7 @@
     enableCompletion = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
+    dotDir = "${config.xdg.configHome}/zsh";
     oh-my-zsh = {
       enable = true;
       plugins = [ "git" "tmux" "rust" "extract" "colored-man-pages" ];

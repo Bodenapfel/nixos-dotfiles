@@ -68,8 +68,6 @@ in
     show_fps_limit
 
     fps_limit=280,120,0
-    custom_text=-
-    custom_text=-
     exec=uname -r
     fps_color_change
     fps_color=B22222,FDFD09,39F900

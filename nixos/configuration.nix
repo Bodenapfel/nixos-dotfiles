@@ -149,6 +149,7 @@
     python3
     rustup
     markdownlint-cli
+    lact
   ];
 
   # Hint Electron apps to use Wayland:

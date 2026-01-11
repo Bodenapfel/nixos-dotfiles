@@ -92,7 +92,6 @@
 
     # display 
     brightnessctl
-    ddcutil
 
     # image viewers pdf viewers etc.
     qview

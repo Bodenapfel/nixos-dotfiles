@@ -175,6 +175,7 @@
     markdownlint-cli
     lact
     sbctl
+    ddcutil
     efibootmgr
     bash
   ];

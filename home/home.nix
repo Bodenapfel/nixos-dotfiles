@@ -29,6 +29,7 @@
     ./theme/theme.nix
     ./window-manager/hyprland.nix
     ./gaming/mangohud.nix
+    ./gaming/misc.nix
   ];
 
 

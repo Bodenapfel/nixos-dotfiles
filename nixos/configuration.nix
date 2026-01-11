@@ -142,6 +142,11 @@
     ncdu
     clang
     nodejs_25
+    jdk21
+    jdk17
+    jdk8
+    python3
+    rustup
   ];
 
   # Hint Electron apps to use Wayland:

@@ -158,6 +158,7 @@
     markdownlint-cli
     lact
     sbctl
+    efibootmgr
   ];
 
   systemd.packages = with pkgs; [

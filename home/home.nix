@@ -28,6 +28,7 @@
     ./rofi/rofi.nix
     ./theme/theme.nix
     ./window-manager/hyprland.nix
+    ./window-manager/waybar.nix
     ./gaming/mangohud.nix
     ./gaming/misc.nix
   ];
@@ -68,6 +69,7 @@
     fortune
     sshfs
     fastfetch
+    swaynotificationcenter
 
     # media
     mpv

@@ -26,7 +26,6 @@
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   networking.hostName = "nixbtw"; # Define your hostname.
-
   # Configure network connections interactively with nmcli or nmtui.
   networking.networkmanager.enable = true;
 
@@ -121,7 +120,7 @@
   users.users.dk = {
     shell = pkgs.zsh;
     isNormalUser = true;
-    extraGroups = [ "wheel" "video"]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "video" "i2c" ]; # Enable ‘sudo’ for the user.
     packages = with pkgs; [
       tree
     ];
@@ -137,6 +136,7 @@
     withUWSM = true;
     xwayland.enable = true;
   };
+
   programs.yazi.enable = true;
   programs.zsh.enable = true;
   programs.steam = {
@@ -144,13 +144,18 @@
     remotePlay.openFirewall = true;
     dedicatedServer.openFirewall = true;
     localNetworkGameTransfers.openFirewall = true;
-
   };
+
   programs.xfconf.enable = true;
   programs.thunar = {
     enable = true;
+    plugins = with pkgs; [
+      thunar-archive-plugin
+      thunar-media-tags-plugin
+      thunar-vcs-plugin
+      thunar-volman
+    ];
   };
-
 
   # Portals (screensharing, file pickers etc.) for hyrprland
   xdg.portal.enable = true;
@@ -164,12 +169,11 @@
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
   environment.systemPackages = with pkgs; [
+    file-roller
     wget
     vim
     neovim
     vesktop
-    thunar-archive-plugin
-    thunar-volman
     onlyoffice-desktopeditors
     ncdu
     clang

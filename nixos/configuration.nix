@@ -18,7 +18,7 @@
 
   boot.lanzaboote = {
     enable = true;
-    pkiBundle = "var/lib/sbctl";
+    pkiBundle = "/var/lib/sbctl";
   };
 
   # Use latest kernel.

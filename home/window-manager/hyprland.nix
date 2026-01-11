@@ -22,7 +22,6 @@
   # Swaync - Sway Notification Center
   services.swaync = {
     enable = true;
-
     # Use your existing JSON + CSS as-is:
     settings = builtins.fromJSON (builtins.readFile ./swaync/config.json);
     style = builtins.readFile ./swaync/style.css;

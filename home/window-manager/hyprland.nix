@@ -18,5 +18,14 @@
   services.blueman-applet.enable = true;         # requires NixOS services.blueman.enable :contentReference[oaicite:10]{index=10}
   services.kdeconnect.enable = true;
   services.kdeconnect.indicator = true;          # :contentReference[oaicite:11]{index=11}
+
+  # Swaync - Sway Notification Center
+  services.swaync = {
+    enable = true;
+
+    # Use your existing JSON + CSS as-is:
+    settings = builtins.fromJSON (builtins.readFile ./swaync/config.json);
+    style = builtins.readFile ./swaync/style.css;
+  };
 }
 

@@ -67,7 +67,6 @@
     cowsay
     fortune
     sshfs
-    swaync
 
     # media
     mpv

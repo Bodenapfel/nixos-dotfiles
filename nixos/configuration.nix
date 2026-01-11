@@ -12,7 +12,13 @@
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
+  boot.loader.timeout = 10;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.systemd-boot.consoleMode = "max";
+
+  boot.lanzaboote.enable = true;
+  boot.lanzaboote.pkiBundle = "/var/lib/sbctl";
+  boot.loader.systemd-boot.enable = lib.mkForce false;
 
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
@@ -150,6 +156,7 @@
     rustup
     markdownlint-cli
     lact
+    sbctl
   ];
 
   systemd.packages = with pkgs; [

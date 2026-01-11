@@ -28,6 +28,11 @@
       # Papirus provides Papirus, Papirus-Dark, Papirus-Light. :contentReference[oaicite:1]{index=1}
       name = "Papirus-Dark";
     };
+
+    font = {
+      name = "Comic Sans Mono";
+      size = 13;
+    }
   };
 
   #### Qt: qtct + Kvantum

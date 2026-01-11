@@ -15,6 +15,7 @@
   boot.loader.timeout = 10;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.systemd-boot.consoleMode = "max";
+  boot.loader.systemd-boot.configurationLimit = 5;
 
   boot.lanzaboote = {
     enable = true;
@@ -163,6 +164,7 @@
     vesktop
     thunar-archive-plugin
     thunar-volman
+    onlyoffice-desktopeditors
     ncdu
     clang
     nodejs_25
@@ -175,6 +177,7 @@
     lact
     sbctl
     efibootmgr
+    bash
   ];
 
   systemd.packages = with pkgs; [

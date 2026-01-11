@@ -30,7 +30,7 @@
     };
 
     font = {
-      name = "Comic Sans Mono";
+      name = "Comic Shans Mono";
       size = 11;
     };
   };

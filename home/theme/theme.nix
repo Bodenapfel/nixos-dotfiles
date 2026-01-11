@@ -51,7 +51,7 @@
     libsForQt5.qt5ct
     kdePackages.qt6ct
 
-    # Kvantum engine + manager (this is what you wanted instead of `kvantum`)
+    # Kvantum engine + manager
     kdePackages.qtstyleplugin-kvantum
   ]; # :contentReference[oaicite:3]{index=3}
 

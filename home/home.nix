@@ -27,8 +27,9 @@
     ./shell/tmux.nix
     ./shell/misc.nix
     ./shell/kitty.nix
-    ./rofi/rofi.nix
     ./theme/theme.nix
+    ./misc/mpv.nix
+    ./window-manager/rofi/rofi.nix
     ./window-manager/hyprland.nix
     ./window-manager/waybar.nix
     ./window-manager/swaync.nix
@@ -108,7 +109,6 @@
     libnotify
 
     # media
-    mpv
     playerctl
     pavucontrol
     helvum

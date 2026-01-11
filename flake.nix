@@ -14,8 +14,8 @@
     };
     # lanzaboote
     lanzaboote = {
-        url = "github:nix-community/lanzaboote/v1.0.0";
-        inputs.nixpkgs.folows = "nixpkgs";
+      url = "github:nix-community/lanzaboote/v1.0.0";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 

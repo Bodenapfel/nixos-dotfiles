@@ -158,6 +158,9 @@
 
   systemd.services.lactd.wantedBy = ["multi-user.target"];
 
+  # enable overdrive for lact
+  hardware.amdgpu.overdrive.enable = true;
+
   # Hint Electron apps to use Wayland:
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
   environment.variables.EDITOR = "nvim";

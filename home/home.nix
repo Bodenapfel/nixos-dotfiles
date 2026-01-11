@@ -25,6 +25,7 @@
   imports = [
     ./shell/zsh.nix
     ./shell/tmux.nix
+    ./shell/misc.nix
     ./rofi/rofi.nix
     ./theme/theme.nix
     ./window-manager/hyprland.nix
@@ -102,7 +103,6 @@
     cowsay
     fortune
     sshfs
-    fastfetch
     swaynotificationcenter
     libnotify
 
@@ -157,7 +157,6 @@
     hugo # static site generator
     glow # markdown previewer in terminal
 
-    btop  # replacement of htop/nmon
     iotop # io monitoring
     iftop # network monitoring
 

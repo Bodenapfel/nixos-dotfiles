@@ -71,6 +71,7 @@
     sshfs
     fastfetch
     swaynotificationcenter
+    libnotify
 
     # media
     mpv

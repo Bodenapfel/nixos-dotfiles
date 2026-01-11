@@ -19,7 +19,7 @@
     };
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, lanzaboote ... }: {
+  outputs = inputs@{ nixpkgs, home-manager, lanzaboote,  ... }: {
     nixosConfigurations = {
       nixbtw = nixpkgs.lib.nixosSystem {
         modules = [

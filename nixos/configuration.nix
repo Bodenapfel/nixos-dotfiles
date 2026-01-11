@@ -81,6 +81,8 @@
   services.pipewire = {
     enable = true;
     pulse.enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
   };
 
   # Enable touchpad support (enabled default in most desktopManager).
@@ -147,6 +149,7 @@
     jdk8
     python3
     rustup
+    markdownlint-cli
   ];
 
   # Hint Electron apps to use Wayland:

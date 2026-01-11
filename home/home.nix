@@ -67,12 +67,13 @@
     cowsay
     fortune
     sshfs
+    fastfetch
 
     # media
     mpv
     playerctl
+    pavucontrol
 
-    fastfetch
 
     # archives
     zip

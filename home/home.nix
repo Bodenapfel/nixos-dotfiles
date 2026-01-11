@@ -28,6 +28,7 @@
     ./rofi/rofi.nix
     ./theme/theme.nix
     ./window-manager/hyprland.nix
+    ./gaming/mangohud.nix
   ];
 
 

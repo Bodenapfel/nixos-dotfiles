@@ -152,6 +152,12 @@
     lact
   ];
 
+  systemd.packages = with pkgs; [
+    lact
+  ]
+
+  systemd.servicecs.lactd.wantedBy = ["multi-user.target"]
+
   # Hint Electron apps to use Wayland:
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
   environment.variables.EDITOR = "nvim";

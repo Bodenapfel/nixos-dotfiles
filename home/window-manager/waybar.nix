@@ -293,11 +293,3 @@ in
 
   # Provide swaync + swaync-client (your Waybar module calls swaync-client). :contentReference[oaicite:2]{index=2}
   services.swaync.enable = true;
-
-  # Font for your CSS
-  # If you install fonts via Home Manager (user fontconfig):
-  fonts.fontconfig.enable = true;
-  home.packages = (config.home.packages or []) ++ [
-    pkgs.nerd-fonts."comic-shanns-mono"
-  ];
-}

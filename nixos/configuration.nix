@@ -160,7 +160,6 @@
     wget
     vim
     neovim
-    kitty
     vesktop
     thunar-archive-plugin
     thunar-volman

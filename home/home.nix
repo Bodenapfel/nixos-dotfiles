@@ -26,6 +26,7 @@
     ./shell/zsh.nix
     ./shell/tmux.nix
     ./shell/misc.nix
+    ./shell/kitty.nix
     ./rofi/rofi.nix
     ./theme/theme.nix
     ./window-manager/hyprland.nix
@@ -83,10 +84,10 @@
     pkgs.seahorse # GUI to inspect/edit keyrings
 
     # hyprland utils
-    hypridle
     hyprshot
-    hyprpaper
     hyprpolkitagent
+    hyprpaper
+    hypridle
 
     # display 
     brightnessctl

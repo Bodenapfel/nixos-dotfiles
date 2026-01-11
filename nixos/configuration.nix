@@ -32,7 +32,7 @@
   # ddcci setup
   hardware.i2c.enable = true;
   boot.extraModulePackages = [ config.boot.kernelPackages.ddcci-driver ];
-  boot.kernelModules = [ "i2c-dev" "ddcci_backlight" ];
+  boot.kernelModules = [ "i2c-dev" "i2c-piix4" "ddcci_backlight" ];
 
   # Bluetooth
   hardware.bluetooth.enable = true;
@@ -190,7 +190,6 @@
     brightnessctl
     efibootmgr
     bash
-    openrgb-with-all-plugins
     i2c-tools
   ];
 
@@ -222,7 +221,12 @@
   # List services that you want to enable:
 
   # openrgb
-  services.hardware.openrgb.enable = true;
+  services.hardware.openrgb = {
+    enable = true;
+    package = pkgs.openrgb-with-all-plugins;
+    motherboard = "amd";
+  };
+  services.udev.packages = [ pkgs.openrgb ];
 
   # for thunar
   services.gvfs.enable = true; # Mount, trash, and other functionalities

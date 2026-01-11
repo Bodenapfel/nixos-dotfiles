@@ -190,6 +190,8 @@
     brightnessctl
     efibootmgr
     bash
+    openrgb-with-all-plugins
+    i2c-tools
   ];
 
   systemd.packages = with pkgs; [
@@ -200,6 +202,10 @@
 
   # enable overdrive for lact
   hardware.amdgpu.overdrive.enable = true;
+
+  # amdcpu
+  hardware.enableRedistributableFirmware = true;
+  hardware.cpu.amd.updateMicrocode = true;
 
   # Hint Electron apps to use Wayland:
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
@@ -214,6 +220,9 @@
   # };
 
   # List services that you want to enable:
+
+  # openrgb
+  services.hardware.openrgb.enable = true;
 
   # for thunar
   services.gvfs.enable = true; # Mount, trash, and other functionalities

@@ -34,6 +34,16 @@
     ./gaming/misc.nix
   ];
 
+  xdg = {
+    enable = true;
+
+    mimeApps = {
+      enable = true;
+      defaultApplications = {
+        "indode/directory" = "thunar.desktop";
+      };
+    };
+  };
 
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [

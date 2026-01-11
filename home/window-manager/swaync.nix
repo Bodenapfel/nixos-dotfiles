@@ -18,7 +18,7 @@
       notification-icon-size = 64;
       notification-body-image-height = 100;
       notification-body-image-width = 200;
-    }
+    };
     style = '':root {
   --cc-bg: rgba(32, 37, 53, 0.8);
   --noti-border-color: rgba(255, 255, 255, 0.0);

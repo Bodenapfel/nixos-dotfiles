@@ -75,6 +75,7 @@
     mpv
     playerctl
     pavucontrol
+    helvum
 
 
     # archives

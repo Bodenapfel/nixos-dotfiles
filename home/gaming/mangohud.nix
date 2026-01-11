@@ -69,7 +69,6 @@ in
 
     fps_limit=280,120,0
     custom_text=-
-    exec=cat ${homeDir}/.config/goverlay/distro
     custom_text=-
     exec=uname -r
     fps_color_change

@@ -287,7 +287,6 @@ in
 
   # Components referenced by your config (click actions + notification daemon)
   home.packages = with pkgs; [
-    pavucontrol
     swaynotificationcenter
   ];
 

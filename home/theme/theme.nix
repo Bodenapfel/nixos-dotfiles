@@ -32,7 +32,7 @@
     font = {
       name = "Comic Sans Mono";
       size = 13;
-    }
+    };
   };
 
   #### Qt: qtct + Kvantum

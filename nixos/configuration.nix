@@ -35,6 +35,7 @@
 
   # Set your time zone.
   time.timeZone = "Europe/Berlin";
+  time.hardwareClockInLocalTime = true;
 
   # filesystems 
   fileSystems = {

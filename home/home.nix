@@ -90,9 +90,6 @@
     hyprpaper
     hypridle
 
-    # display 
-    brightnessctl
-
     # image viewers pdf viewers etc.
     qview
 

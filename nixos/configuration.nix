@@ -30,8 +30,10 @@
   # Configure network connections interactively with nmcli or nmtui.
   networking.networkmanager.enable = true;
 
-  # i2c for ddcci
+  # ddcci setup
   hardware.i2c.enable = true;
+  boot.extraModulePackages = [ config.boot.kernelPackages.ddcci-driver ];
+  boot.kernelModules = [ "i2c-dev" "ddcci_backlight" ];
 
   # Bluetooth
   hardware.bluetooth.enable = true;
@@ -128,6 +130,8 @@
   nixpkgs.config.allowUnfree = true;
 
   programs.firefox.enable = true;
+  programs.chromium.enable = true;
+
   programs.hyprland = {
     enable = true;
     withUWSM = true;
@@ -179,6 +183,7 @@
     lact
     sbctl
     ddcutil
+    brightnessctl
     efibootmgr
     bash
   ];

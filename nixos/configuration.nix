@@ -16,9 +16,6 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.systemd-boot.consoleMode = "max";
 
-  boot.lanzaboote.enable = true;
-  boot.lanzaboote.pkiBundle = "/var/lib/sbctl";
-
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
 

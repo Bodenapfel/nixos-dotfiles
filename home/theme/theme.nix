@@ -31,7 +31,7 @@
 
     font = {
       name = "Comic Sans Mono";
-      size = 13;
+      size = 11;
     };
   };
 

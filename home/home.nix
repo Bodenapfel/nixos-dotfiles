@@ -40,7 +40,7 @@
     mimeApps = {
       enable = true;
       defaultApplications = {
-        "indode/directory" = "thunar.desktop";
+        "inode/directory" = "thunar.desktop";
       };
     };
   };

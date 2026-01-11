@@ -11,11 +11,11 @@
       # the `inputs.nixpkgs` of the current flake,
       # to avoid problems caused by different versions of nixpkgs.
       inputs.nixpkgs.follows = "nixpkgs";
-
+    };
+    # lanzaboote
     lanzaboote = {
         url = "github:nix-community/lanzaboote/v1.0.0";
         inputs.nixpkgs.folows = "nixpkgs";
-      };
     };
   };
 

@@ -294,7 +294,7 @@ in
       notification-body-image-height = 100;
       notification-body-image-width = 200;
     };
-    style = {
+    style =
         ''
         :root {
           --cc-bg: rgba(32, 37, 53, 0.8);
@@ -862,7 +862,6 @@ in
           border-radius: var(--border-radius);
         }
         ''
-      }
   };
 
   # User fontconfig (so the font is picked up in your session)

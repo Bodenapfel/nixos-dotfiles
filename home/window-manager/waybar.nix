@@ -293,3 +293,4 @@ in
 
   # Provide swaync + swaync-client (your Waybar module calls swaync-client). :contentReference[oaicite:2]{index=2}
   services.swaync.enable = true;
+}

@@ -11,12 +11,16 @@
       # the `inputs.nixpkgs` of the current flake,
       # to avoid problems caused by different versions of nixpkgs.
       inputs.nixpkgs.follows = "nixpkgs";
+
+    lanzaboote = {
+        url = "github:nix-community/lanzaboote/v1.0.0";
+        inputs.nixpkgs.folows = "nixpkgs";
+      };
     };
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, ... }: {
+  outputs = inputs@{ nixpkgs, home-manager, lanzaboote ... }: {
     nixosConfigurations = {
-      # TODO please change the hostname to your own
       nixbtw = nixpkgs.lib.nixosSystem {
         modules = [
           ./nixos/configuration.nix
@@ -32,6 +36,8 @@
 
             # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
           }
+
+          lanzaboote.nixosModules.lanzaboote
         ];
       };
     };

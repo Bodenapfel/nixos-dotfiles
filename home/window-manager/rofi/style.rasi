@@ -4,8 +4,8 @@
     background:  rgba(0, 0, 0, 0.00);
     foreground:  rgb(255, 255, 255);
 
-    accent:      #62A0EAd9;
-    outline:     #99C1F1d9;
+    accent:      #5277C3;
+    outline:     #7EBAE4;
 
     border-width: 0px;
 }

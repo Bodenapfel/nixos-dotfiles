@@ -6,8 +6,8 @@
   --noti-bg-darker: rgb(32, 37, 53);
   --noti-bg-hover: rgb(28, 33, 49);
   --noti-bg-focus: rgba(32, 37, 53, 0.0);
-  --noti-close-bg: rgb(153, 193, 242);
-  --noti-close-bg-hover: rgb(113, 153, 222);
+  --noti-close-bg: rgb(126, 186, 228);
+  --noti-close-bg-hover: rgb(82, 119, 195);
   --text-color: rgb(255, 255, 255);
   --text-color-disabled: rgb(150, 150, 150);
   --bg-selected: rgb(0, 128, 255);

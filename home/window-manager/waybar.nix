@@ -57,9 +57,9 @@ in
 
         bluetooth = {
           on-click = bluemanManager;
-          format = "<span foreground='#99C1F1'> </span>on";
-          format-disabled = "<span foreground='#99C1F1'> </span>off";
-          format-connected = "<span foreground='#99C1F1'> </span>{num_connections}";
+          format = "<span foreground='#7EBAE4'> </span>on";
+          format-disabled = "<span foreground='#7EBAE4'> </span>off";
+          format-connected = "<span foreground='#7EBAE4'> </span>{num_connections}";
           tooltip-format = "{controller_alias}\t{controller_address}";
           tooltip-format-connected = "{device_enumerate}";
           tooltip-format-enumerate-connected = "{device_alias} {device_battery_percentage}%";
@@ -69,10 +69,10 @@ in
           format = "{player_icon}{title}";
           format-paused = "{status_icon}{title}";
           player-icons = {
-            default = "<span foreground='#99C1F1'> </span>";
+            default = "<span foreground='#7EBAE4'> </span>";
           };
           status-icons = {
-            paused = "<span foreground='#99C1F1'> </span>";
+            paused = "<span foreground='#7EBAE4'> </span>";
           };
           tooltip-format = "{dynamic}";
           max-length = 50;
@@ -80,18 +80,18 @@ in
 
         clock = {
           interval = 1;
-          format = "<span color='#99C1F1'>󰃰 </span> {:%d.%m.%Y %H:%M:%S}";
+          format = "<span color='#7EBAE4'>󰃰 </span> {:%d.%m.%Y %H:%M:%S}";
           tooltip = true;
           tooltip-format = "{calendar}";
           calendar = {
             mode = "month";
             weeks-pos = "right";
             format = {
-              months = "<span color='#739ade'><b>{}</b></span>";
+              months = "<span color='#5277C3'><b>{}</b></span>";
               days = "<span color='#ffffff'><b>{}</b></span>";
-              weeks = "<span color='#99C1F1'><b>W{}</b></span>";
-              weekdays = "<span color='#99C1F1'><b>{}</b></span>";
-              today = "<span color='#739ade'><b><u>{}</u></b></span>";
+              weeks = "<span color='#7EBAE4'><b>W{}</b></span>";
+              weekdays = "<span color='#7EBAE4'><b>{}</b></span>";
+              today = "<span color='#5277C3'><b><u>{}</u></b></span>";
             };
             actions = { };
           };
@@ -104,20 +104,20 @@ in
         };
 
         cpu = {
-          format = "<span color='#99C1F1'> </span> {usage}%";
+          format = "<span color='#7EBAE4'> </span> {usage}%";
           on-click = "${kittyExe} ${btopExe}";
           tooltip = true;
         };
 
         memory = {
-          format = "<span color='#99C1F1'> </span> {percentage}%";
+          format = "<span color='#7EBAE4'> </span> {percentage}%";
           on-click = "${kittyExe} ${btopExe}";
           tooltip = true;
         };
 
         pulseaudio = {
-          format = "<span color='#99C1F1'>{icon}</span>{volume}%";
-          format-muted = "<span color='#99C1F1'>  </span>{volume}%";
+          format = "<span color='#7EBAE4'>{icon}</span>{volume}%";
+          format-muted = "<span color='#7EBAE4'>  </span>{volume}%";
           format-icons = {
             default = [ " " " " "  " ];
           };
@@ -128,14 +128,14 @@ in
           tooltip = false;
           format = "{icon}";
           format-icons = {
-            notification = "<span foreground='#99C1F1'>󰂚 </span><span foreground='red'><sup></sup></span>";
-            none = "<span foreground='#99C1F1'>󰂚 </span>";
-            dnd-notification = "<span foreground='#99C1F1'>󰂛 </span><span foreground='red'><sup></sup></span>";
-            dnd-none = "<span foreground='#99C1F1'>󰂛 </span>";
-            inhibited-notification = "<span foreground='#99C1F1'>󰂚 </span><span foreground='red'><sup></sup></span>";
-            inhibited-none = "<span foreground='#99C1F1'>󰂛 </span>";
-            dnd-inhibited-notification = "<span foreground='#99C1F1'>󰂚 </span><span foreground='red'><sup></sup></span>";
-            dnd-inhibited-none = "<span foreground='#99C1F1'>󰂛 </span>";
+            notification = "<span foreground='#7EBAE4'>󰂚 </span><span foreground='red'><sup></sup></span>";
+            none = "<span foreground='#7EBAE4'>󰂚 </span>";
+            dnd-notification = "<span foreground='#7EBAE4'>󰂛 </span><span foreground='red'><sup></sup></span>";
+            dnd-none = "<span foreground='#7EBAE4'>󰂛 </span>";
+            inhibited-notification = "<span foreground='#7EBAE4'>󰂚 </span><span foreground='red'><sup></sup></span>";
+            inhibited-none = "<span foreground='#7EBAE4'>󰂛 </span>";
+            dnd-inhibited-notification = "<span foreground='#7EBAE4'>󰂚 </span><span foreground='red'><sup></sup></span>";
+            dnd-inhibited-none = "<span foreground='#7EBAE4'>󰂛 </span>";
           };
           return-type = "json";
           exec-if = "test -x ${swayncClient}";

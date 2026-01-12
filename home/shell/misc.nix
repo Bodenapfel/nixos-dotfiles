@@ -20,15 +20,15 @@
           right = 2;
         };
         color = {
-          "1" = "#9999ff";
-          "2" = "#99C1F1";
+          "1" = "#7EBAE4";
+          "2" = "#5277C3";
         };
       };
       display = {
         separator = ": ";
         color = {
-          keys = "#99C1F1";
-          title = "#9999ff";
+          keys = "#7EBAE4";
+          title = "#5277C3";
         };
         bar = {
           width = 10;

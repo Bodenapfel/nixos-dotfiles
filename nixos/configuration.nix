@@ -127,9 +127,22 @@
   };
 
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.allowUnfreePredicate = pkg: 
+    builtins.elem (lib.getName pkg) [ "corefonts" ];
+
+  fonts.fonts = with pkgs; [
+    corefonts
+  ];
+
+  
+  programs.nix-ld.enable = true;
+
+  programs.appimage = {
+    enable = true;
+    binfmt = true;
+  };
 
   programs.firefox.enable = true;
-  programs.chromium.enable = true;
 
   programs.hyprland = {
     enable = true;
@@ -191,6 +204,7 @@
     efibootmgr
     bash
     i2c-tools
+    chromium
   ];
 
   systemd.packages = with pkgs; [
@@ -226,7 +240,11 @@
     package = pkgs.openrgb-with-all-plugins;
     motherboard = "amd";
   };
-  services.udev.packages = [ pkgs.openrgb ];
+
+  services.udev.packages = [ 
+    pkgs.openrgb 
+    pkgs.wooting-udev-rules 
+  ];
 
   # for thunar
   services.gvfs.enable = true; # Mount, trash, and other functionalities

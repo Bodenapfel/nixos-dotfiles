@@ -57,6 +57,10 @@
         "application/x-yaml" = "kitty-nvim.desktop";
         "x-scheme-handler/discord" = "vesktop.desktop";
         "inode/directory" = "thunar.desktop";
+        "x-scheme-handler/http" = "firefox.desktop";
+        "x-scheme-handler/https" = "firefox.desktop";
+        "x-scheme-handler/about" = "firefox.desktop";
+        "x-scheme-handler/unknown" = "firefox.desktop";
       };
     };
     
@@ -95,7 +99,6 @@
 
     # misc
     kdePackages.kdeconnect-kde
-    owncloud-client
     ferdium
     jellyfin-mpv-shim
     cowsay
@@ -103,6 +106,8 @@
     sshfs
     swaynotificationcenter
     libnotify
+    wootility
+    anki
 
     # media
     playerctl
@@ -184,6 +189,12 @@
     enable = true;
     # Optional: restrict components, otherwise it starts a default set
     components = [ "secrets" "ssh" "pkcs11" ];
+  };
+
+  services.nextcloud-client = {
+    enable = true;
+    package = pkgs.nextcloud-client;
+    startInBackground = true;
   };
 
   # This value determines the home Manager release that your

@@ -130,7 +130,7 @@
   nixpkgs.config.allowUnfreePredicate = pkg: 
     builtins.elem (lib.getName pkg) [ "corefonts" ];
 
-  fonts.fonts = with pkgs; [
+  fonts.packages = with pkgs; [
     corefonts
   ];
 

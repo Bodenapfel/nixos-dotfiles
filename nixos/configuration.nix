@@ -8,6 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./sound.nix
     ];
 
   # Use the systemd-boot EFI boot loader.
@@ -101,16 +102,6 @@
       cups-filters
       cups-browsed
     ];
-  };
-
-  # Enable sound.
-  # services.pulseaudio.enable = true;
-  # OR
-  services.pipewire = {
-    enable = true;
-    pulse.enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
   };
 
   # Enable touchpad support (enabled default in most desktopManager).

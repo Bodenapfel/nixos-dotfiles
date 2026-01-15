@@ -108,6 +108,8 @@
     libnotify
     wootility
     anki
+    tor-browser
+    qbittorrent
 
     # media
     playerctl

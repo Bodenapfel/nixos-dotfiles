@@ -168,6 +168,9 @@
   xdg.portal.enable = true;
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-hyprland pkgs.xdg-desktop-portal-gtk ];
 
+  # for vpn
+  networking.firewall.checkReversePath = false;
+
   # Needed for aut dialogs
   security.polkit.enable = true;
 
@@ -202,6 +205,8 @@
     wineWowPackages.stable
     winetricks
     chromium
+    wireguard-tools
+    protonvpn-gui
   ];
 
   systemd.packages = with pkgs; [

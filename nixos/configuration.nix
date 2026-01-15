@@ -148,6 +148,8 @@
     remotePlay.openFirewall = true;
     dedicatedServer.openFirewall = true;
     localNetworkGameTransfers.openFirewall = true;
+    gamescopeSession.enable = true;
+    extraCompatPackages = [ pkgs.proton-ge-bin ];
   };
 
   programs.xfconf.enable = true;
@@ -195,6 +197,7 @@
     efibootmgr
     bash
     i2c-tools
+    protonup-qt
     chromium
   ];
 
@@ -206,6 +209,13 @@
 
   # enable overdrive for lact
   hardware.amdgpu.overdrive.enable = true;
+  
+  services.xserver.videoDrivers = [ "amdgpu" ];
+
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
+  };
 
   # amdcpu
   hardware.enableRedistributableFirmware = true;

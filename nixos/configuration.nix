@@ -151,6 +151,7 @@
     gamescopeSession.enable = true;
     extraCompatPackages = [ pkgs.proton-ge-bin ];
   };
+  programs.gamemode.enable = true;
 
   programs.xfconf.enable = true;
   programs.thunar = {
@@ -198,6 +199,8 @@
     bash
     i2c-tools
     protonup-qt
+    wineWowPackages.stable
+    winetricks
     chromium
   ];
 

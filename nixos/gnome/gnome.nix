@@ -76,6 +76,8 @@ in
     # Keyring UI
     gnome-keyring
     seahorse
+    gcr
+    libsecret
   ];
 
   # Helps some non-GNOME apps pick it up too

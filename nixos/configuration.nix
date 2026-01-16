@@ -112,7 +112,7 @@
   users.users.dk = {
     shell = pkgs.zsh;
     isNormalUser = true;
-    extraGroups = [ "wheel" "video" "i2c" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "video" "i2c" "networkmanager" ]; # Enable ‘sudo’ for the user.
     packages = with pkgs; [
       tree
     ];
@@ -172,15 +172,15 @@
   # Portals (screensharing, file pickers etc.) for hyrprland
   xdg.portal = {
     enable = true;
-    xdgOpenUsePortal = true;
     extraPortals = [
+      pkgs.xdg-desktop-portal-wlr
       pkgs.xdg-desktop-portal-hyprland
       pkgs.xdg-desktop-portal-gtk
     ];
     config = {
       common = {
-        default = [ "gtk" "hyprland"];
-        "org.freedesktop.portal.OpenURI" = [ "gtk" ];
+        default = [ "wlr" "hyprland" "gtk"];
+        "org.freedesktop.impl.portal.OpenURI" = [ "gtk" ];
       };
     };
   };
@@ -224,11 +224,12 @@
     chromium
     wireguard-tools
     networkmanagerapplet
-    nextcloud-client
+    owncloud-client
     libsForQt5.qtkeychain
     xdg-desktop-portal
     xdg-desktop-portal-hyprland
     xdg-desktop-portal-gnome
+    xdg-desktop-portal-gtk
   ];
 
   systemd.packages = with pkgs; [

@@ -41,7 +41,7 @@
   # depending on version. :contentReference[oaicite:2]{index=2}
   qt = {
     enable = true;
-    platformTheme.name = "qtct";
+    platformTheme.name = "qt5ct";
   };
 
   #### Packages needed for Qt theming

@@ -29,6 +29,7 @@
     ./shell/kitty.nix
     ./theme/theme.nix
     ./misc/mpv.nix
+    ./misc/vscode.nix
     ./window-manager/rofi/rofi.nix
     ./window-manager/hyprland.nix
     ./window-manager/waybar.nix
@@ -72,6 +73,8 @@
     };
   };
 
+  programs.firefox.enable = true;
+
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
     # here is some command line tools I use frequently
@@ -83,10 +86,6 @@
 
     # fonts
     nerd-fonts.comic-shanns-mono
-
-    # Prompter and GUI manaager for gnome-keyring
-    pkgs.gcr      # provides org.gnome.keyring.SystemPrompter
-    pkgs.seahorse # GUI to inspect/edit keyrings
 
     # hyprland utils
     hyprshot
@@ -108,14 +107,16 @@
     libnotify
     wootility
     anki
-    tor-browser
     qbittorrent
+    tor-browser
 
     # media
     playerctl
     pavucontrol
     helvum
 
+    # vpn
+    protonvpn-gui
 
     # archives
     zip
@@ -177,6 +178,7 @@
     usbutils # lsusb
   ];
 
+
   # basic configuration of git, please change to your own
   programs.git = {
     enable = true;
@@ -185,18 +187,6 @@
       user.email = "dakorb20@gmail.com";
       init.defaultbranch = "main";
     };
-  };
-
-  services.gnome-keyring = {
-    enable = true;
-    # Optional: restrict components, otherwise it starts a default set
-    components = [ "secrets" "ssh" "pkcs11" ];
-  };
-
-  services.nextcloud-client = {
-    enable = true;
-    package = pkgs.nextcloud-client;
-    startInBackground = true;
   };
 
   # This value determines the home Manager release that your

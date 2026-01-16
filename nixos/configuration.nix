@@ -9,6 +9,7 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./sound.nix
+      ./gnome/gnome.nix
     ];
 
   # Use the systemd-boot EFI boot loader.
@@ -135,6 +136,10 @@
 
   programs.firefox.enable = true;
 
+  environment.sessionVariables = {
+    BROWSER = "firefox";
+  };
+
   programs.hyprland = {
     enable = true;
     withUWSM = true;
@@ -165,15 +170,27 @@
   };
 
   # Portals (screensharing, file pickers etc.) for hyrprland
-  xdg.portal.enable = true;
-  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-hyprland pkgs.xdg-desktop-portal-gtk ];
+  xdg.portal = {
+    enable = true;
+    xdgOpenUsePortal = true;
+    extraPortals = [
+      pkgs.xdg-desktop-portal-hyprland
+      pkgs.xdg-desktop-portal-gtk
+    ];
+    config = {
+      common = {
+        default = [ "gtk" "hyprland"];
+        "org.freedesktop.portal.OpenURI" = [ "gtk" ];
+      };
+    };
+  };
 
   # for vpn
   networking.firewall.checkReversePath = false;
 
   # Needed for aut dialogs
   security.polkit.enable = true;
-
+  
   # Enable Flakes ad new nix cli tool
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   # List packages installed in system profile.
@@ -206,7 +223,12 @@
     winetricks
     chromium
     wireguard-tools
-    protonvpn-gui
+    networkmanagerapplet
+    nextcloud-client
+    libsForQt5.qtkeychain
+    xdg-desktop-portal
+    xdg-desktop-portal-hyprland
+    xdg-desktop-portal-gnome
   ];
 
   systemd.packages = with pkgs; [
@@ -294,7 +316,5 @@
   #
   # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
   system.stateVersion = "25.11"; # Did you read the comment?
-
-
 }
 

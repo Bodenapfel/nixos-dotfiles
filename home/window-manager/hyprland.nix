@@ -13,7 +13,6 @@
   };
 
   #### Services you currently start via exec-once (make them declarative)
-  services.gnome-keyring.enable = true;          # :contentReference[oaicite:8]{index=8}
   services.network-manager-applet.enable = true; # :contentReference[oaicite:9]{index=9}
   services.blueman-applet.enable = true;         # requires NixOS services.blueman.enable :contentReference[oaicite:10]{index=10}
   services.kdeconnect.enable = true;

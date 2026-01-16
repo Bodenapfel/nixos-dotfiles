@@ -9,8 +9,10 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./sound.nix
-      ./gnome/gnome.nix
     ];
+
+  services.gnome.gnome-keyring.enable = true;
+  security.pam.services.lgoin.enableGnomeKeyring = true;
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = lib.mkForce false;
@@ -169,18 +171,25 @@
     ];
   };
 
+  environment.pathsToLink = [ "/share/xdg-desktop-portal" "/share/applications" ];
   # Portals (screensharing, file pickers etc.) for hyrprland
   xdg.portal = {
     enable = true;
-    extraPortals = [
-      pkgs.xdg-desktop-portal-wlr
-      pkgs.xdg-desktop-portal-hyprland
-      pkgs.xdg-desktop-portal-gtk
+
+    # You need GTK for OpenURI (and file picker), Hyprland portal for screencast/etc.
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-gtk
+      xdg-desktop-portal-hyprland
     ];
+
+    # Force which backend serves which interface (written to portals.conf)
     config = {
       common = {
-        default = [ "wlr" "hyprland" "gtk"];
+        default = [ "hyprland" "gtk" ];
+
+        # These are the ones you are missing:
         "org.freedesktop.impl.portal.OpenURI" = [ "gtk" ];
+        "org.freedesktop.impl.portal.Settings" = [ "gtk" ];
       };
     };
   };
@@ -230,6 +239,9 @@
     xdg-desktop-portal-hyprland
     xdg-desktop-portal-gnome
     xdg-desktop-portal-gtk
+    libva
+    libva-utils
+    glib
   ];
 
   systemd.packages = with pkgs; [

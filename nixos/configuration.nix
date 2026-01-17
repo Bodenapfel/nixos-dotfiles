@@ -12,7 +12,7 @@
     ];
 
   services.gnome.gnome-keyring.enable = true;
-  security.pam.services.lgoin.enableGnomeKeyring = true;
+  security.pam.services.login.enableGnomeKeyring = true;
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = lib.mkForce false;
@@ -176,22 +176,21 @@
   xdg.portal = {
     enable = true;
 
-    # You need GTK for OpenURI (and file picker), Hyprland portal for screencast/etc.
+    config = {
+      common = {
+        default = [
+          "gtk"
+          "hyprland"
+        ];
+      };
+    };
+
+    xdgOpenUsePortal = true;
+
     extraPortals = with pkgs; [
       xdg-desktop-portal-gtk
       xdg-desktop-portal-hyprland
     ];
-
-    # Force which backend serves which interface (written to portals.conf)
-    config = {
-      common = {
-        default = [ "hyprland" "gtk" ];
-
-        # These are the ones you are missing:
-        "org.freedesktop.impl.portal.OpenURI" = [ "gtk" ];
-        "org.freedesktop.impl.portal.Settings" = [ "gtk" ];
-      };
-    };
   };
 
   # for vpn
@@ -228,6 +227,8 @@
     bash
     i2c-tools
     protonup-qt
+    protontricks
+    gamescope
     wineWowPackages.stable
     winetricks
     chromium
@@ -237,11 +238,11 @@
     libsForQt5.qtkeychain
     xdg-desktop-portal
     xdg-desktop-portal-hyprland
-    xdg-desktop-portal-gnome
     xdg-desktop-portal-gtk
     libva
     libva-utils
     glib
+    xdg-utils
   ];
 
   systemd.packages = with pkgs; [

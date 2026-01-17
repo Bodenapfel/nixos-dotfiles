@@ -42,6 +42,20 @@
   xdg = {
     enable = true;
 
+    portal = {
+      enable = true;
+      extraPortals = with pkgs; [
+        xdg-desktop-portal-hyprland
+        xdg-desktop-portal-gtk
+      ];
+
+      config.common = {
+        default = [ "hyprland" "gtk" ];
+        "org.freedesktop.impl.portal.OpenURI" = [ "gtk" ];
+        "org.freedesktop.impl.portal.FileChooser" = [ "gtk" ];
+      };
+    };
+
     mimeApps = {
       enable = true;
       defaultApplications = {
@@ -73,20 +87,22 @@
     };
   };
 
-  programs.firefox.enable = true;
-
-  xdg.portal = {
-    enable = true;
-    extraPortals = with pkgs; [
-      xdg-desktop-portal-hyprland
-      xdg-desktop-portal-gtk
-    ];
-
-    config.common = {
-      default = [ "hyprland" "gtk" ];
-      "org.freedesktop.impl.portal.OpenURI" = [ "gtk" ];
-      "org.freedesktop.impl.portal.FileChooser" = [ "gtk" ];
+  programs = {
+    firefox.enable = true;
+    git = {
+      enable = true;
+      settings = {
+        user.name = "Bodenapfel";
+        user.email = "dakorb20@gmail.com";
+        init.defaultbranch = "main";
+      };
     };
+  };
+
+  home.sessionVariables = {
+    BROWSER = "firefox";
+    NIXOS_OZONE_WL = "1";
+    EDITOR = "nvim";
   };
 
   # Packages that should be installed to the user profile.
@@ -94,12 +110,18 @@
     # here is some command line tools I use frequently
     # feel free to add your own or remove some of them
 
+    # voice
+    vesktop
+    teamspeak6-client
+
     # clipboard
     cliphist
     wl-clipboard
 
     # fonts
     nerd-fonts.comic-shanns-mono
+
+    thunderbird
 
     # hyprland utils
     hyprshot
@@ -192,17 +214,6 @@
     pciutils # lspci
     usbutils # lsusb
   ];
-
-
-  # basic configuration of git, please change to your own
-  programs.git = {
-    enable = true;
-    settings = {
-      user.name = "Bodenapfel";
-      user.email = "dakorb20@gmail.com";
-      init.defaultbranch = "main";
-    };
-  };
 
   # This value determines the home Manager release that your
   # configuration is compatible with. This helps avoid breakage

@@ -125,7 +125,22 @@
         "sleep 3 && steam -silent"
         "jellyfin-mpv-shim --no-gui"
       ];
+      env = [
+        "NIXOS_OZONE_WL,1"
 
+        # Toolkits
+        "QT_QPA_PLATFORM,wayland;xcb"
+        "QT_WAYLAND_DISABLE_WINDOWDECORATION,1"
+
+        # XDG (keep consistent)
+        "XDG_CURRENT_DESKTOP,Hyprland"
+        "XDG_SESSION_TYPE,wayland"
+        "XDG_SESSION_DESKTOP,Hyprland"
+
+        # could break some things
+        # "SDL_VIDEODRIVER,wayland"
+        # "CLUTTER_BACKEND,wayland"
+      ];
       bind = [
         "$mainMod, A, exec, $terminal"
         "$mainMod, Q, killactive,"

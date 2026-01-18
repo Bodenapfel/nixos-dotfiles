@@ -37,7 +37,7 @@
   qt = {
     enable = true;
     platformTheme.name = "qt5ct";
-      style.name = "kvantum";
+    style.name = "kvantum";
   };
 
   home.packages = with pkgs; [
@@ -55,6 +55,5 @@
     XCURSOR_THEME = "Breeze_Light";
     XCURSOR_SIZE = "24";
     QT_QPA_PLATFORMTHEME = "qt5ct";
-    QT_STYLE_OVERRIDE = "kvantum";
   };
 }

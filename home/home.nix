@@ -87,16 +87,8 @@
 
   home.sessionVariables = {
     BROWSER = "firefox";
-    NIXOS_OZONE_WL = "1";
     EDITOR = "nvim";
-    QT_QPA_PLATFORM = "wayland,xcb";
-    QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
-    XDG_CURRENT_DESKTOP = "Hyprland";
-    XDG_SESSION_TYPE = "wayland";
-    XDG_SESSION_DESKTOP = "hyprland";
     TERMINAL = "kitty";
-    SDL_VIDEODRIVER = "wayland";
-    CLUTTER_BACKEND = "wayland";
   };
 
   # Packages that should be installed to the user profile.

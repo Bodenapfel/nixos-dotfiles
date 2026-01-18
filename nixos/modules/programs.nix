@@ -9,6 +9,10 @@
     onlyoffice-desktopeditors
     ncdu
     clang
+    cmake
+    gnumake
+    gcc
+    pkg-config
     nodejs_25
     jdk21
     jdk17

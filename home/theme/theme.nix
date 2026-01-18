@@ -25,6 +25,13 @@
       name = "Papirus-Dark";
     };
 
+    gtk3.extraConfig = {
+      gtk-application-prefer-dark-theme = true;
+    };
+
+    gtk4.extraConfig = {
+      gtk-application-prefer-dark-theme = true;
+    };
   };
 
   xdg.configFile."Kvantum/GraphiteDark/GraphiteDark.kvconfig".source = ./GraphiteDark/GraphiteDark.kvconfig;
@@ -37,7 +44,6 @@
   qt = {
     enable = true;
     platformTheme.name = "qt5ct";
-    style.name = "kvantum";
   };
 
   home.packages = with pkgs; [
@@ -50,6 +56,13 @@
     kdePackages.qtstyleplugin-kvantum
     papirus-icon-theme
   ];
+
+  dconf.settings."org/gnome/desktop/interface" = {
+    gtk-theme = "Graphite-Dark";
+    icon-theme = "Papirus-Dark";
+    cursor-theme = "Breeze_Light";
+    color-scheme = "prefer-dark";
+  };
 
   home.sessionVariables = {
     XCURSOR_THEME = "Breeze_Light";

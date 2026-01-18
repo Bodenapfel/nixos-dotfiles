@@ -28,7 +28,6 @@
     gamescope
     wineWowPackages.stable
     winetricks
-    chromium
     wireguard-tools
     networkmanagerapplet
     owncloud-client
@@ -41,6 +40,8 @@
     glib
     xdg-utils
   ];
+
+  programs.dconf.enable = true;
 
   programs.nix-ld.enable = true;
 

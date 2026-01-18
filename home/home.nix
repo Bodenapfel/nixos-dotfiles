@@ -4,24 +4,6 @@
   home.username = "dk";
   home.homeDirectory = "/home/dk";
 
-  # Import files from the current configuration directory into the Nix store,
-  # and create symbolic links pointing to those store files in the Home directory.
-
-  # home.file.".config/i3/wallpaper.jpg".source = ./wallpaper.jpg;
-
-  # Import the scripts directory into the Nix store,
-  # and recursively generate symbolic links in the Home directory pointing to the files in the store.
-  # home.file.".config/i3/scripts" = {
-  #   source = ./scripts;
-  #   recursive = true;   # link recursively
-  #   executable = true;  # make all files executable
-  # };
-
-  # encode the file content in nix configuration file directly
-  # home.file.".xxx".text = ''
-  #     xxx
-  # '';
-
   imports = [
     ./shell/zsh.nix
     ./shell/tmux.nix
@@ -31,10 +13,14 @@
     ./misc/mpv.nix
     ./misc/vscode.nix
     ./window-manager/rofi/rofi.nix
-    ./window-manager/hyprland.nix
     ./window-manager/waybar.nix
     ./window-manager/swaync.nix
+    ./window-manager/services.nix
     ./window-manager/hypr/scripts.nix
+    ./window-manager/hypr/hypridle.nix
+    ./window-manager/hypr/hyprlock.nix
+    ./window-manager/hypr/hyprpaper.nix
+    ./window-manager/hypr/hyprland.nix
     ./gaming/mangohud.nix
     ./gaming/misc.nix
   ];
@@ -103,6 +89,14 @@
     BROWSER = "firefox";
     NIXOS_OZONE_WL = "1";
     EDITOR = "nvim";
+    QT_QPA_PLATFORM = "wayland,xcb";
+    QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
+    XDG_CURRENT_DESKTOP = "Hyprland";
+    XDG_SESSION_TYPE = "wayland";
+    XDG_SESSION_DESKTOP = "hyprland";
+    TERMINAL = "kitty";
+    SDL_VIDEODRIVER = "wayland";
+    CLUTTER_BACKEND = "wayland";
   };
 
   # Packages that should be installed to the user profile.
@@ -117,11 +111,6 @@
     # clipboard
     cliphist
     wl-clipboard
-
-    # fonts
-    nerd-fonts.comic-shanns-mono
-
-    thunderbird
 
     # hyprland utils
     hyprshot
@@ -146,6 +135,8 @@
     anki
     qbittorrent
     tor-browser
+    thunderbird
+    # papirus-icon-theme
 
     # media
     playerctl

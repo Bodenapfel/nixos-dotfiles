@@ -1,6 +1,7 @@
 { config, pkgs, ... }:
 {
   fonts.packages = with pkgs; [
-  corefonts
+    corefonts
+    nerd-fonts.comic-shanns-mono
   ];
 }

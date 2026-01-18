@@ -19,7 +19,7 @@
     };
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, lanzaboote,  ... }: {
+  outputs = inputs@{ nixpkgs, home-manager, lanzaboote, ... }: {
     nixosConfigurations = {
       nixbtw = nixpkgs.lib.nixosSystem {
         modules = [
@@ -32,7 +32,11 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
 
-            home-manager.users.dk = import ./home/home.nix;
+            home-manager.users.dk = {
+              imports = [
+                ./home/home.nix
+              ];
+            };
 
             # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
           }

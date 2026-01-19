@@ -12,6 +12,7 @@
     ./theme/theme.nix
     ./misc/mpv.nix
     ./misc/vscode.nix
+    ./misc/flatpak.nix
     ./window-manager/rofi/rofi.nix
     ./window-manager/waybar.nix
     ./window-manager/swaync.nix
@@ -126,7 +127,6 @@
     wootility
     anki
     qbittorrent
-    tor-browser
     thunderbird
     # papirus-icon-theme
 

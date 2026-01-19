@@ -17,14 +17,16 @@
       url = "github:nix-community/lanzaboote/v1.0.0";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, lanzaboote, ... }: {
+  outputs = inputs@{ nixpkgs, home-manager, lanzaboote, nix-flatpak,  ... }: {
     nixosConfigurations = {
       nixbtw = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
         modules = [
           ./nixos/configuration.nix
-
+          nix-flatpak.nixosModules.nix-flatpak
           # make home-manager as a module of nixos
           # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`
           home-manager.nixosModules.home-manager
@@ -35,6 +37,7 @@
             home-manager.users.dk = {
               imports = [
                 ./home/home.nix
+                nix-flatpak.homeManagerModules.nix-flatpak
               ];
             };
 

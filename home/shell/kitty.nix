@@ -28,9 +28,5 @@
       background_blur = 1;
       background_tint = "1.0";
     };
-
-    extraConfig = ''
-      include current-theme.conf
-    '';
   };
 }

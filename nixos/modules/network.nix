@@ -5,10 +5,6 @@
   # Configure network connections interactively with nmcli or nmtui.
   networking.networkmanager.enable = true;
 
-  # Set your time zone.
-  time.timeZone = "Europe/Berlin";
-  time.hardwareClockInLocalTime = true;
-
   # for vpn
   networking.firewall.checkReversePath = false;
 

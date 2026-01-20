@@ -21,4 +21,7 @@
 
   # Needed for aut dialogs
   security.polkit.enable = true;
+
+  # udev rules
+  services.udev.packages = [ pkgs.openrgb pkgs.wooting-udev-rules ];
 }

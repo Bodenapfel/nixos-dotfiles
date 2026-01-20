@@ -23,9 +23,6 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  # Needed for aut dialogs
-  security.polkit.enable = true;
-
   # Enable Flakes ad new nix cli tool
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 

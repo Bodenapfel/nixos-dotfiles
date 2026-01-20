@@ -11,10 +11,10 @@
   boot.lanzaboote = {
     enable = true;
     pkiBundle = "/var/lib/sbctl";
+    autoGenerateKeys.enable = true;
+    autoEnrollKeys.enable = true;
   };
 
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
-
-  services.udev.packages = [ pkgs.openrgb pkgs.wooting-udev-rules ];
 }

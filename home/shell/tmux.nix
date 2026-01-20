@@ -17,17 +17,10 @@
 
       # Your status + border colors
       # (modern equivalent of status-bg/status-fg)
-      set -g status-style "bg=#99c1f2,fg=#000000"
+      set -g status-style "bg=#5277C3,fg=#000000"
 
-      set -g pane-border-style fg=#99c1f2
-      set -g pane-active-border-style fg=#48658b
-
-      # Your old config had:
-      #   unbind C-a
-      #   bind C-b send-prefix
-      #
-      # With prefix = C-b, these are redundant because tmux already uses C-b
-      # as prefix and "C-b C-b" sends the prefix through by default. :contentReference[oaicite:2]{index=2}
+      set -g pane-border-style fg=#7EBAE4
+      set -g pane-active-border-style fg=#5277C3
     '';
   };
 }

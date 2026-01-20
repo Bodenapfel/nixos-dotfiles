@@ -6,7 +6,6 @@
     vim
     neovim
     vesktop
-    onlyoffice-desktopeditors
     ncdu
     clang
     cmake

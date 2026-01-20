@@ -5,12 +5,13 @@
       "com.github.tchx84.Flatseal"
       "io.github.Soundux"
       "org.torproject.torbrowser-launcher"
+      "it.mijorus.gearlever"
     ];
     overrides = {
       global = {
         Context.sockets = [
           "wayland"
-          "!x11"
+          "x11"
           "fallback-x11"
           "session-bus"
           "system-bus"

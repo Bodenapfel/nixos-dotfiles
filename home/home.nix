@@ -82,6 +82,7 @@
     anki
     qbittorrent
     thunderbird
+    onlyoffice-desktopeditors
 
     # media
     playerctl

@@ -6,6 +6,7 @@
       "io.github.Soundux"
       "org.torproject.torbrowser-launcher"
       "it.mijorus.gearlever"
+      "org.inkscape.Inkscape"
     ];
     overrides = {
       global = {

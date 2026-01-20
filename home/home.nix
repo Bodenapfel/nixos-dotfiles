@@ -68,6 +68,8 @@
 
     # image viewers pdf viewers etc.
     qview
+    gimp
+    krita
 
     # misc
     kdePackages.kdeconnect-kde

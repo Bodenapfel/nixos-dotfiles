@@ -1,4 +1,4 @@
-{ pkgs, config, ... }:
+{ ... }:
 
 {
   xdg.configFile."hypr/wallpapers/wallpaper.jpg".source =

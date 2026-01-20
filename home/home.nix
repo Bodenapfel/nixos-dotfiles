@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   home.username = "dk";
@@ -16,7 +16,7 @@
     ./misc/xdg.nix
     ./window-manager/rofi/rofi.nix
     ./window-manager/waybar.nix
-    ./window-manager/swaync.nix
+    ./window-manager/swaync/swaync.nix
     ./window-manager/services.nix
     ./window-manager/hypr/scripts.nix
     ./window-manager/hypr/hypridle.nix

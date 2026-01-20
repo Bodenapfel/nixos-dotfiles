@@ -1,4 +1,4 @@
-{ pkgs, options, ... }:
+{ ... }:
 
 {
   programs.kitty = {

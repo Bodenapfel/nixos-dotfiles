@@ -3,6 +3,6 @@
 {
   services.swaync = {
     enable = true;
-    style = ./swaync/style.css;
+    style = ./style.css;
   };
 }

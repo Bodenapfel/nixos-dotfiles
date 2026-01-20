@@ -1,4 +1,5 @@
 { config, lib, pkgs, ... }:
+
 {
   services.pipewire = {
     enable = true;
@@ -41,27 +42,25 @@
 
     # 3) Route soundboard -> loopback mic
     extraConfig.pipewire."92-soundboard-to-loopback" = {
-      "context.modules" = [
-        {
-          name = "libpipewire-module-loopback";
-          args = {
-            "node.description" = "Soundboard -> Loopback Mic";
+      "context.modules" = [{
+        name = "libpipewire-module-loopback";
+        args = {
+          "node.description" = "Soundboard -> Loopback Mic";
 
-            "capture.props" = {
-              # capture from the *sink* named "soundboard"
-              "stream.capture.sink" = true;
-              "target.object" = "soundboard";
-              "node.passive" = true;
-            };
-
-            "playback.props" = {
-              # play into the virtual mic node
-              "target.object" = "soundboard_loopback";
-              "node.passive" = true;
-            };
+          "capture.props" = {
+            # capture from the *sink* named "soundboard"
+            "stream.capture.sink" = true;
+            "target.object" = "soundboard";
+            "node.passive" = true;
           };
-        }
-      ];
+
+          "playback.props" = {
+            # play into the virtual mic node
+            "target.object" = "soundboard_loopback";
+            "node.passive" = true;
+          };
+        };
+      }];
     };
   };
 }

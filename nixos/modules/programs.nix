@@ -1,4 +1,5 @@
 { config, pkgs, ... }:
+
 {
   environment.systemPackages = with pkgs; [
     file-roller
@@ -11,6 +12,7 @@
     cmake
     gnumake
     gcc
+    nixpkgs-fmt
     pkg-config
     nodejs_25
     jdk21

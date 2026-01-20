@@ -20,7 +20,7 @@
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, lanzaboote, nix-flatpak,  ... }: {
+  outputs = inputs@{ nixpkgs, home-manager, lanzaboote, nix-flatpak, ... }: {
     nixosConfigurations = {
       nixbtw = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -35,10 +35,8 @@
             home-manager.useUserPackages = true;
 
             home-manager.users.dk = {
-              imports = [
-                ./home/home.nix
-                nix-flatpak.homeManagerModules.nix-flatpak
-              ];
+              imports =
+                [ ./home/home.nix nix-flatpak.homeManagerModules.nix-flatpak ];
             };
 
             # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix

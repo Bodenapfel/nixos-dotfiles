@@ -1,11 +1,13 @@
 { config, pkgs, ... }:
+
 {
   fonts = {
     enableDefaultPackages = true;
     packages = with pkgs; [
       corefonts
 
-      noto-fonts noto-fonts-cjk-sans
+      noto-fonts
+      noto-fonts-cjk-sans
       noto-fonts-color-emoji
 
       liberation_ttf

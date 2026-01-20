@@ -7,7 +7,8 @@
     # If you’re on Wayland you might be using rofi-wayland; keep if you know it works for you.
     # package = pkgs.rofi-wayland;
 
-    theme = ./style.rasi;  # programs.rofi.theme supports a path :contentReference[oaicite:1]{index=1}
+    theme =
+      ./style.rasi; # programs.rofi.theme supports a path :contentReference[oaicite:1]{index=1}
 
     extraConfig = {
       # keys with hyphens must be quoted in Nix
@@ -31,9 +32,6 @@
     };
 
     # Optional: install plugins that match your modi list
-    plugins = with pkgs; [
-      rofi-calc
-      rofi-emoji
-    ];
+    plugins = with pkgs; [ rofi-calc rofi-emoji ];
   };
 }

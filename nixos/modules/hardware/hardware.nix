@@ -1,4 +1,5 @@
 { config, pkgs, ... }:
+
 {
   # ddcci setup
   hardware.i2c.enable = true;
@@ -13,8 +14,5 @@
   hardware.enableRedistributableFirmware = true;
   hardware.cpu.amd.updateMicrocode = true;
 
-  services.udev.packages = [ 
-    pkgs.openrgb 
-    pkgs.wooting-udev-rules 
-  ];
+  services.udev.packages = [ pkgs.openrgb pkgs.wooting-udev-rules ];
 }

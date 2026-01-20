@@ -1,4 +1,5 @@
 { config, pkgs, lib, ... }:
+
 {
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = lib.mkForce false;
@@ -15,8 +16,5 @@
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  services.udev.packages = [ 
-    pkgs.openrgb 
-    pkgs.wooting-udev-rules 
-  ];
+  services.udev.packages = [ pkgs.openrgb pkgs.wooting-udev-rules ];
 }

@@ -1,4 +1,5 @@
 { config, pkgs, ... }:
+
 {
   networking.hostName = "nixbtw"; # Define your hostname.
   # Configure network connections interactively with nmcli or nmtui.

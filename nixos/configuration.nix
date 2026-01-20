@@ -1,38 +1,35 @@
 { config, lib, pkgs, ... }:
 
 {
-  imports =
-    [ 
-      # Include the results of the hardware scan.
-      ./hardware-configuration.nix
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
 
-      # Custom modules
-      ./modules/hardware/amdgpu.nix
-      ./modules/hardware/hardware.nix
-      ./modules/hardware/printer.nix
-      ./modules/hardware/sound.nix
-      ./modules/boot.nix
-      ./modules/filesystems.nix
-      ./modules/fonts.nix
-      ./modules/locale.nix
-      ./modules/network.nix
-      ./modules/programs.nix
-      ./modules/services.nix
-      ./modules/users.nix
+    # Custom modules
+    ./modules/hardware/amdgpu.nix
+    ./modules/hardware/hardware.nix
+    ./modules/hardware/printer.nix
+    ./modules/hardware/sound.nix
+    ./modules/boot.nix
+    ./modules/filesystems.nix
+    ./modules/fonts.nix
+    ./modules/locale.nix
+    ./modules/network.nix
+    ./modules/programs.nix
+    ./modules/services.nix
+    ./modules/users.nix
 
-    ];
-
+  ];
 
   nixpkgs.config.allowUnfree = true;
-  nixpkgs.config.allowUnfreePredicate = pkg: 
+  nixpkgs.config.allowUnfreePredicate = pkg:
     builtins.elem (lib.getName pkg) [ "corefonts" ];
 
   # Needed for aut dialogs
   security.polkit.enable = true;
-  
+
   # Enable Flakes ad new nix cli tool
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
 
   # Don't change this unless you know what you're doin.
   # This only sets the first version of NixOS

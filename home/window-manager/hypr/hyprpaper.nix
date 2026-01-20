@@ -1,6 +1,8 @@
-{ pkgs, config, ...}:
+{ pkgs, config, ... }:
+
 {
-  xdg.configFile."hypr/wallpapers/wallpaper.jpg".source = ./wallpapers/mojave.jpg;
+  xdg.configFile."hypr/wallpapers/wallpaper.jpg".source =
+    ./wallpapers/mojave.jpg;
 
   services.hyprpaper = {
     enable = true;

@@ -1,4 +1,5 @@
-{ pkgs, config, ...}:
+{ pkgs, config, ... }:
+
 {
   programs.hyprlock = {
     enable = true;
@@ -21,7 +22,7 @@
 
         outer_color = "rgb(15,15,15)";
         inner_color = "rgb(255,255,255)";
-        font_color  = "rgb(10,10,10)";
+        font_color = "rgb(10,10,10)";
 
         fade_on_empty = true;
         fade_timeout = 1000;
@@ -32,12 +33,12 @@
         rounding = -1;
 
         check_color = "rgb(204,136,34)";
-        fail_color  = "rgb(204,34,34)";
-        fail_text   = "<i>$FAIL <b>($ATTEMPTS)</b></i>";
+        fail_color = "rgb(204,34,34)";
+        fail_text = "<i>$FAIL <b>($ATTEMPTS)</b></i>";
         fail_transition = 300;
 
         capslock_color = -1;
-        numlock_color  = -1;
+        numlock_color = -1;
         bothlock_color = -1;
         invert_numlock = false;
         swap_font_color = false;
@@ -50,7 +51,7 @@
       label = [
         {
           monitor = "";
-          text = "cmd[update:1000] echo \"$TIME\"";
+          text = ''cmd[update:1000] echo "$TIME"'';
           color = "rgba(200,200,200,1.0)";
           font_size = 55;
           font_family = "Fira Semibold";

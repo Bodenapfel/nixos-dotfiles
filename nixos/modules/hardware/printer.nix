@@ -1,4 +1,5 @@
 { config, pkgs, ... }:
+
 {
   # printing setup
   services.avahi = {
@@ -9,9 +10,6 @@
 
   services.printing = {
     enable = true;
-    drivers = with pkgs; [
-      cups-filters
-      cups-browsed
-    ];
+    drivers = with pkgs; [ cups-filters cups-browsed ];
   };
 }

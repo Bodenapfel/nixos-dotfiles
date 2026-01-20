@@ -1,4 +1,5 @@
 { config, pkgs, ... }:
+
 {
   # openrgb
   services.hardware.openrgb = {

@@ -1,4 +1,5 @@
 { config, pkgs, ... }:
+
 {
   xdg = {
     enable = true;
@@ -40,7 +41,7 @@
         "x-scheme-handler/unknown" = "firefox.desktop";
       };
     };
-    
+
     desktopEntries.kitty-nvim = {
       name = "Neovim (Kitty)";
       exec = "kitty nvim %f";

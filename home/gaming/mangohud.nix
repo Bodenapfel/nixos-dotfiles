@@ -1,4 +1,5 @@
 { config, pkgs, ... }:
+
 let homeDir = config.home.homeDirectory;
 in {
   programs.mangohud = {

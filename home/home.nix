@@ -50,9 +50,10 @@
     # here is some command line tools I use frequently
     # feel free to add your own or remove some of them
 
-    # voice
+    # communication
     vesktop
     teamspeak6-client
+    ferdium
 
     # clipboard
     cliphist
@@ -72,8 +73,6 @@
 
     # misc
     kdePackages.kdeconnect-kde
-    ferdium
-    jellyfin-mpv-shim
     cowsay
     fortune
     sshfs
@@ -82,13 +81,13 @@
     wootility
     anki
     qbittorrent
-    thunderbird
     onlyoffice-desktopeditors
 
     # media
     playerctl
     pavucontrol
     helvum
+    jellyfin-mpv-shim
 
     # vpn
     protonvpn-gui

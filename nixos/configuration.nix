@@ -24,7 +24,18 @@
   nixpkgs.config.allowUnfree = true;
 
   # Enable Flakes ad new nix cli tool
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix = {
+    settings = { experimental-features = [ "nix-command" "flakes" ]; };
+    optimise = {
+      automatic = true;
+      dates = [ "daily" ];
+    };
+    gc = {
+      automatic = true;
+      dates = [ "daily" ];
+      options = "delete-older-than 30d";
+    };
+  };
 
   # Don't change this unless you know what you're doin.
   # This only sets the first version of NixOS

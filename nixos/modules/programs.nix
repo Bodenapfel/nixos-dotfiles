@@ -7,6 +7,7 @@
     vim
     neovim
     vesktop
+    p7zip
     ncdu
     clang
     cmake
@@ -35,7 +36,6 @@
     winetricks
     wireguard-tools
     networkmanagerapplet
-    owncloud-client
     libsForQt5.qtkeychain
     xdg-desktop-portal
     xdg-desktop-portal-hyprland

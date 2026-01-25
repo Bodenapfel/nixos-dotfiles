@@ -1,24 +1,10 @@
-{ pkgs, lib, ... }:
+{ ... }:
 
-let
-  kittyExe = lib.getExe pkgs.kitty;
-  btopExe = lib.getExe pkgs.btop;
-  pavucontrolExe = lib.getExe pkgs.pavucontrol;
-
-  bluemanManager = "${pkgs.blueman}/bin/blueman-manager";
-  swayncClient = "${pkgs.swaynotificationcenter}/bin/swaync-client";
-
-  # Nerd font name changed across nixpkgs versions; support both.
-  comicShannsNerd = if builtins.hasAttr "nerd-fonts" pkgs then
-    pkgs.nerd-fonts."comic-shanns-mono"
-  else
-    (pkgs.nerdfonts.override { fonts = [ "ComicShannsMono" ]; });
-in {
+{
   programs.waybar = {
     enable = true;
     systemd.enable = true;
 
-    # Home Manager can generate the JSON config from Nix values:
     settings = [{
       layer = "top";
 
@@ -52,7 +38,7 @@ in {
       };
 
       bluetooth = {
-        on-click = bluemanManager;
+        on-click = "blueman-manager";
         format = "<span foreground='#7EBAE4'> </span>on";
         format-disabled = "<span foreground='#7EBAE4'> </span>off";
         format-connected =
@@ -99,13 +85,13 @@ in {
 
       cpu = {
         format = "<span color='#7EBAE4'> </span> {usage}%";
-        on-click = "${kittyExe} ${btopExe}";
+        on-click = "kitty btop";
         tooltip = true;
       };
 
       memory = {
         format = "<span color='#7EBAE4'> </span> {percentage}%";
-        on-click = "${kittyExe} ${btopExe}";
+        on-click = "kitty btop";
         tooltip = true;
       };
 
@@ -113,7 +99,7 @@ in {
         format = "<span color='#7EBAE4'>{icon}</span>{volume}%";
         format-muted = "<span color='#7EBAE4'>  </span>{volume}%";
         format-icons = { default = [ " " " " "  " ]; };
-        on-click = "${pavucontrolExe} -t 3";
+        on-click = "pavucontrol -t 3";
       };
 
       "custom/notification" = {
@@ -134,15 +120,14 @@ in {
           dnd-inhibited-none = "<span foreground='#7EBAE4'>󰂛 </span>";
         };
         return-type = "json";
-        exec-if = "test -x ${swayncClient}";
-        exec = "${swayncClient} -swb";
-        on-click = "${swayncClient} -t -sw";
-        on-click-right = "${swayncClient} -d -sw";
+        exec-if = "test -x swaync-client";
+        exec = "swaync-client -swb";
+        on-click = "swaync-client -t -sw";
+        on-click-right = "swaync-client -d -sw";
         escape = true;
       };
     }];
 
-    # CSS
     style = ''
       * {
         border: none;
@@ -258,17 +243,4 @@ in {
       }
     '';
   };
-
-  # Packages referenced by the Waybar config (do NOT use lib.getExe outputs here)
-  home.packages = with pkgs; [
-    kitty
-    btop
-    blueman
-    pavucontrol
-    swaynotificationcenter
-    comicShannsNerd
-  ];
-
-  # User fontconfig (so the font is picked up in your session)
-  fonts.fontconfig.enable = true;
 }

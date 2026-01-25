@@ -31,33 +31,38 @@
     hypridle
     hyprsunset
 
-    # image viewers pdf viewers etc.
-    qview
-    gimp
-    krita
-
-    # misc
-    kdePackages.kdeconnect-kde
-    cowsay
-    fortune
-    sshfs
-    swaynotificationcenter
-    libnotify
-    wootility
-    anki
-    qbittorrent
-    onlyoffice-desktopeditors
-    blueman
-    pkgs-stable.owncloud-client
-
-    # media
+    # multimedia
     playerctl
     pavucontrol
     helvum
     jellyfin-mpv-shim
+    qview
+    gimp
+    krita
+
+    # gui apps
+    blueman
+    wootility
+    qbittorrent
+    onlyoffice-desktopeditors
+    kdePackages.kdeconnect-kde
+    pkgs-stable.owncloud-client # unstable has wrong hash
+
+    # misc
+    fortune
+    cowsay
+    sshfs
+    swaynotificationcenter
+    libnotify
+    anki
+    gnused
+    gnupg
+    gnutar
+    gawk
+    zstd
 
     # vpn
-    protonvpn-gui
+    protonvpn-gui # ProtonVPN GUI client
 
     # archives
     zip
@@ -71,27 +76,19 @@
     yq-go # yaml processor https://github.com/mikefarah/yq
     eza # A modern replacement for ‘ls’
     fzf # A command-line fuzzy finder
+    which # shows the full path of (shell) commands
+    tree # display directories as trees
+    file # determine file type
 
     # networking tools
     mtr # A network diagnostic tool
-    iperf3
+    iperf3 # network bandwidth measurement tool
     dnsutils # `dig` + `nslookup`
     ldns # replacement of `dig`, it provide the command `drill`
     aria2 # A lightweight multi-protocol & multi-source command-line download utility
     socat # replacement of openbsd-netcat
     nmap # A utility for network discovery and security auditing
     ipcalc # it is a calculator for the IPv4/v6 addresses
-
-    # misc
-    cowsay
-    file
-    which
-    tree
-    gnused
-    gnutar
-    gawk
-    zstd
-    gnupg
 
     # nix related
     #

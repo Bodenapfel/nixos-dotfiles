@@ -11,6 +11,11 @@
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
+    extraPackages = with pkgs; [
+      # rocm for btop
+      rocmPackages.rocm-smi
+      rocmPackages.rocminfo
+    ];
   };
 
   systemd.packages = with pkgs; [ lact ];

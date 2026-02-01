@@ -117,6 +117,8 @@
         "$terminal -e zsh -c 'fastfetch; NO_COWSAY=1 zsh'"
         "sleep 3 && steam -silent"
         "jellyfin-mpv-shim --no-gui"
+        "eval $(gnome-keyring-daemon --start --components=secrets)"
+        "export GNOME_KEYRING_CONTROL"
       ];
       env = [
         "NIXOS_OZONE_WL,1"

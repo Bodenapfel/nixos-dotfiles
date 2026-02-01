@@ -44,11 +44,15 @@
     libva-utils
     glib
     xdg-utils
+    libsecret
+    gcr
   ];
 
   programs.dconf.enable = true;
 
   programs.nix-ld.enable = true;
+
+  programs.seahorse.enable = true;
 
   programs.appimage = {
     enable = true;
@@ -86,4 +90,5 @@
       thunar-volman
     ];
   };
+
 }

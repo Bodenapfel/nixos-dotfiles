@@ -24,4 +24,8 @@
 
   # udev rules
   services.udev.packages = [ pkgs.openrgb pkgs.wooting-udev-rules ];
+
+  services.dbus.enable = true;
+
+  environment.variables.XDG_RUNTIME_DIR = "/run/user/$UID";
 }

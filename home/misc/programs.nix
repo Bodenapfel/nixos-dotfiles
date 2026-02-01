@@ -47,6 +47,8 @@
     onlyoffice-desktopeditors
     kdePackages.kdeconnect-kde
     pkgs-stable.owncloud-client # unstable has wrong hash
+    obs-studio
+    ffmpeg
 
     # misc
     fortune
@@ -60,6 +62,7 @@
     gnutar
     gawk
     zstd
+    gcr
 
     # vpn
     protonvpn-gui # ProtonVPN GUI client

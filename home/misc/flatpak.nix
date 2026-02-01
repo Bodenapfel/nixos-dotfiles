@@ -8,6 +8,10 @@
       "org.torproject.torbrowser-launcher"
       "it.mijorus.gearlever"
       "org.inkscape.Inkscape"
+      "org.kde.kdenlive"
+      "io.gitlab.adhami3310.Footage"
+      "org.xonotic.Xonotic"
+      "org.upscayl.Upscayl"
     ];
     overrides = {
       global = {

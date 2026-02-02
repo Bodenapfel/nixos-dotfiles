@@ -63,6 +63,8 @@
     gawk
     zstd
     gcr
+    cmatrix
+    cava
 
     # vpn
     protonvpn-gui # ProtonVPN GUI client

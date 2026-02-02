@@ -46,6 +46,7 @@
     xdg-utils
     libsecret
     gcr
+    tldr
   ];
 
   programs.dconf.enable = true;

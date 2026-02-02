@@ -37,6 +37,7 @@
           specialArgs = { inherit pkgs-stable; };
           modules = [
             ./nixos/configuration.nix
+            ./nixos/modules/default.nix
             nix-flatpak.nixosModules.nix-flatpak
             home-manager.nixosModules.home-manager
             {

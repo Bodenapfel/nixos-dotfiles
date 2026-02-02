@@ -6,19 +6,7 @@
     ./hardware-configuration.nix
 
     # Custom modules
-    ./modules/hardware/amdgpu.nix
-    ./modules/hardware/hardware.nix
-    ./modules/hardware/printer.nix
-    ./modules/hardware/sound.nix
-    ./modules/boot.nix
-    ./modules/filesystems.nix
-    ./modules/fonts.nix
-    ./modules/locale.nix
-    ./modules/network.nix
-    ./modules/programs.nix
-    ./modules/services.nix
-    ./modules/users.nix
-
+    ./modules/default.nix
   ];
 
   nixpkgs.config.allowUnfree = true;

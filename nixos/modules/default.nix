@@ -12,4 +12,13 @@
     ./misc/services.nix
     ./misc/users.nix
   ];
+
+  boot.enable = lib.mkDefault true;
+  filesystems.enable = lib.mkDefault true;
+  fonts.enable = lib.mkDefault true;
+  locale.enable = lib.mkDefault true;
+  network.enable = lib.mkDefault true;
+  programs.enable = lib.mkDefault true;
+  services.enable = lib.mkDefault true;
+  users.enable = lib.mkDefault true;
 }

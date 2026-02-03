@@ -1,23 +1,27 @@
-{ pkgs, ... }:
+{ pkgs, config, lib, ... }:
 
 {
-  fonts = {
-    enableDefaultPackages = true;
-    packages = with pkgs; [
-      corefonts
+  options = { fonts.enable = lib.mkEnableOption "enable custom fonts"; };
 
-      noto-fonts
-      noto-fonts-cjk-sans
-      noto-fonts-color-emoji
+  config = lib.mkIf config.fonts.enable {
+    fonts = {
+      enableDefaultPackages = true;
+      packages = with pkgs; [
+        corefonts
 
-      liberation_ttf
-      inter
-      roboto
-      dejavu_fonts
+        noto-fonts
+        noto-fonts-cjk-sans
+        noto-fonts-color-emoji
 
-      nerd-fonts.comic-shanns-mono
-      nerd-fonts.fira-code
-    ];
-    fontDir.enable = true;
+        liberation_ttf
+        inter
+        roboto
+        dejavu_fonts
+
+        nerd-fonts.comic-shanns-mono
+        nerd-fonts.fira-code
+      ];
+      fontDir.enable = true;
+    };
   };
 }

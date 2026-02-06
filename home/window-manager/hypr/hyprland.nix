@@ -158,8 +158,12 @@
         ", F16, exec, pactl set-source-mute @DEFAULT_SOURCE@ toggle"
         "$mainMod, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"
 
-        ", PRINT, exec, hyprshot -m region -z --clipboard-only"
-        "$mainMod, PRINT, exec, hyprshot -m active -m output"
+        ''
+          , PRINT, exec, grimblast -n copysave area $HOME/Photos/Screenshots/$(date +%F_%H-%M-%S).png
+        ''
+        ''
+          $mainMod, PRINT, exec, grimblast -n save output $HOME/Photos/$(date +'%F-%T').png
+        ''
 
         ", F21, exec, ~/Scripts/hue-dunkler.sh"
         ", F22, exec, ~/Scripts/hue-heller.sh"

@@ -20,16 +20,13 @@
     teamspeak6-client
     ferdium
 
-    # clipboard
-    cliphist
-    wl-clipboard
-
     # hyprland utils
     hyprshot
     hyprpolkitagent
     hyprpaper
     hypridle
     hyprsunset
+    grimblast
 
     # multimedia
     playerctl

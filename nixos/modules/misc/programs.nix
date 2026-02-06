@@ -52,9 +52,13 @@
       libsecret
       gcr
       tldr
+      xclip
+      xsel
+      wl-clipboard
+      cliphist
     ];
 
-    programs.dconf.enable = true;
+    programs.dconf = { enable = true; };
 
     programs.nix-ld.enable = true;
 

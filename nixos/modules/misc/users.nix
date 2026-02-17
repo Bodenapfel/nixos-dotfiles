@@ -7,7 +7,7 @@
     users.users.dk = {
       shell = pkgs.zsh;
       isNormalUser = true;
-      extraGroups = [ "wheel" "video" "i2c" "networkmanager" ];
+      extraGroups = [ "wheel" "video" "i2c" "networkmanager" "kvm" "libvirtd" ];
       packages = with pkgs; [ tree ];
     };
   };

@@ -12,7 +12,9 @@
       "io.gitlab.adhami3310.Footage"
       "org.xonotic.Xonotic"
       "org.upscayl.Upscayl"
+      "tv.kodi.Kodi"
     ];
+
     overrides = {
       global = {
         Environment = {

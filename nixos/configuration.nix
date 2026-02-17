@@ -25,6 +25,13 @@
     };
   };
 
+  virtualisation = {
+    # virtualisation
+    libvirtd = {
+      # libvirtd
+      enable = true;
+    };
+  };
   # Don't change this unless you know what you're doin.
   # This only sets the first version of NixOS
   system.stateVersion = "25.11"; # Did you read the comment?

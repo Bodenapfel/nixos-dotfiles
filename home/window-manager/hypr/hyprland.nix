@@ -159,10 +159,10 @@
         "$mainMod, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"
 
         ''
-          , PRINT, exec, grimblast -n copysave area $HOME/Photos/Screenshots/$(date +%F_%H-%M-%S).png
+          , PRINT, exec, grimblast -n copysave area $HOME/Pictures/Screenshots/$(date +%F_%H-%M-%S).png
         ''
         ''
-          $mainMod, PRINT, exec, grimblast -n save output $HOME/Photos/$(date +'%F-%T').png
+          $mainMod, PRINT, exec, grimblast -n save output $HOME/Pictures/Screenshots/$(date +'%F-%T').png
         ''
 
         ", F21, exec, ~/Scripts/hue-dunkler.sh"
@@ -198,6 +198,7 @@
         "$mainMod, 8, workspace, 8"
         "$mainMod, 9, workspace, 9"
         "$mainMod, 0, workspace, 10"
+        "$mainMod, D, workspace, 10"
 
         "$mainMod SHIFT, 1, movetoworkspace, 1"
         "$mainMod SHIFT, 2, movetoworkspace, 2"
@@ -209,6 +210,7 @@
         "$mainMod SHIFT, 8, movetoworkspace, 8"
         "$mainMod SHIFT, 9, movetoworkspace, 9"
         "$mainMod SHIFT, 0, movetoworkspace, 10"
+        "$mainMod SHIFT, D, movetoworkspace, 10"
 
         "$mainMod, S, togglespecialworkspace, magic"
         "$mainMod SHIFT, S, movetoworkspace, special:magic"

@@ -7,6 +7,7 @@
     ./hardware/misc.nix
     ./hardware/printing.nix
     ./hardware/soundconfig.nix
+    ./hardware/virtual.nix
   ];
 
   amdgpu.enable = lib.mkDefault true;
@@ -14,4 +15,5 @@
   misc.enable = lib.mkDefault true;
   printing.enable = lib.mkDefault true;
   soundconfig.enable = lib.mkDefault true;
+  virtual.enable = lib.mkDefault true;
 }

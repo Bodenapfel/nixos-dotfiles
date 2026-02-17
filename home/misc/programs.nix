@@ -18,7 +18,8 @@
     # communication
     vesktop
     teamspeak6-client
-    ferdium
+    pkgs-stable.ferdium
+    gnome-boxes
 
     # hyprland utils
     hyprshot

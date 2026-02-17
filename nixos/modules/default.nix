@@ -11,6 +11,7 @@
     ./misc/programs.nix
     ./misc/services.nix
     ./misc/users.nix
+    ./misc/hardware/virtual.nix
   ];
 
   boot.enable = lib.mkDefault true;
@@ -21,4 +22,5 @@
   programs.enable = lib.mkDefault true;
   services.enable = lib.mkDefault true;
   users.enable = lib.mkDefault true;
+  virtual.enable = lib.mkDefault true;
 }

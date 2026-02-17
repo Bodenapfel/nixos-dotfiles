@@ -1,4 +1,4 @@
-{ ... }:
+{ lib, ... }:
 
 {
   home.username = "dk";
@@ -33,6 +33,11 @@
     EDITOR = "nvim";
     TERMINAL = "kitty";
   };
+
+  home.activation.createScreenshotsDir =
+    lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+      mkdir -p "$HOME/Pictures/Screenshots"
+    '';
 
   # This value determines the home Manager release that your
   # configuration is compatible with. This helps avoid breakage

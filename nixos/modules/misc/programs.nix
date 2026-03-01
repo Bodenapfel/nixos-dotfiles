@@ -37,7 +37,7 @@
       protonup-qt
       protontricks
       gamescope
-      wineWowPackages.stable
+      wineWow64Packages.stable
       winetricks
       wireguard-tools
       networkmanagerapplet
@@ -56,13 +56,17 @@
       xsel
       wl-clipboard
       cliphist
+      cifs-utils
+      davfs2
+      kdePackages.kwallet
+      kdePackages.kwalletmanager
     ];
 
     programs.dconf = { enable = true; };
 
     programs.nix-ld.enable = true;
 
-    programs.seahorse.enable = true;
+    # programs.seahorse.enable = true;
 
     programs.appimage = {
       enable = true;

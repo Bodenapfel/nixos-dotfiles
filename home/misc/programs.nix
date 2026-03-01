@@ -11,13 +11,12 @@
         init.defaultbranch = "main";
       };
     };
+    vivaldi.enable = true;
   };
 
   home.packages = with pkgs; [
 
     # communication
-    vesktop
-    teamspeak6-client
     ferdium
 
     # hyprland utils
@@ -26,6 +25,7 @@
     hyprpaper
     hypridle
     hyprsunset
+    hyprpicker
     grimblast
 
     # multimedia
@@ -35,7 +35,7 @@
     jellyfin-mpv-shim
     qview
     gimp
-    krita
+    pkgs-stable.krita
 
     # gui apps
     blueman
@@ -43,7 +43,7 @@
     qbittorrent
     onlyoffice-desktopeditors
     kdePackages.kdeconnect-kde
-    pkgs-stable.owncloud-client # unstable has wrong hash
+    owncloud-client
     obs-studio
     ffmpeg
 
@@ -53,7 +53,7 @@
     sshfs
     swaynotificationcenter
     libnotify
-    anki
+    pkgs-stable.anki
     gnused
     gnupg
     gnutar

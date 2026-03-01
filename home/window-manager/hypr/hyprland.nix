@@ -9,7 +9,7 @@
       "$terminal" = "kitty";
       "$fileManager" = "thunar";
       "$menu" = "rofi -show drun";
-      "$browser" = "firefox";
+      "$browser" = "vivaldi";
 
       monitor = [ ",2560x1440@280,auto,1" ];
 
@@ -114,11 +114,11 @@
         "sleep 3 && vesktop --start-minimized"
         "sleep 2 && owncloud"
         "sleep 1 && ferdium --ozone-platform=wayland --enable-features=WaylandWindowDecorations --ozone-platform-hint=auto"
+        "dbus-update-activation-environment --systemd --all"
         "$terminal -e zsh -c 'fastfetch; NO_COWSAY=1 zsh'"
         "sleep 3 && steam -silent"
         "jellyfin-mpv-shim --no-gui"
-        "eval $(gnome-keyring-daemon --start --components=secrets)"
-        "export GNOME_KEYRING_CONTROL"
+        "swww img ~/.config/hypr/wallpapers/wallpaper.jpg"
       ];
       env = [
         "NIXOS_OZONE_WL,1"
@@ -133,8 +133,8 @@
         "XDG_SESSION_DESKTOP,Hyprland"
 
         # could break some things
-        # "SDL_VIDEODRIVER,wayland"
-        # "CLUTTER_BACKEND,wayland"
+        "SDL_VIDEODRIVER,wayland"
+        "CLUTTER_BACKEND,wayland"
       ];
       bind = [
         "$mainMod, A, exec, $terminal"
@@ -159,10 +159,10 @@
         "$mainMod, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"
 
         ''
-          , PRINT, exec, grimblast -n copysave area $HOME/Photos/Screenshots/$(date +%F_%H-%M-%S).png
+          , PRINT, exec, grimblast -n copysave area $HOME/Pictures/Screenshots/$(date +%F_%H-%M-%S).png
         ''
         ''
-          $mainMod, PRINT, exec, grimblast -n save output $HOME/Photos/$(date +'%F-%T').png
+          $mainMod, PRINT, exec, grimblast -n save output $HOME/Pictures/$(date +'%F-%T').png
         ''
 
         ", F21, exec, ~/Scripts/hue-dunkler.sh"
@@ -198,6 +198,7 @@
         "$mainMod, 8, workspace, 8"
         "$mainMod, 9, workspace, 9"
         "$mainMod, 0, workspace, 10"
+        "$mainMod, D, workspace, 10"
 
         "$mainMod SHIFT, 1, movetoworkspace, 1"
         "$mainMod SHIFT, 2, movetoworkspace, 2"
@@ -209,6 +210,7 @@
         "$mainMod SHIFT, 8, movetoworkspace, 8"
         "$mainMod SHIFT, 9, movetoworkspace, 9"
         "$mainMod SHIFT, 0, movetoworkspace, 10"
+        "$mainMod SHIFT, d, movetoworkspace, 10"
 
         "$mainMod, S, togglespecialworkspace, magic"
         "$mainMod SHIFT, S, movetoworkspace, special:magic"

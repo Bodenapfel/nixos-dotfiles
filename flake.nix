@@ -54,6 +54,10 @@
               # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
             }
 
+            # overlays
+
+            (import ./overlays/default.nix)
+
             lanzaboote.nixosModules.lanzaboote
           ];
         };

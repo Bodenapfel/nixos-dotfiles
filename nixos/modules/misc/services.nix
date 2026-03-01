@@ -21,8 +21,12 @@
     services.flatpak.enable = true;
 
     # gnome keyring
-    services.gnome.gnome-keyring.enable = true;
-    security.pam.services.login.enableGnomeKeyring = true;
+    # services.gnome.gnome-keyring.enable = true;
+    # security.pam.services.login.enableGnomeKeyring = true;
+
+    # kde wallet
+    security.pam.services.login.kwallet.enable = true;
+    security.pam.services.login.kwallet.forceRun = true;
 
     # Needed for aut dialogs
     security.polkit.enable = true;
@@ -31,6 +35,9 @@
     services.udev.packages = [ pkgs.openrgb pkgs.wooting-udev-rules ];
 
     services.dbus.enable = true;
+
+    # davfs2
+    services.davfs2.enable = true;
 
     environment.variables.XDG_RUNTIME_DIR = "/run/user/$UID";
   };

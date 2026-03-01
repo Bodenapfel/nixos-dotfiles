@@ -22,7 +22,7 @@
     ./window-manager/hypr/scripts.nix
     ./window-manager/hypr/hypridle.nix
     ./window-manager/hypr/hyprlock.nix
-    ./window-manager/hypr/hyprpaper.nix
+    ./window-manager/hypr/wallpaper.nix
     ./window-manager/hypr/hyprland.nix
     ./gaming/mangohud.nix
     ./gaming/misc.nix

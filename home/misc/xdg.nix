@@ -33,13 +33,13 @@
         "application/json" = "kitty-nvim.desktop";
         "application/xml" = "kitty-nvim.desktop";
         "application/x-yaml" = "kitty-nvim.desktop";
-        "application/pdf" = "vivaldi.desktop";
+        "application/pdf" = "firefox-pdf.desktop";
         "x-scheme-handler/discord" = "vesktop.desktop";
         "inode/directory" = "thunar.desktop";
-        "x-scheme-handler/http" = "vivaldi.desktop";
-        "x-scheme-handler/https" = "vivaldi.desktop";
-        "x-scheme-handler/about" = "vivaldi.desktop";
-        "x-scheme-handler/unknown" = "vivaldi.desktop";
+        "x-scheme-handler/http" = "vivaldi-stable.desktop";
+        "x-scheme-handler/https" = "vivaldi-stable.desktop";
+        "x-scheme-handler/about" = "vivaldi-stable.desktop";
+        "x-scheme-handler/unknown" = "vivaldi-stable.desktop";
       };
     };
 

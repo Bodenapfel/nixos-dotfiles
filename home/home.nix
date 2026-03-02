@@ -11,6 +11,7 @@
     ./shell/kitty.nix
     ./theme/theme.nix
     ./misc/mpv.nix
+    ./misc/vivaldi.nix
     ./misc/vscode.nix
     ./misc/flatpak.nix
     ./misc/xdg.nix

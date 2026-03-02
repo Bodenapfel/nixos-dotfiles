@@ -58,15 +58,15 @@
       cliphist
       cifs-utils
       davfs2
-      kdePackages.kwallet
-      kdePackages.kwalletmanager
+      # kdePackages.kwallet
+      # kdePackages.kwalletmanager
     ];
 
     programs.dconf = { enable = true; };
 
     programs.nix-ld.enable = true;
 
-    # programs.seahorse.enable = true;
+    programs.seahorse.enable = true;
 
     programs.appimage = {
       enable = true;

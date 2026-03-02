@@ -21,12 +21,14 @@
     services.flatpak.enable = true;
 
     # gnome keyring
-    # services.gnome.gnome-keyring.enable = true;
-    # security.pam.services.login.enableGnomeKeyring = true;
+    services.gnome.gnome-keyring.enable = true;
+    security.pam.services.login.enableGnomeKeyring = true;
 
     # kde wallet
-    security.pam.services.login.kwallet.enable = true;
-    security.pam.services.login.kwallet.forceRun = true;
+    # security.pam.services.login.kwallet = {
+    #   enable = true;
+    #   package = pkgs.kdePackages.kwallet-pam;
+    # };
 
     # Needed for aut dialogs
     security.polkit.enable = true;

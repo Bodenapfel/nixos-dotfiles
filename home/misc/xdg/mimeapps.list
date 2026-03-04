@@ -1,0 +1,25 @@
+[Added Associations]
+image/png=com.interversehq.qView.desktop;org.kde.gwenview.desktop;
+
+[Default Applications]
+application/json=kitty-nvim.desktop
+application/pdf=firefox-pdf.desktop
+application/x-yaml=kitty-nvim.desktop
+application/xml=kitty-nvim.desktop
+inode/directory=thunar.desktop
+text/css=kitty-nvim.desktop
+text/html=kitty-nvim.desktop
+text/plain=kitty-nvim.desktop
+text/x-c=kitty-nvim.desktop
+text/x-c++=kitty-nvim.desktop
+text/x-java=kitty-nvim.desktop
+text/x-markdown=kitty-nvim.desktop
+text/x-python=kitty-nvim.desktop
+text/x-shellscript=kitty-nvim.desktop
+x-scheme-handler/about=vivaldi-stable.desktop
+x-scheme-handler/discord=vesktop.desktop
+x-scheme-handler/http=vivaldi-stable.desktop
+x-scheme-handler/https=vivaldi-stable.desktop
+x-scheme-handler/unknown=vivaldi-stable.desktop
+
+[Removed Associations]

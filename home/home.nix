@@ -14,7 +14,7 @@
     ./misc/vivaldi.nix
     ./misc/vscode.nix
     ./misc/flatpak.nix
-    ./misc/xdg.nix
+    ./misc/xdg/xdg.nix
     ./misc/programs.nix
     ./window-manager/rofi/rofi.nix
     ./window-manager/waybar.nix

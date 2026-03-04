@@ -12,6 +12,7 @@
       "io.gitlab.adhami3310.Footage"
       "org.xonotic.Xonotic"
       "org.upscayl.Upscayl"
+      "com.teamspeak.TeamSpeak3"
     ];
     overrides = {
       global = {

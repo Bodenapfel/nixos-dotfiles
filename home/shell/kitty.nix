@@ -4,6 +4,8 @@
   programs.kitty = {
     enable = true;
 
+    keybindings = { "ctrl+[" = "send_text all \\x1b"; };
+
     settings = {
       # Fonts
       font_family = "ComicShannsMono Nerd Font";

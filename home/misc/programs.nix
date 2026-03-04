@@ -18,6 +18,7 @@
 
     # communication
     ferdium
+    element-desktop
 
     # hyprland utils
     hyprshot
@@ -36,6 +37,7 @@
     qview
     gimp
     pkgs-stable.krita
+    kdePackages.gwenview
 
     # gui apps
     blueman
@@ -62,6 +64,7 @@
     gcr
     cmatrix
     cava
+    claude-code
 
     # vpn
     protonvpn-gui # ProtonVPN GUI client

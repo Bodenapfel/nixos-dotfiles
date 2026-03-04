@@ -1,5 +1,8 @@
 { config, lib, ... }:
 
+let
+  c = config.colorScheme.palette;
+in
 {
   options = { tmux.enable = lib.mkEnableOption "tmux configuration"; };
 
@@ -20,10 +23,10 @@
 
         # Your status + border colors
         # (modern equivalent of status-bg/status-fg)
-        set -g status-style "bg=#5277C3,fg=#000000"
+        set -g status-style "bg=#${c.base0d},fg=#000000"
 
-        set -g pane-border-style fg=#7EBAE4
-        set -g pane-active-border-style fg=#5277C3
+        set -g pane-border-style fg=#${c.base0c}
+        set -g pane-active-border-style fg=#${c.base0d}
       '';
     };
   };

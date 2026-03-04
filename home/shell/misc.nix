@@ -1,5 +1,8 @@
 { config, lib, ... }:
 
+let
+  c = config.colorScheme.palette;
+in
 {
   options = { shell.enable = lib.mkEnableOption "shell utilities (btop, fastfetch)"; };
 
@@ -21,19 +24,19 @@
             right = 2;
           };
           color = {
-            "1" = "#7EBAE4";
-            "2" = "#5277C3";
-            "3" = "#7EBAE4";
-            "4" = "#5277C3";
-            "5" = "#7EBAE4";
-            "6" = "#5277C3";
+            "1" = "#${c.base0c}";
+            "2" = "#${c.base0d}";
+            "3" = "#${c.base0c}";
+            "4" = "#${c.base0d}";
+            "5" = "#${c.base0c}";
+            "6" = "#${c.base0d}";
           };
         };
         display = {
           separator = ": ";
           color = {
-            keys = "#7EBAE4";
-            title = "#5277C3";
+            keys = "#${c.base0c}";
+            title = "#${c.base0d}";
           };
           bar = {
             width = 10;

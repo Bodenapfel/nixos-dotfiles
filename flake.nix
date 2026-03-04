@@ -21,10 +21,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
+    nix-colors.url = "github:misterio77/nix-colors";
   };
 
   outputs = inputs@{ nixpkgs, home-manager, lanzaboote, nix-flatpak
-    , nixpkgs-stable, ... }:
+    , nixpkgs-stable, nix-colors, ... }:
     let
       system = "x86_64-linux";
       pkgs-stable = import nixpkgs-stable {
@@ -48,6 +49,7 @@
                 imports = [
                   ./home/home.nix
                   nix-flatpak.homeManagerModules.nix-flatpak
+                  nix-colors.homeManagerModules.default
                 ];
               };
 

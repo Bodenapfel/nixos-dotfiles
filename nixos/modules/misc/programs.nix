@@ -11,8 +11,6 @@
       wget
       vim
       neovim
-      vesktop
-      p7zip
       ncdu
       clang
       cmake
@@ -42,15 +40,11 @@
       wireguard-tools
       networkmanagerapplet
       libsForQt5.qtkeychain
-      xdg-desktop-portal
-      xdg-desktop-portal-hyprland
-      xdg-desktop-portal-gtk
       libva
       libva-utils
       glib
       xdg-utils
       libsecret
-      gcr
       tldr
       xclip
       xsel

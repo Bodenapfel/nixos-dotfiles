@@ -14,7 +14,6 @@
         init.defaultbranch = "main";
       };
     };
-    vivaldi.enable = true;
   };
 
   home.packages = with pkgs; [

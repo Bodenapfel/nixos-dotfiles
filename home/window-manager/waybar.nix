@@ -1,7 +1,10 @@
-{ ... }:
+{ config, lib, ... }:
 
 {
-  programs.waybar = {
+  options = { waybar.enable = lib.mkEnableOption "Waybar status bar configuration"; };
+
+  config = lib.mkIf config.waybar.enable {
+    programs.waybar = {
     enable = true;
     systemd.enable = true;
 
@@ -242,5 +245,6 @@
         animation-direction: alternate;
       }
     '';
+    };
   };
 }

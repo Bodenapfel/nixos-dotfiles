@@ -1,38 +1,42 @@
-{ pkgs, config, lib, ... }:
+{ config, pkgs, lib, ... }:
 
 {
-  home.activation.mimeapps = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-    ln -sf "${config.home.homeDirectory}/.dotfiles/home/misc/xdg/mimeapps.list" \
-           "${config.home.homeDirectory}/.config/mimeapps.list"
-  '';
+  options = { portals.enable = lib.mkEnableOption "XDG portals and desktop entries"; };
 
-  xdg = {
-    enable = true;
+  config = lib.mkIf config.portals.enable {
+    home.activation.mimeapps = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+      ln -sf "${config.home.homeDirectory}/.dotfiles/home/misc/xdg/mimeapps.list" \
+             "${config.home.homeDirectory}/.config/mimeapps.list"
+    '';
 
-    portal = {
+    xdg = {
       enable = true;
-      extraPortals = with pkgs; [
-        xdg-desktop-portal-hyprland
-        xdg-desktop-portal-gtk
-      ];
 
-      config.common = {
-        default = [ "hyprland" "gtk" ];
-        "org.freedesktop.impl.portal.OpenURI" = [ "gtk" ];
-        "org.freedesktop.impl.portal.FileChooser" = [ "gtk" ];
+      portal = {
+        enable = true;
+        extraPortals = with pkgs; [
+          xdg-desktop-portal-hyprland
+          xdg-desktop-portal-gtk
+        ];
+
+        config.common = {
+          default = [ "hyprland" "gtk" ];
+          "org.freedesktop.impl.portal.OpenURI" = [ "gtk" ];
+          "org.freedesktop.impl.portal.FileChooser" = [ "gtk" ];
+        };
       };
-    };
 
-    desktopEntries.kitty-nvim = {
-      name = "Neovim (Kitty)";
-      exec = "kitty nvim %f";
-      type = "Application";
-      noDisplay = true;
-    };
-    desktopEntries.firefox-pdf = {
-      name = "Firefox (PDF Window)";
-      exec = "firefox --new-window %f";
-      type = "Application";
+      desktopEntries.kitty-nvim = {
+        name = "Neovim (Kitty)";
+        exec = "kitty nvim %f";
+        type = "Application";
+        noDisplay = true;
+      };
+      desktopEntries.firefox-pdf = {
+        name = "Firefox (PDF Window)";
+        exec = "firefox --new-window %f";
+        type = "Application";
+      };
     };
   };
 }

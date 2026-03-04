@@ -1,7 +1,10 @@
-{ pkgs, pkgs-stable, ... }:
+{ config, pkgs, pkgs-stable, lib, ... }:
 
 {
-  programs = {
+  options = { apps.enable = lib.mkEnableOption "home packages and programs"; };
+
+  config = lib.mkIf config.apps.enable {
+    programs = {
     firefox.enable = true;
     git = {
       enable = true;
@@ -119,5 +122,6 @@
     ethtool
     pciutils # lspci
     usbutils # lsusb
-  ];
+    ];
+  };
 }

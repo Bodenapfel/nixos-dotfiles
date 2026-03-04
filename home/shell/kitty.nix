@@ -1,35 +1,39 @@
-{ ... }:
+{ config, lib, ... }:
 
 {
-  programs.kitty = {
-    enable = true;
+  options = { kitty.enable = lib.mkEnableOption "kitty terminal configuration"; };
 
-    keybindings = { "ctrl+[" = "send_text all \\x1b"; };
+  config = lib.mkIf config.kitty.enable {
+    programs.kitty = {
+      enable = true;
 
-    settings = {
-      # Fonts
-      font_family = "ComicShannsMono Nerd Font";
-      font_size = 12.0;
+      keybindings = { "ctrl+[" = "send_text all \\x1b"; };
 
-      # Cursor
-      cursor_stop_blinking_after = 0.0;
-      cursor_trail = 1;
+      settings = {
+        # Fonts
+        font_family = "ComicShannsMono Nerd Font";
+        font_size = 12.0;
 
-      # Window layout
-      window_border_width = "0.0pt";
-      draw_minimal_borders = true;
-      window_margin_width = 0;
-      window_padding_width = 0;
-      single_window_padding_width = 2;
-      hide_window_decorations = true;
+        # Cursor
+        cursor_stop_blinking_after = 0.0;
+        cursor_trail = 1;
 
-      # Behavior
-      confirm_os_window_close = 0;
+        # Window layout
+        window_border_width = "0.0pt";
+        draw_minimal_borders = true;
+        window_margin_width = 0;
+        window_padding_width = 0;
+        single_window_padding_width = 2;
+        hide_window_decorations = true;
 
-      # Background / transparency
-      background_opacity = "0.5";
-      background_blur = 1;
-      background_tint = "1.0";
+        # Behavior
+        confirm_os_window_close = 0;
+
+        # Background / transparency
+        background_opacity = "0.5";
+        background_blur = 1;
+        background_tint = "1.0";
+      };
     };
   };
 }

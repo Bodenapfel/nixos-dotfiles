@@ -1,44 +1,48 @@
-{ pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
-  home.packages = [
-    (pkgs.writeShellScriptBin "switchkb" ''
-      #!/usr/bin/env bash
+  options = { hyprScripts.enable = lib.mkEnableOption "Hyprland helper scripts"; };
 
-      # get the main keyboard device name
-      kb=$(hyprctl devices -j | jq -r '.keyboards[] | select(.main == true) | .name')
+  config = lib.mkIf config.hyprScripts.enable {
+    home.packages = [
+      (pkgs.writeShellScriptBin "switchkb" ''
+        #!/usr/bin/env bash
 
-      # switch to next layout
-      hyprctl switchxkblayout "$kb" next
+        # get the main keyboard device name
+        kb=$(hyprctl devices -j | jq -r '.keyboards[] | select(.main == true) | .name')
 
-      # get the active layout name
-      layout=$(hyprctl devices -j | jq -r '.keyboards[] | select(.name=="'"$kb"'") | .active_keymap')
+        # switch to next layout
+        hyprctl switchxkblayout "$kb" next
 
-      # notify via hyprpanel (fallback to notify-send if needed)
-      hyprctl notify -1 1500 0 "Layout: $layout"
-    '')
+        # get the active layout name
+        layout=$(hyprctl devices -j | jq -r '.keyboards[] | select(.name=="'"$kb"'") | .active_keymap')
 
-    (pkgs.writeShellScriptBin "hyprsunset-auto" ''
-      #!/usr/bin/env bash
-      TEMP=5000   # color temperature
-      ON_START=23 # hour to enable
-      ON_END=6    # hour to disable
+        # notify via hyprpanel (fallback to notify-send if needed)
+        hyprctl notify -1 1500 0 "Layout: $layout"
+      '')
 
-      while true; do
-        HOUR=$(date +%H)
+      (pkgs.writeShellScriptBin "hyprsunset-auto" ''
+        #!/usr/bin/env bash
+        TEMP=5000   # color temperature
+        ON_START=23 # hour to enable
+        ON_END=6    # hour to disable
 
-        if ((HOUR >= ON_START || HOUR < ON_END)); then
-          # Time is within night range → start if not running
-          if ! pgrep -x hyprsunset >/dev/null; then
-            hyprsunset -t "$TEMP" &
+        while true; do
+          HOUR=$(date +%H)
+
+          if ((HOUR >= ON_START || HOUR < ON_END)); then
+            # Time is within night range → start if not running
+            if ! pgrep -x hyprsunset >/dev/null; then
+              hyprsunset -t "$TEMP" &
+            fi
+          else
+            # Time is outside night range → stop if running
+            pkill -x hyprsunset
           fi
-        else
-          # Time is outside night range → stop if running
-          pkill -x hyprsunset
-        fi
 
-        sleep 300 # check every 5 minutes
-      done
-    '')
-  ];
+          sleep 300 # check every 5 minutes
+        done
+      '')
+    ];
+  };
 }

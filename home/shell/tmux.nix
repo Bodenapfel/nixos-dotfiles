@@ -1,26 +1,30 @@
-{ ... }:
+{ config, lib, ... }:
 
 {
-  programs.tmux = {
-    enable = true;
+  options = { tmux.enable = lib.mkEnableOption "tmux configuration"; };
 
-    mouse = true;
-    keyMode = "vi";
-    prefix = "C-b";
+  config = lib.mkIf config.tmux.enable {
+    programs.tmux = {
+      enable = true;
 
-    extraConfig = ''
-      # Vim-like pane navigation (after prefix)
-      bind h select-pane -L
-      bind j select-pane -D
-      bind k select-pane -U
-      bind l select-pane -R
+      mouse = true;
+      keyMode = "vi";
+      prefix = "C-b";
 
-      # Your status + border colors
-      # (modern equivalent of status-bg/status-fg)
-      set -g status-style "bg=#5277C3,fg=#000000"
+      extraConfig = ''
+        # Vim-like pane navigation (after prefix)
+        bind h select-pane -L
+        bind j select-pane -D
+        bind k select-pane -U
+        bind l select-pane -R
 
-      set -g pane-border-style fg=#7EBAE4
-      set -g pane-active-border-style fg=#5277C3
-    '';
+        # Your status + border colors
+        # (modern equivalent of status-bg/status-fg)
+        set -g status-style "bg=#5277C3,fg=#000000"
+
+        set -g pane-border-style fg=#7EBAE4
+        set -g pane-active-border-style fg=#5277C3
+      '';
+    };
   };
 }

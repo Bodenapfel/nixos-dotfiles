@@ -41,6 +41,5 @@
     # davfs2
     services.davfs2.enable = true;
 
-    environment.variables.XDG_RUNTIME_DIR = "/run/user/$UID";
   };
 }

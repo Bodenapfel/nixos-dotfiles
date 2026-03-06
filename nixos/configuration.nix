@@ -13,10 +13,10 @@
 
   # Enable Flakes ad new nix cli tool
   nix = {
-    settings = { experimental-features = [ "nix-command" "flakes" ]; };
-    optimise = {
-      automatic = true;
-      dates = [ "daily" ];
+    settings = {
+      experimental-features = [ "nix-command" "flakes" ];
+      auto-optimise-store = true;
+      trusted-users = [ "root" "dk" ];
     };
     gc = {
       automatic = true;

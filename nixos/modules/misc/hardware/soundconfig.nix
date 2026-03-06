@@ -4,6 +4,8 @@
   options = { soundconfig.enable = lib.mkEnableOption "enables soundconfig"; };
 
   config = lib.mkIf config.soundconfig.enable {
+    security.rtkit.enable = true;
+
     services.pipewire = {
       enable = true;
       pulse.enable = true;

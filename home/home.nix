@@ -4,9 +4,7 @@
   home.username = "dk";
   home.homeDirectory = "/home/dk";
 
-  imports = [
-    ./modules/default.nix
-  ];
+  imports = [ ./modules/default.nix ];
 
   colorScheme = {
     slug = "nixbtw";

@@ -9,60 +9,43 @@
     services.pipewire = {
       enable = true;
       pulse.enable = true;
+      wireplumber.enable = true;
       alsa.enable = true;
       alsa.support32Bit = true;
-      # Creates a persistent virtual sink named "soundboard"
-      extraConfig.pipewire."91-soundboard-devices" = {
-        "context.objects" = [
-          # 1) Soundboard output sink (apps output here)
-          {
-            factory = "adapter";
-            args = {
-              "factory.name" = "support.null-audio-sink";
-              "node.name" = "soundboard";
-              "node.description" = "Soundboard";
-              "media.class" = "Audio/Sink";
-              "audio.position" = [ "FL" "FR" ];
+      extraConfig.pipewire."99-soundboard-sink" = {
+        # Null sink — appears as "soundboard Output" in Vivaldi's audio settings
+        # and in crosspipe. Connect its monitor port to Vesktop input in crosspipe.
+        "context.objects" = [{
+          factory = "adapter";
+          args = {
+            "factory.name" = "support.null-audio-sink";
+            "node.name" = "soundboard_sink";
+            "node.description" = "soundboard Output";
+            "media.class" = "Audio/Sink";
+            "audio.position" = "FL,FR";
+            "node.pause-on-idle" = false;
+          };
+        }];
 
-              # optional: nicer UX in mixers
-              "monitor.channel-volumes" = true;
-              "monitor.passthrough" = true;
-            };
-          }
-
-          # 2) “Loopback device” for Discord: a virtual microphone
-          # (PipeWire creates a node you can pick as an Input Device in Discord)
-          {
-            factory = "adapter";
-            args = {
-              "factory.name" = "support.null-audio-sink";
-              "node.name" = "soundboard_loopback";
-              "node.description" = "Soundboard Loopback";
-              "media.class" = "Audio/Source/Virtual";
-              "audio.position" = [ "FL" "FR" ];
-            };
-          }
-        ];
-      };
-
-      # 3) Route soundboard -> loopback mic
-      extraConfig.pipewire."92-soundboard-to-loopback" = {
+        # Loopback: soundboard_sink monitor → your real default output
+        # so you hear audio normally while it also flows to Vesktop via crosspipe
         "context.modules" = [{
           name = "libpipewire-module-loopback";
           args = {
-            "node.description" = "Soundboard -> Loopback Mic";
-
             "capture.props" = {
-              # capture from the *sink* named "soundboard"
+              "node.name" = "soundboard_loopback_in";
+              "audio.position" = "FL,FR";
+              "target.object" = "soundboard_sink";
+              # Capture from the sink side (not its monitor)
               "stream.capture.sink" = true;
-              "target.object" = "soundboard";
-              "node.passive" = true;
+              "node.pause-on-idle" = false;
             };
-
             "playback.props" = {
-              # play into the virtual mic node
-              "target.object" = "soundboard_loopback";
-              "node.passive" = true;
+              "node.name" = "soundboard_loopback_out";
+              "audio.position" = "FL,FR";
+              "node.pause-on-idle" = false;
+              # Empty = follows your default output (speakers/headphones)
+              "target.object" = "";
             };
           };
         }];

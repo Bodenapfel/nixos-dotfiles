@@ -1,10 +1,11 @@
 { config, lib, ... }:
 
-let
-  c = config.colorScheme.palette;
-in
-{
-  options = { hyprland.enable = lib.mkEnableOption "Hyprland window manager configuration"; };
+let c = config.colorScheme.palette;
+in {
+  options = {
+    hyprland.enable =
+      lib.mkEnableOption "Hyprland window manager configuration";
+  };
 
   config = lib.mkIf config.hyprland.enable {
     wayland.windowManager.hyprland = {
@@ -80,7 +81,8 @@ in
         };
 
         # "smart gaps" / "no gaps when only one window"
-        workspace = [ "w[tv1], gapsout:0, gapsin:0" "f[1], gapsout:0, gapsin:0" ];
+        workspace =
+          [ "w[tv1], gapsout:0, gapsin:0" "f[1], gapsout:0, gapsin:0" ];
         windowrule = [
           "border_size 0, match:float 0, match:workspace w[tv1]"
           "rounding 0, match:float 0, match:workspace w[tv1]"
@@ -150,7 +152,7 @@ in
           "$mainMod, C, togglefloating,"
           "$mainMod, Space, exec, $menu"
           "$mainMod, P, pseudo,"
-          "$mainMod, O, togglesplit,"
+          "$mainMod, O, layoutmsg, togglesplit"
           "$mainMod, E, exec, $browser"
           "ALT, Tab, exec, rofi -show window"
           "$mainMod, F, fullscreen"
@@ -183,11 +185,6 @@ in
           "$mainMod, l, movefocus, r"
           "$mainMod, k, movefocus, u"
           "$mainMod, j, movefocus, d"
-
-          "$mainMod SHIFT, h, resizeactive, -50 0"
-          "$mainMod SHIFT, l, resizeactive, 50 0"
-          "$mainMod SHIFT, k, resizeactive, 0 -50"
-          "$mainMod SHIFT, j, resizeactive, 0 50"
 
           "$mainMod CTRL, h, movewindow, l"
           "$mainMod CTRL, l, movewindow, r"
@@ -227,6 +224,12 @@ in
         bindm = [
           "$mainMod, mouse:272, movewindow"
           "$mainMod, mouse:273, resizewindow"
+        ];
+        binde = [
+          "$mainMod SHIFT, h, resizeactive, -50 0"
+          "$mainMod SHIFT, l, resizeactive, 50 0"
+          "$mainMod SHIFT, k, resizeactive, 0 -50"
+          "$mainMod SHIFT, j, resizeactive, 0 50"
         ];
         bindel = [
           ",XF86AudioRaiseVolume, exec, wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"

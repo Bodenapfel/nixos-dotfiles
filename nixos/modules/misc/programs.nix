@@ -52,6 +52,7 @@
       cliphist
       cifs-utils
       davfs2
+      gh # github cli
       # kdePackages.kwallet
       # kdePackages.kwalletmanager
     ];

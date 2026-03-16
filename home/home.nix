@@ -31,7 +31,7 @@
   };
 
   home.sessionVariables = {
-    BROWSER = "firefox";
+    BROWSER = "vivaldi";
     EDITOR = "nvim";
     TERMINAL = "kitty";
   };

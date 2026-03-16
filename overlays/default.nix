@@ -1,9 +1,6 @@
-{ config, lib, pkgs, ... }:
-
-{
+{ config, lib, pkgs, ... }: {
+  # weird cmake bug
   nixpkgs.overlays = [
-
-    # weird cmake bug
     (final: prev: {
       lager = prev.lager.overrideAttrs (old: {
         cmakeFlags = (old.cmakeFlags or [ ]) ++ [

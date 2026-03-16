@@ -1,7 +1,12 @@
 [Added Associations]
 image/png=com.interversehq.qView.desktop;org.kde.gwenview.desktop;
+image/jpeg=com.interversehq.qView.desktop;
+application/pdf=firefox-pdf.desktop;
 
 [Default Applications]
+image/jpeg=com.interversehq.qView.desktop
+image/jpg=com.interversehq.qView.desktop
+image/png=com.interversehq.qView.desktop
 application/json=kitty-nvim.desktop
 application/pdf=firefox-pdf.desktop
 application/x-yaml=kitty-nvim.desktop
@@ -23,3 +28,16 @@ x-scheme-handler/https=vivaldi-stable.desktop
 x-scheme-handler/unknown=vivaldi-stable.desktop
 
 [Removed Associations]
+application/rdf+xml=google-chrome.desktop;com.google.Chrome.desktop;
+application/rss+xml=google-chrome.desktop;com.google.Chrome.desktop;
+application/xhtml+xml=google-chrome.desktop;com.google.Chrome.desktop;
+application/xhtml_xml=google-chrome.desktop;com.google.Chrome.desktop;
+application/xml=google-chrome.desktop;com.google.Chrome.desktop;
+application/pdf=google-chrome.desktop;com.google.Chrome.desktop;
+image/gif=google-chrome.desktop;com.google.Chrome.desktop;
+image/jpeg=google-chrome.desktop;com.google.Chrome.desktop;
+image/jpg=google-chrome.desktop;com.google.Chrome.desktop;
+image/png=google-chrome.desktop;com.google.Chrome.desktop;
+image/webp=google-chrome.desktop;com.google.Chrome.desktop;
+text/html=google-chrome.desktop;com.google.Chrome.desktop;
+text/xml=google-chrome.desktop;com.google.Chrome.desktop;

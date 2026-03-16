@@ -43,7 +43,7 @@
       kdePackages.gwenview
 
       # gui apps
-      xournalpp
+      kdePackages.okular
       blueman
       wootility
       qbittorrent

@@ -1,6 +1,6 @@
 [Added Associations]
 application/octet-stream=userapp-kitty nvim-0AN4I3.desktop;
-application/pdf=com.github.xournalpp.xournalpp.desktop;vivaldi-stable.desktop;firefox-pdf.desktop;
+application/pdf=krita_pdf.desktop;org.kde.okular.desktop;vivaldi-stable.desktop;firefox-pdf.desktop;
 image/jpeg=com.interversehq.qView.desktop;
 image/png=com.interversehq.qView.desktop;org.kde.gwenview.desktop;
 video/mp4=mpv-2.desktop;
@@ -8,7 +8,7 @@ video/mp4=mpv-2.desktop;
 [Default Applications]
 application/json=kitty-nvim.desktop
 application/octet-stream=userapp-kitty nvim-0AN4I3.desktop
-application/pdf=com.github.xournalpp.xournalpp.desktop
+application/pdf=org.kde.okular.desktop
 application/x-yaml=kitty-nvim.desktop
 application/xml=kitty-nvim.desktop
 image/jpeg=com.interversehq.qView.desktop

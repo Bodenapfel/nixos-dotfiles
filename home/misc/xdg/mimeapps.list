@@ -1,17 +1,19 @@
 [Added Associations]
-image/png=com.interversehq.qView.desktop;org.kde.gwenview.desktop;
-image/jpeg=com.interversehq.qView.desktop;
-application/pdf=firefox-pdf.desktop;
 application/octet-stream=userapp-kitty nvim-0AN4I3.desktop;
+application/pdf=com.github.xournalpp.xournalpp.desktop;vivaldi-stable.desktop;firefox-pdf.desktop;
+image/jpeg=com.interversehq.qView.desktop;
+image/png=com.interversehq.qView.desktop;org.kde.gwenview.desktop;
+video/mp4=mpv-2.desktop;
 
 [Default Applications]
+application/json=kitty-nvim.desktop
+application/octet-stream=userapp-kitty nvim-0AN4I3.desktop
+application/pdf=com.github.xournalpp.xournalpp.desktop
+application/x-yaml=kitty-nvim.desktop
+application/xml=kitty-nvim.desktop
 image/jpeg=com.interversehq.qView.desktop
 image/jpg=com.interversehq.qView.desktop
 image/png=com.interversehq.qView.desktop
-application/json=kitty-nvim.desktop
-application/pdf=firefox-pdf.desktop
-application/x-yaml=kitty-nvim.desktop
-application/xml=kitty-nvim.desktop
 inode/directory=thunar.desktop
 text/css=kitty-nvim.desktop
 text/html=kitty-nvim.desktop
@@ -22,20 +24,20 @@ text/x-java=kitty-nvim.desktop
 text/x-markdown=kitty-nvim.desktop
 text/x-python=kitty-nvim.desktop
 text/x-shellscript=kitty-nvim.desktop
+video/mp4=mpv-2.desktop;
 x-scheme-handler/about=vivaldi-stable.desktop
 x-scheme-handler/discord=vesktop.desktop
 x-scheme-handler/http=vivaldi-stable.desktop
 x-scheme-handler/https=vivaldi-stable.desktop
 x-scheme-handler/unknown=vivaldi-stable.desktop
-application/octet-stream=userapp-kitty nvim-0AN4I3.desktop
 
 [Removed Associations]
+application/pdf=google-chrome.desktop;com.google.Chrome.desktop;
 application/rdf+xml=google-chrome.desktop;com.google.Chrome.desktop;
 application/rss+xml=google-chrome.desktop;com.google.Chrome.desktop;
 application/xhtml+xml=google-chrome.desktop;com.google.Chrome.desktop;
 application/xhtml_xml=google-chrome.desktop;com.google.Chrome.desktop;
 application/xml=google-chrome.desktop;com.google.Chrome.desktop;
-application/pdf=google-chrome.desktop;com.google.Chrome.desktop;
 image/gif=google-chrome.desktop;com.google.Chrome.desktop;
 image/jpeg=google-chrome.desktop;com.google.Chrome.desktop;
 image/jpg=google-chrome.desktop;com.google.Chrome.desktop;

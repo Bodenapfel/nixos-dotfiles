@@ -14,7 +14,7 @@ in {
       settings = {
         "$mainMod" = "SUPER";
         "$terminal" = "kitty";
-        "$fileManager" = "dolphin"; # switch to "thunar" if needed
+        "$fileManager" = "thunar";
         "$menu" = "rofi -show drun";
         "$browser" = "vivaldi";
 

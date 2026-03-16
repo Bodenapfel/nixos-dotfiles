@@ -22,9 +22,6 @@
       ferdium
       element-desktop
 
-      # file managers
-      kdePackages.dolphin
-
       # hyprland utils
       hyprpolkitagent
       hyprpaper

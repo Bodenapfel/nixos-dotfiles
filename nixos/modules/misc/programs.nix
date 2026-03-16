@@ -49,6 +49,7 @@
       xclip
       xsel
       wl-clipboard
+      wl-clip-persist
       cliphist
       cifs-utils
       davfs2

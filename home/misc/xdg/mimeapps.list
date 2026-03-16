@@ -2,6 +2,7 @@
 image/png=com.interversehq.qView.desktop;org.kde.gwenview.desktop;
 image/jpeg=com.interversehq.qView.desktop;
 application/pdf=firefox-pdf.desktop;
+application/octet-stream=userapp-kitty nvim-0AN4I3.desktop;
 
 [Default Applications]
 image/jpeg=com.interversehq.qView.desktop
@@ -26,6 +27,7 @@ x-scheme-handler/discord=vesktop.desktop
 x-scheme-handler/http=vivaldi-stable.desktop
 x-scheme-handler/https=vivaldi-stable.desktop
 x-scheme-handler/unknown=vivaldi-stable.desktop
+application/octet-stream=userapp-kitty nvim-0AN4I3.desktop
 
 [Removed Associations]
 application/rdf+xml=google-chrome.desktop;com.google.Chrome.desktop;

@@ -31,6 +31,7 @@
         "me-accept-entry" = "MousePrimary";
 
         "drun-display-format" = "{name}";
+        "drun-show-actions" = true;
         "window-format" = "{w} · {c} · {t}";
       };
 

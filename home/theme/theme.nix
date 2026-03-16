@@ -65,10 +65,17 @@
       color-scheme = "prefer-dark";
     };
 
+    # Apply Papirus-Dark icons to KDE/Qt apps (e.g. Dolphin)
+    xdg.configFile."kdeglobals".text = ''
+      [Icons]
+      Theme=Papirus-Dark
+    '';
+
     home.sessionVariables = {
       XCURSOR_THEME = "Breeze_Light";
       XCURSOR_SIZE = "24";
       QT_QPA_PLATFORMTHEME = "qt5ct";
+      QT_STYLE_OVERRIDE = "kvantum"; # ensures Qt6 apps like Dolphin use Kvantum/GraphiteDark
     };
   };
 }

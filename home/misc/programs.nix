@@ -23,13 +23,15 @@
       element-desktop
 
       # hyprland utils
-      hyprshot
       hyprpolkitagent
       hyprpaper
       hypridle
       hyprsunset
       hyprpicker
       grimblast
+      satty
+      wdisplays
+      nwg-look
 
       # multimedia
       playerctl

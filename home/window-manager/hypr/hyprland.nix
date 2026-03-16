@@ -118,6 +118,7 @@ in {
           "systemctl --user start hyprpolkitagent.service"
           "wl-paste --type text --watch cliphist store"
           "wl-paste --type image --watch cliphist store"
+          "wl-clip-persist --clipboard regular"
           "hyprsunset-auto"
           "sleep 3 && vesktop --start-minimized"
           "sleep 2 && owncloud"
@@ -161,7 +162,7 @@ in {
           "$mainMod, B, exec, $terminal btop"
           "$mainMod, period, exec, rofi -modi emoji -show emoji"
           "$mainMod, comma, exec, rofi -show calc -modi calc -no-show-match -no-sort -automatic-save-to-history"
-          "$mainMod, R, exec, .config/ml4w/scripts/reload-waybar.sh"
+          "$mainMod, R, exec, systemctl --user restart waybar"
 
           ", F16, exec, pactl set-source-mute @DEFAULT_SOURCE@ toggle"
           "$mainMod, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"
@@ -170,7 +171,7 @@ in {
             , PRINT, exec, grimblast -n copysave area $HOME/Pictures/Screenshots/$(date +%F_%H-%M-%S).png
           ''
           ''
-            $mainMod, PRINT, exec, grimblast -n save output $HOME/Pictures/$(date +'%F-%T').png
+            $mainMod, PRINT, exec, grimblast save output - | satty --filename - --output-filename $HOME/Pictures/Screenshots/$(date +%F_%H-%M-%S).png
           ''
 
           ", F21, exec, ~/Scripts/hue-dunkler.sh"

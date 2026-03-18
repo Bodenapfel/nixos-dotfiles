@@ -15,16 +15,11 @@
       # to avoid problems caused by different versions of nixpkgs.
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    # lanzaboote
-    lanzaboote = {
-      url = "github:nix-community/lanzaboote/v1.0.0";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
     nix-colors.url = "github:misterio77/nix-colors";
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, lanzaboote, nix-flatpak
+  outputs = inputs@{ nixpkgs, home-manager, nix-flatpak
     , nixpkgs-stable, nix-colors, ... }:
     let
       system = "x86_64-linux";
@@ -41,16 +36,20 @@
             nix-flatpak.nixosModules.nix-flatpak
             home-manager.nixosModules.home-manager
             {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.extraSpecialArgs = { inherit pkgs-stable; };
-
-              home-manager.users.dk = {
-                imports = [
-                  ./home/home.nix
-                  nix-flatpak.homeManagerModules.nix-flatpak
-                  nix-colors.homeManagerModules.default
-                ];
+              home-manager = {
+                useGlobalPkgs = true;
+                useUserPackages = true;
+                extraSpecialArgs = { inherit pkgs-stable; };
+                users = {
+                  dk = {
+                    imports = [
+                      ./home/home.nix
+                      nix-flatpak.homeManagerModules.nix-flatpak
+                      nix-colors.homeManagerModules.default
+                    ];
+                  };
+                };
+                backupFileExtension = "backup";
               };
 
               # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
@@ -59,8 +58,6 @@
             # overlays
 
             (import ./overlays/default.nix)
-
-            lanzaboote.nixosModules.lanzaboote
           ];
         };
       };

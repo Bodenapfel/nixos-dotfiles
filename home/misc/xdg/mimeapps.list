@@ -1,6 +1,6 @@
 [Added Associations]
 application/octet-stream=userapp-kitty nvim-0AN4I3.desktop;
-application/pdf=krita_pdf.desktop;firefox-pdf.desktop;vivaldi-stable.desktop;firefox-pdf.desktop;
+application/pdf=vivaldi-stable.desktop;krita_pdf.desktop;firefox-pdf.desktop;firefox-pdf.desktop;
 image/jpeg=com.interversehq.qView.desktop;
 image/png=com.interversehq.qView.desktop;org.kde.gwenview.desktop;
 video/mp4=mpv-2.desktop;

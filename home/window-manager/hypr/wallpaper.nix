@@ -1,11 +1,12 @@
 { config, pkgs, lib, ... }:
 
 {
-  options = { wallpaper.enable = lib.mkEnableOption "wallpaper configuration"; };
+  options = {
+    wallpaper.enable = lib.mkEnableOption "wallpaper configuration";
+  };
 
   config = lib.mkIf config.wallpaper.enable {
-    xdg.configFile."hypr/wallpapers/wallpaper.jpg".source =
-      ./wallpapers/mojave.jpg;
+    xdg.dataFile."wallpapers".source = ./wallpapers;
 
     # services.hyprpaper = {
     #   enable = true;

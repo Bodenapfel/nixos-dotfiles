@@ -51,6 +51,7 @@
       owncloud-client
       obs-studio
       ffmpeg
+      waypaper
 
       # misc
       fortune
@@ -58,7 +59,7 @@
       sshfs
       swaynotificationcenter
       libnotify
-      pkgs-stable.anki
+      anki
       gnused
       gnupg
       gnutar

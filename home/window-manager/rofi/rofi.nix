@@ -7,9 +7,6 @@
     programs.rofi = {
       enable = true;
 
-      # If you're on Wayland you might be using rofi-wayland; keep if you know it works for you.
-      # package = pkgs.rofi-wayland;
-
       theme =
         ./style.rasi; # programs.rofi.theme supports a path :contentReference[oaicite:1]{index=1}
 
@@ -31,7 +28,7 @@
         "me-accept-entry" = "MousePrimary";
 
         "drun-display-format" = "{name}";
-        "drun-show-actions" = true;
+        # "drun-show-actions" = true;
         "window-format" = "{w} · {c} · {t}";
       };
 

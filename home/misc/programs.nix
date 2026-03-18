@@ -71,6 +71,7 @@
       claude-code
       pavucontrol
       google-chrome
+      microsoft-edge
 
       # vpn
       protonvpn-gui # ProtonVPN GUI client

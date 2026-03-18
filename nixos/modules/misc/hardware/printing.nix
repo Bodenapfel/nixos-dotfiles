@@ -8,12 +8,14 @@
     services.avahi = {
       enable = true;
       nssmdns4 = true;
+      nssmdns6 = true;
       openFirewall = true;
     };
 
     services.printing = {
       enable = true;
-      drivers = with pkgs; [ cups-filters cups-browsed ];
+      browsing = true;
+      drivers = with pkgs; [ cups-filters ];
     };
   };
 }

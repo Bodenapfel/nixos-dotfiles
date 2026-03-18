@@ -7,9 +7,17 @@
     boot.loader.limine = {
       enable = true;
       maxGenerations = 5;
-      secureBoot.enable = true; # enable after enrolling keys in BIOS
+      secureBoot.enable = true;
+      style.wallpapers = [ ];
+      style.backdrop = "000000";
+      # uid of the windows partition with vfat, thats small (like 100mb), look up detail on arch wiki or something
+      extraEntries = ''
+        /Windows 11
+          protocol: efi
+          path: guid(e04c8b1c-95b3-4b17-96a5-2cafd8075dd9):/EFI/Microsoft/Boot/bootmgfw.efi
+      '';
     };
-    boot.loader.timeout = 10;
+    boot.loader.timeout = 20;
     boot.loader.efi.canTouchEfiVariables = true;
 
     # Use latest kernel.

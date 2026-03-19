@@ -12,7 +12,7 @@
       style.backdrop = "000000";
       # uid of the windows partition with vfat, thats small (like 100mb), look up detail on arch wiki or something
       extraEntries = ''
-        /Windows 11
+        /Microslop Windows
           protocol: efi
           path: guid(e04c8b1c-95b3-4b17-96a5-2cafd8075dd9):/EFI/Microsoft/Boot/bootmgfw.efi
       '';

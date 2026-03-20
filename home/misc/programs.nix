@@ -52,6 +52,7 @@
       obs-studio
       ffmpeg
       waypaper
+      gnome-boxes
 
       # misc
       fortune

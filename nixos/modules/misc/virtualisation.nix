@@ -2,7 +2,8 @@
 
 {
   options = {
-    virtualisation.enable = lib.mkEnableOption "enable virtualisation with virt-manager";
+    virtualisation.enable =
+      lib.mkEnableOption "enable virtualisation with virt-manager";
   };
 
   config = lib.mkIf config.virtualisation.enable {
@@ -12,10 +13,6 @@
         package = pkgs.qemu_kvm;
         runAsRoot = true;
         swtpm.enable = true;
-        ovmf = {
-          enable = true;
-          packages = [ pkgs.OVMFFull.fd ];
-        };
       };
     };
 

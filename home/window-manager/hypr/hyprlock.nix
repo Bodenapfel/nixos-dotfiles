@@ -1,7 +1,9 @@
 { config, lib, ... }:
 
 {
-  options = { hyprlock.enable = lib.mkEnableOption "Hyprlock screen locker configuration"; };
+  options = {
+    hyprlock.enable = lib.mkEnableOption "Hyprlock screen locker configuration";
+  };
 
   config = lib.mkIf config.hyprlock.enable {
     programs.hyprlock = {
@@ -10,7 +12,7 @@
       settings = {
         background = {
           monitor = "";
-          path = "~/.config/hypr/wallpapers/wallpaper.jpg";
+          path = "~/.local/share/wallpapers/mojave.jpg";
         };
 
         input-field = {

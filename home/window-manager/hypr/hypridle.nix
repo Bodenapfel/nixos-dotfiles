@@ -1,7 +1,9 @@
 { config, lib, ... }:
 
 {
-  options = { hypridle.enable = lib.mkEnableOption "Hypridle idle daemon configuration"; };
+  options = {
+    hypridle.enable = lib.mkEnableOption "Hypridle idle daemon configuration";
+  };
 
   config = lib.mkIf config.hypridle.enable {
     services.hypridle = {

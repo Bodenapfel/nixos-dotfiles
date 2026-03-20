@@ -1,7 +1,9 @@
 { config, pkgs, lib, ... }:
 
 {
-  options = { hyprScripts.enable = lib.mkEnableOption "Hyprland helper scripts"; };
+  options = {
+    hyprScripts.enable = lib.mkEnableOption "Hyprland helper scripts";
+  };
 
   config = lib.mkIf config.hyprScripts.enable {
     home.packages = [

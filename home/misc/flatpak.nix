@@ -1,7 +1,9 @@
 { config, lib, ... }:
 
 {
-  options = { flatpak.enable = lib.mkEnableOption "Flatpak packages and configuration"; };
+  options = {
+    flatpak.enable = lib.mkEnableOption "Flatpak packages and configuration";
+  };
 
   config = lib.mkIf config.flatpak.enable {
     services.flatpak = {
@@ -15,7 +17,6 @@
         "io.gitlab.adhami3310.Footage"
         "org.xonotic.Xonotic"
         "org.upscayl.Upscayl"
-        "com.teamspeak.TeamSpeak3"
       ];
       overrides = {
         global = {

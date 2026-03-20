@@ -17,7 +17,7 @@
           path: guid(e04c8b1c-95b3-4b17-96a5-2cafd8075dd9):/EFI/Microsoft/Boot/bootmgfw.efi
       '';
     };
-    boot.loader.timeout = 20;
+    boot.loader.timeout = 30;
     boot.loader.efi.canTouchEfiVariables = true;
 
     # Use latest kernel.

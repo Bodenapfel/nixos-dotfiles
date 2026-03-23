@@ -1,7 +1,14 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 {
-  options = { vivaldi.enable = lib.mkEnableOption "Vivaldi browser configuration"; };
+  options = {
+    vivaldi.enable = lib.mkEnableOption "Vivaldi browser configuration";
+  };
 
   config = lib.mkIf config.vivaldi.enable {
     programs.vivaldi = {

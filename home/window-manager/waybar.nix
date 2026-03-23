@@ -1,7 +1,9 @@
 { config, lib, ... }:
 
-let c = config.colorScheme.palette;
-in {
+let
+  c = config.colorScheme.palette;
+in
+{
   options = {
     waybar.enable = lib.mkEnableOption "Waybar status bar configuration";
   };
@@ -11,133 +13,138 @@ in {
       enable = true;
       systemd.enable = true;
 
-      settings = [{
-        layer = "top";
+      settings = [
+        {
+          layer = "top";
 
-        modules-left = [ "hyprland/workspaces" "mpris" ];
-        modules-center = [ "hyprland/window" ];
-        modules-right = [
-          "cpu"
-          "memory"
-          "bluetooth"
-          "pulseaudio"
-          "clock"
-          "tray"
-          "custom/notification"
-        ];
+          modules-left = [
+            "hyprland/workspaces"
+            "mpris"
+          ];
+          modules-center = [ "hyprland/window" ];
+          modules-right = [
+            "cpu"
+            "memory"
+            "bluetooth"
+            "pulseaudio"
+            "clock"
+            "tray"
+            "custom/notification"
+          ];
 
-        "hyprland/window" = {
-          icon = true;
-          format = "{class}";
-        };
-
-        "hyprland/workspaces" = {
-          all-outputs = true;
-          show-special = true;
-          persistent-workspaces = {
-            "1" = [ ];
-            "2" = [ ];
-            "3" = [ ];
-            "4" = [ ];
-            "5" = [ ];
+          "hyprland/window" = {
+            icon = true;
+            format = "{class}";
           };
-        };
 
-        bluetooth = {
-          on-click = "blueman-manager";
-          format = "<span foreground='#${c.base0c}'> </span>on";
-          format-disabled = "<span foreground='#${c.base0c}'> </span>off";
-          format-connected =
-            "<span foreground='#${c.base0c}'> </span>{num_connections}";
-          tooltip-format = "{controller_alias}	{controller_address}";
-          tooltip-format-connected = "{device_enumerate}";
-          tooltip-format-enumerate-connected =
-            "{device_alias} {device_battery_percentage}%";
-        };
-
-        mpris = {
-          format = "{player_icon}{title}";
-          format-paused = "{status_icon}{title}";
-          player-icons = {
-            default = "<span foreground='#${c.base0c}'> </span>";
-          };
-          status-icons = {
-            paused = "<span foreground='#${c.base0c}'> </span>";
-          };
-          tooltip-format = "{dynamic}";
-          max-length = 50;
-        };
-
-        clock = {
-          interval = 1;
-          format = "<span color='#${c.base0c}'>󰃰 </span> {:%d.%m.%Y %H:%M:%S}";
-          tooltip = true;
-          tooltip-format = "{calendar}";
-          on-click = "vivaldi -e vivaldi://calendar";
-          calendar = {
-            mode = "month";
-            weeks-pos = "right";
-            format = {
-              months = "<span color='#${c.base0d}'><b>{}</b></span>";
-              days = "<span color='#${c.base05}'><b>{}</b></span>";
-              weeks = "<span color='#${c.base0c}'><b>W{}</b></span>";
-              weekdays = "<span color='#${c.base0c}'><b>{}</b></span>";
-              today = "<span color='#${c.base0d}'><b><u>{}</u></b></span>";
+          "hyprland/workspaces" = {
+            all-outputs = true;
+            show-special = true;
+            persistent-workspaces = {
+              "1" = [ ];
+              "2" = [ ];
+              "3" = [ ];
+              "4" = [ ];
+              "5" = [ ];
             };
-            actions = { };
           };
-        };
 
-        tray = {
-          icon-size = 24;
-          spacing = 10;
-          icons = { };
-        };
-
-        cpu = {
-          format = "<span color='#${c.base0c}'> </span> {usage}%";
-          on-click = "kitty btop";
-          tooltip = true;
-        };
-
-        memory = {
-          format = "<span color='#${c.base0c}'> </span> {percentage}%";
-          on-click = "kitty btop";
-          tooltip = true;
-        };
-
-        pulseaudio = {
-          format = "<span color='#${c.base0c}'>{icon}</span>{volume}%";
-          format-muted = "<span color='#${c.base0c}'>  </span>{volume}%";
-          format-icons = { default = [ " " " " "  " ]; };
-          on-click = "pavucontrol -t 3";
-        };
-
-        "custom/notification" = {
-          tooltip = false;
-          format = "{icon}";
-          format-icons = {
-            notification =
-              "<span foreground='#${c.base0c}'>󰂚 </span><span foreground='red'><sup></sup></span>";
-            none = "<span foreground='#${c.base0c}'>󰂚 </span>";
-            dnd-notification =
-              "<span foreground='#${c.base0c}'>󰂛 </span><span foreground='red'><sup></sup></span>";
-            dnd-none = "<span foreground='#${c.base0c}'>󰂛 </span>";
-            inhibited-notification =
-              "<span foreground='#${c.base0c}'>󰂚 </span><span foreground='red'><sup></sup></span>";
-            inhibited-none = "<span foreground='#${c.base0c}'>󰂛 </span>";
-            dnd-inhibited-notification =
-              "<span foreground='#${c.base0c}'>󰂚 </span><span foreground='red'><sup></sup></span>";
-            dnd-inhibited-none = "<span foreground='#${c.base0c}'>󰂛 </span>";
+          bluetooth = {
+            on-click = "blueman-manager";
+            format = "<span foreground='#${c.base0c}'> </span>on";
+            format-disabled = "<span foreground='#${c.base0c}'> </span>off";
+            format-connected = "<span foreground='#${c.base0c}'> </span>{num_connections}";
+            tooltip-format = "{controller_alias}	{controller_address}";
+            tooltip-format-connected = "{device_enumerate}";
+            tooltip-format-enumerate-connected = "{device_alias} {device_battery_percentage}%";
           };
-          return-type = "json";
-          exec-if = "test -x swaync-client";
-          exec = "swaync-client -swb";
-          on-click = "swaync-client -t -sw";
-          on-click-right = "swaync-client -d -sw";
-          escape = true;
-        };
-      }];
+
+          mpris = {
+            format = "{player_icon}{title}";
+            format-paused = "{status_icon}{title}";
+            player-icons = {
+              default = "<span foreground='#${c.base0c}'> </span>";
+            };
+            status-icons = {
+              paused = "<span foreground='#${c.base0c}'> </span>";
+            };
+            tooltip-format = "{dynamic}";
+            max-length = 50;
+          };
+
+          clock = {
+            interval = 1;
+            format = "<span color='#${c.base0c}'>󰃰 </span> {:%d.%m.%Y %H:%M:%S}";
+            tooltip = true;
+            tooltip-format = "{calendar}";
+            on-click = "vivaldi -e vivaldi://calendar";
+            calendar = {
+              mode = "month";
+              weeks-pos = "right";
+              format = {
+                months = "<span color='#${c.base0d}'><b>{}</b></span>";
+                days = "<span color='#${c.base05}'><b>{}</b></span>";
+                weeks = "<span color='#${c.base0c}'><b>W{}</b></span>";
+                weekdays = "<span color='#${c.base0c}'><b>{}</b></span>";
+                today = "<span color='#${c.base0d}'><b><u>{}</u></b></span>";
+              };
+              actions = { };
+            };
+          };
+
+          tray = {
+            icon-size = 24;
+            spacing = 10;
+            icons = { };
+          };
+
+          cpu = {
+            format = "<span color='#${c.base0c}'> </span> {usage}%";
+            on-click = "kitty btop";
+            tooltip = true;
+          };
+
+          memory = {
+            format = "<span color='#${c.base0c}'> </span> {percentage}%";
+            on-click = "kitty btop";
+            tooltip = true;
+          };
+
+          pulseaudio = {
+            format = "<span color='#${c.base0c}'>{icon}</span>{volume}%";
+            format-muted = "<span color='#${c.base0c}'>  </span>{volume}%";
+            format-icons = {
+              default = [
+                " "
+                " "
+                "  "
+              ];
+            };
+            on-click = "pavucontrol -t 3";
+          };
+
+          "custom/notification" = {
+            tooltip = false;
+            format = "{icon}";
+            format-icons = {
+              notification = "<span foreground='#${c.base0c}'>󰂚 </span><span foreground='red'><sup></sup></span>";
+              none = "<span foreground='#${c.base0c}'>󰂚 </span>";
+              dnd-notification = "<span foreground='#${c.base0c}'>󰂛 </span><span foreground='red'><sup></sup></span>";
+              dnd-none = "<span foreground='#${c.base0c}'>󰂛 </span>";
+              inhibited-notification = "<span foreground='#${c.base0c}'>󰂚 </span><span foreground='red'><sup></sup></span>";
+              inhibited-none = "<span foreground='#${c.base0c}'>󰂛 </span>";
+              dnd-inhibited-notification = "<span foreground='#${c.base0c}'>󰂚 </span><span foreground='red'><sup></sup></span>";
+              dnd-inhibited-none = "<span foreground='#${c.base0c}'>󰂛 </span>";
+            };
+            return-type = "json";
+            exec-if = "test -x swaync-client";
+            exec = "swaync-client -swb";
+            on-click = "swaync-client -t -sw";
+            on-click-right = "swaync-client -d -sw";
+            escape = true;
+          };
+        }
+      ];
 
       style = ''
         * {

@@ -1,10 +1,11 @@
 { config, lib, ... }:
 
-let c = config.colorScheme.palette;
-in {
+let
+  c = config.colorScheme.palette;
+in
+{
   options = {
-    hyprland.enable =
-      lib.mkEnableOption "Hyprland window manager configuration";
+    hyprland.enable = lib.mkEnableOption "Hyprland window manager configuration";
   };
 
   config = lib.mkIf config.hyprland.enable {
@@ -81,8 +82,10 @@ in {
         };
 
         # "smart gaps" / "no gaps when only one window"
-        workspace =
-          [ "w[tv1], gapsout:0, gapsin:0" "f[1], gapsout:0, gapsin:0" ];
+        workspace = [
+          "w[tv1], gapsout:0, gapsin:0"
+          "f[1], gapsout:0, gapsin:0"
+        ];
         windowrule = [
           "border_size 0, match:float 0, match:workspace w[tv1]"
           "rounding 0, match:float 0, match:workspace w[tv1]"
@@ -95,7 +98,9 @@ in {
           preserve_split = true;
         };
 
-        master = { new_status = "master"; };
+        master = {
+          new_status = "master";
+        };
 
         misc = {
           vrr = 0;
@@ -110,7 +115,9 @@ in {
           repeat_delay = 300;
           follow_mouse = 1;
           sensitivity = -0.7;
-          touchpad = { natural_scroll = false; };
+          touchpad = {
+            natural_scroll = false;
+          };
         };
 
         exec-once = [

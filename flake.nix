@@ -19,15 +19,23 @@
     nix-colors.url = "github:misterio77/nix-colors";
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, nix-flatpak
-    , nixpkgs-stable, nix-colors, ... }:
+  outputs =
+    inputs@{
+      nixpkgs,
+      home-manager,
+      nix-flatpak,
+      nixpkgs-stable,
+      nix-colors,
+      ...
+    }:
     let
       system = "x86_64-linux";
       pkgs-stable = import nixpkgs-stable {
         system = system;
         config.allowUnfree = true;
       };
-    in {
+    in
+    {
       nixosConfigurations = {
         nixbtw = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit pkgs-stable; };

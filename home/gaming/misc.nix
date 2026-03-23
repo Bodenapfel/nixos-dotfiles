@@ -1,7 +1,14 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 {
-  options = { gaming.enable = lib.mkEnableOption "gaming packages"; };
+  options = {
+    gaming.enable = lib.mkEnableOption "gaming packages";
+  };
 
   config = lib.mkIf config.gaming.enable {
     home.packages = with pkgs; [

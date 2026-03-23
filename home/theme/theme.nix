@@ -1,7 +1,14 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 {
-  options = { theme.enable = lib.mkEnableOption "GTK/Qt theme configuration"; };
+  options = {
+    theme.enable = lib.mkEnableOption "GTK/Qt theme configuration";
+  };
 
   config = lib.mkIf config.theme.enable {
     #### Cursor: Breeze Light
@@ -28,15 +35,18 @@
         name = "Papirus-Dark";
       };
 
-      gtk3.extraConfig = { gtk-application-prefer-dark-theme = true; };
+      gtk3.extraConfig = {
+        gtk-application-prefer-dark-theme = true;
+      };
 
-      gtk4.extraConfig = { gtk-application-prefer-dark-theme = true; };
+      gtk4.extraConfig = {
+        gtk-application-prefer-dark-theme = true;
+      };
     };
 
     xdg.configFile."Kvantum/GraphiteDark/GraphiteDark.kvconfig".source =
       ./GraphiteDark/GraphiteDark.kvconfig;
-    xdg.configFile."Kvantum/GraphiteDark/GraphiteDark.svg".source =
-      ./GraphiteDark/GraphiteDark.svg;
+    xdg.configFile."Kvantum/GraphiteDark/GraphiteDark.svg".source = ./GraphiteDark/GraphiteDark.svg;
     xdg.configFile."Kvantum/kvantum.kvconfig".text = ''
       [General]
       theme=GraphiteDark

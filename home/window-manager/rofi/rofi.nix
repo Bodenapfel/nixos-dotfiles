@@ -1,14 +1,20 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 {
-  options = { rofi.enable = lib.mkEnableOption "Rofi launcher configuration"; };
+  options = {
+    rofi.enable = lib.mkEnableOption "Rofi launcher configuration";
+  };
 
   config = lib.mkIf config.rofi.enable {
     programs.rofi = {
       enable = true;
 
-      theme =
-        ./style.rasi; # programs.rofi.theme supports a path :contentReference[oaicite:1]{index=1}
+      theme = ./style.rasi; # programs.rofi.theme supports a path :contentReference[oaicite:1]{index=1}
 
       extraConfig = {
         # keys with hyphens must be quoted in Nix
@@ -33,7 +39,10 @@
       };
 
       # Optional: install plugins that match your modi list
-      plugins = with pkgs; [ rofi-calc rofi-emoji ];
+      plugins = with pkgs; [
+        rofi-calc
+        rofi-emoji
+      ];
     };
   };
 }

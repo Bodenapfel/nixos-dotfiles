@@ -1,7 +1,14 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 {
-  options = { portals.enable = lib.mkEnableOption "XDG portals and desktop entries"; };
+  options = {
+    portals.enable = lib.mkEnableOption "XDG portals and desktop entries";
+  };
 
   config = lib.mkIf config.portals.enable {
     home.activation.mimeapps = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
@@ -20,7 +27,10 @@
         ];
 
         config.common = {
-          default = [ "hyprland" "gtk" ];
+          default = [
+            "hyprland"
+            "gtk"
+          ];
           "org.freedesktop.impl.portal.OpenURI" = [ "gtk" ];
           "org.freedesktop.impl.portal.FileChooser" = [ "gtk" ];
         };

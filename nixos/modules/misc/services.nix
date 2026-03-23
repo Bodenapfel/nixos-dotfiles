@@ -1,4 +1,9 @@
-{ pkgs, config, lib, ... }:
+{
+  pkgs,
+  config,
+  lib,
+  ...
+}:
 
 {
   options = {
@@ -34,7 +39,10 @@
     security.polkit.enable = true;
 
     # udev rules
-    services.udev.packages = [ pkgs.openrgb pkgs.wooting-udev-rules ];
+    services.udev.packages = [
+      pkgs.openrgb
+      pkgs.wooting-udev-rules
+    ];
 
     services.dbus.enable = true;
 

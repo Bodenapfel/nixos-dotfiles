@@ -1,7 +1,9 @@
 { config, lib, ... }:
 
 {
-  options = { mpv.enable = lib.mkEnableOption "mpv media player configuration"; };
+  options = {
+    mpv.enable = lib.mkEnableOption "mpv media player configuration";
+  };
 
   config = lib.mkIf config.mpv.enable {
     programs.mpv = {

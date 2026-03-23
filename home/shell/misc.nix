@@ -4,12 +4,16 @@ let
   c = config.colorScheme.palette;
 in
 {
-  options = { shell.enable = lib.mkEnableOption "shell utilities (btop, fastfetch)"; };
+  options = {
+    shell.enable = lib.mkEnableOption "shell utilities (btop, fastfetch)";
+  };
 
   config = lib.mkIf config.shell.enable {
     programs.btop = {
       enable = true;
-      settings = { vim_keys = true; };
+      settings = {
+        vim_keys = true;
+      };
     };
 
     programs.fastfetch = {

@@ -1,7 +1,14 @@
-{ pkgs, config, lib, ... }:
+{
+  pkgs,
+  config,
+  lib,
+  ...
+}:
 
 {
-  options = { boot.enable = lib.mkEnableOption "enable boot configuration"; };
+  options = {
+    boot.enable = lib.mkEnableOption "enable boot configuration";
+  };
 
   config = lib.mkIf config.boot.enable {
     boot.loader.limine = {

@@ -1,9 +1,13 @@
-{ pkgs, config, lib, ... }:
+{
+  pkgs,
+  config,
+  lib,
+  ...
+}:
 
 {
   options = {
-    virtualisation.enable =
-      lib.mkEnableOption "enable virtualisation with virt-manager";
+    virtualisation.enable = lib.mkEnableOption "enable virtualisation with virt-manager";
   };
 
   config = lib.mkIf config.virtualisation.enable {

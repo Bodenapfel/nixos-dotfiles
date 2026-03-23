@@ -1,8 +1,13 @@
-{ config, lib, pkgs, ... }: {
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+{
   # weird cmake bug
   nixpkgs.overlays = [
     (final: prev: {
-      heroic-unwrapped = prev.heroic-unwrapped.override { electron_39 = prev.electron_38; };
 
       lager = prev.lager.overrideAttrs (old: {
         cmakeFlags = (old.cmakeFlags or [ ]) ++ [

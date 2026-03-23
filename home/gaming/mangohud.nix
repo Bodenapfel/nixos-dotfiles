@@ -1,8 +1,17 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
-let homeDir = config.home.homeDirectory;
-in {
-  options = { mangohud.enable = lib.mkEnableOption "MangoHud performance overlay"; };
+let
+  homeDir = config.home.homeDirectory;
+in
+{
+  options = {
+    mangohud.enable = lib.mkEnableOption "MangoHud performance overlay";
+  };
 
   config = lib.mkIf config.mangohud.enable {
     programs.mangohud = {

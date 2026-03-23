@@ -1,7 +1,15 @@
-{ config, pkgs, pkgs-stable, lib, ... }:
+{
+  config,
+  pkgs,
+  pkgs-stable,
+  lib,
+  ...
+}:
 
 {
-  options = { apps.enable = lib.mkEnableOption "home packages and programs"; };
+  options = {
+    apps.enable = lib.mkEnableOption "home packages and programs";
+  };
 
   config = lib.mkIf config.apps.enable {
     programs = {

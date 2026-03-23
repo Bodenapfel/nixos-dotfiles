@@ -24,7 +24,10 @@
             XCURSOR_PATH = "run/host/user-share/icons:/run/host/share/icons";
             GTK_THEME = "Graphite-Dark";
           };
-          Filesystem.allow = [ "home" "xdg-download" ];
+          Filesystem.allow = [
+            "home"
+            "xdg-download"
+          ];
           Context.devices = [ "all" ];
         };
       };

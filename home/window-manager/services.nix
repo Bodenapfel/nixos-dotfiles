@@ -1,7 +1,9 @@
 { config, lib, ... }:
 
 {
-  options = { wmServices.enable = lib.mkEnableOption "window manager tray services"; };
+  options = {
+    wmServices.enable = lib.mkEnableOption "window manager tray services";
+  };
 
   config = lib.mkIf config.wmServices.enable {
     services.network-manager-applet.enable = true;

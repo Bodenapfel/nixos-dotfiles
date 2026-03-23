@@ -1,4 +1,9 @@
-{ pkgs, config, lib, ... }:
+{
+  pkgs,
+  config,
+  lib,
+  ...
+}:
 
 {
   options = {
@@ -17,6 +22,7 @@
       gnumake
       gcc
       nixpkgs-fmt
+      nil
       pkg-config
       nodejs_25
       jdk21
@@ -58,7 +64,9 @@
       # kdePackages.kwalletmanager
     ];
 
-    programs.dconf = { enable = true; };
+    programs.dconf = {
+      enable = true;
+    };
 
     programs.nix-ld.enable = true;
 

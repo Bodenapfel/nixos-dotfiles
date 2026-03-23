@@ -1,7 +1,14 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 {
-  options = { zsh.enable = lib.mkEnableOption "zsh shell configuration"; };
+  options = {
+    zsh.enable = lib.mkEnableOption "zsh shell configuration";
+  };
 
   config = lib.mkIf config.zsh.enable {
     programs.zsh = {
@@ -11,14 +18,22 @@
       dotDir = "${config.xdg.configHome}/zsh";
       oh-my-zsh = {
         enable = true;
-        plugins = [ "git" "tmux" "rust" "extract" "colored-man-pages" ];
+        plugins = [
+          "git"
+          "tmux"
+          "rust"
+          "extract"
+          "colored-man-pages"
+        ];
         theme = "";
       };
-      plugins = [{
-        name = "vi-mode";
-        src = pkgs.zsh-vi-mode;
-        file = "share/zsh-vi-mode/zsh-vi-mode.plugin.zsh";
-      }];
+      plugins = [
+        {
+          name = "vi-mode";
+          src = pkgs.zsh-vi-mode;
+          file = "share/zsh-vi-mode/zsh-vi-mode.plugin.zsh";
+        }
+      ];
       shellAliases = {
         ll = "ls -l";
         update = "sudo nixos-rebuild switch";
@@ -29,8 +44,7 @@
         ubumount = "sshfs root@192.168.105.118:/ ~/remote/root@ubuntu";
         dkmount = "sshfs dk@192.168.105.118:/home/dk/ ~/remote/dk@ubuntu";
         media = "sshfs dk@192.168.105.118:/data/ ~/remote/media";
-        cpfonts =
-          "sudo rm -rf $HOME/.local/share/fonts; mkdir $HOME/.local/share/fonts && cp -L /run/current-system/sw/share/X11/fonts/* $HOME/.local/share/fonts/";
+        cpfonts = "sudo rm -rf $HOME/.local/share/fonts; mkdir $HOME/.local/share/fonts && cp -L /run/current-system/sw/share/X11/fonts/* $HOME/.local/share/fonts/";
       };
       history.size = 10000;
       initContent = lib.mkOrder 1500 ''

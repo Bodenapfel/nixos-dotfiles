@@ -14,9 +14,15 @@
   # Enable Flakes ad new nix cli tool
   nix = {
     settings = {
-      experimental-features = [ "nix-command" "flakes" ];
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
       auto-optimise-store = true;
-      trusted-users = [ "root" "dk" ];
+      trusted-users = [
+        "root"
+        "dk"
+      ];
     };
     gc = {
       automatic = true;
@@ -29,4 +35,3 @@
   # This only sets the first version of NixOS
   system.stateVersion = "25.11"; # Did you read the comment?
 }
-

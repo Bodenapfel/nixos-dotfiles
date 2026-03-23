@@ -1,13 +1,17 @@
 { config, lib, ... }:
 
 {
-  options = { kitty.enable = lib.mkEnableOption "kitty terminal configuration"; };
+  options = {
+    kitty.enable = lib.mkEnableOption "kitty terminal configuration";
+  };
 
   config = lib.mkIf config.kitty.enable {
     programs.kitty = {
       enable = true;
 
-      keybindings = { "ctrl+[" = "send_text all \\x1b"; };
+      keybindings = {
+        "ctrl+[" = "send_text all \\x1b";
+      };
 
       settings = {
         # Fonts

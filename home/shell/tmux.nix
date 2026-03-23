@@ -4,7 +4,9 @@ let
   c = config.colorScheme.palette;
 in
 {
-  options = { tmux.enable = lib.mkEnableOption "tmux configuration"; };
+  options = {
+    tmux.enable = lib.mkEnableOption "tmux configuration";
+  };
 
   config = lib.mkIf config.tmux.enable {
     programs.tmux = {

@@ -2,7 +2,7 @@
 application/octet-stream=userapp-kitty nvim-0AN4I3.desktop;
 application/pdf=vivaldi-stable.desktop;krita_pdf.desktop;firefox-pdf.desktop;firefox-pdf.desktop;
 image/jpeg=com.interversehq.qView.desktop;
-image/png=com.interversehq.qView.desktop;org.kde.gwenview.desktop;
+image/png=vivaldi-stable.desktop;com.microsoft.Edge.desktop;org.kde.gwenview.desktop;satty.desktop;com.interversehq.qView.desktop;
 video/mp4=mpv-2.desktop;
 
 [Default Applications]

@@ -1,0 +1,23 @@
+# Nix
+result
+result-*
+.direnv/
+
+# Secrets / credentials (never commit these)
+*.age
+*.pem
+*.key
+secrets.nix
+secrets/
+.env
+.env.*
+
+# Editor artifacts
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS junk
+.DS_Store
+Thumbs.db

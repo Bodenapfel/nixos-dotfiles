@@ -1,3 +1,4 @@
+{ claude-code }:
 {
   config,
   lib,
@@ -7,6 +8,7 @@
 {
   # weird cmake bug
   nixpkgs.overlays = [
+    claude-code.overlays.default
     (final: prev: {
 
       lager = prev.lager.overrideAttrs (old: {

@@ -82,7 +82,7 @@
       microsoft-edge
 
       # vpn
-      protonvpn-gui # ProtonVPN GUI client
+      proton-vpn # ProtonVPN GUI client
 
       # archives
       zip

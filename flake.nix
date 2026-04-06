@@ -17,6 +17,7 @@
     };
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
     nix-colors.url = "github:misterio77/nix-colors";
+    claude-code.url = "github:sadjow/claude-code-nix";
   };
 
   outputs =
@@ -26,6 +27,7 @@
       nix-flatpak,
       nixpkgs-stable,
       nix-colors,
+      claude-code,
       ...
     }:
     let
@@ -65,7 +67,7 @@
 
             # overlays
 
-            (import ./overlays/default.nix)
+            (import ./overlays/default.nix { inherit claude-code; })
           ];
         };
       };

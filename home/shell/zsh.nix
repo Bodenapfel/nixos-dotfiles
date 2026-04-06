@@ -38,7 +38,6 @@
         ll = "ls -l";
         update = "sudo nixos-rebuild switch";
         hypr = "start-hyprland";
-        windows = "sudo efibootmgr --bootnext 0000 && reboot";
         clfetch = "clear && fastfetch";
         server = "ssh dk@192.168.105.118";
         ubumount = "sshfs root@192.168.105.118:/ ~/remote/root@ubuntu";

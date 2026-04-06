@@ -17,7 +17,7 @@ in
         "$terminal" = "kitty";
         "$fileManager" = "thunar";
         "$menu" = "rofi -show drun";
-        "$browser" = "vivaldi";
+        "$browser" = "firefox";
 
         monitor = [ ",2560x1440@280,auto,1" ];
 
@@ -103,7 +103,7 @@ in
         };
 
         misc = {
-          vrr = 0;
+          vrr = 2;
           force_default_wallpaper = -1;
           disable_hyprland_logo = false;
         };

@@ -134,7 +134,7 @@ in
           "$terminal -e zsh -c 'fastfetch; NO_COWSAY=1 zsh'"
           "sleep 3 && steam -silent"
           "jellyfin-mpv-shim --no-gui"
-          "swww img ~/.local/share/wallpapers/mojave.jpg"
+          "awww img ~/.local/share/wallpapers/mojave.jpg"
         ];
         env = [
           "NIXOS_OZONE_WL,1"
@@ -170,8 +170,8 @@ in
           "$mainMod, period, exec, rofi -modi emoji -show emoji"
           "$mainMod, comma, exec, rofi -show calc -modi calc -no-show-match -no-sort -automatic-save-to-history"
           "$mainMod, R, exec, systemctl --user restart waybar"
-          "$mainMod CTRL, S, exec, swww img ~/.local/share/wallpapers/mojave.jpg"
-          "$mainMod CTRL SHIFT, S, exec, swww img ~/.local/share/wallpapers/skeleton.gif --transition-type=none"
+          "$mainMod CTRL, S, exec, awww img ~/.local/share/wallpapers/mojave.jpg"
+          "$mainMod CTRL SHIFT, S, exec, awww img ~/.local/share/wallpapers/skeleton.gif --transition-type=none"
 
           ", F16, exec, pactl set-source-mute @DEFAULT_SOURCE@ toggle"
           "$mainMod, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"

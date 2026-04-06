@@ -27,7 +27,7 @@
     # };
     services.awww = {
       enable = true;
-      package = pkgs.swww;
+      package = pkgs.awww;
     };
   };
 }

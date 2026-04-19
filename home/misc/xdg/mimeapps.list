@@ -1,8 +1,8 @@
 [Added Associations]
 application/octet-stream=userapp-kitty nvim-0AN4I3.desktop;
-application/pdf=vivaldi-stable.desktop;krita_pdf.desktop;firefox-pdf.desktop;firefox-pdf.desktop;
+application/pdf=firefox.desktop;krita_pdf.desktop;firefox-pdf.desktop;firefox-pdf.desktop;
 image/jpeg=com.interversehq.qView.desktop;
-image/png=vivaldi-stable.desktop;com.microsoft.Edge.desktop;org.kde.gwenview.desktop;satty.desktop;com.interversehq.qView.desktop;
+image/png=firefox.desktop;com.microsoft.Edge.desktop;org.kde.gwenview.desktop;satty.desktop;com.interversehq.qView.desktop;
 video/mp4=mpv-2.desktop;
 application/x-shellscript=userapp-kitty nvim-0AN4I3.desktop;
 x-scheme-handler/http=firefox.desktop;
@@ -36,11 +36,11 @@ text/x-markdown=kitty-nvim.desktop
 text/x-python=kitty-nvim.desktop
 text/x-shellscript=kitty-nvim.desktop
 video/mp4=mpv-2.desktop;
-x-scheme-handler/about=vivaldi-stable.desktop
+x-scheme-handler/about=firefox.desktop
 x-scheme-handler/discord=vesktop.desktop
 x-scheme-handler/http=firefox.desktop
 x-scheme-handler/https=firefox.desktop
-x-scheme-handler/unknown=vivaldi-stable.desktop
+x-scheme-handler/unknown=firefox.desktop
 x-scheme-handler/claude-cli=claude-code-url-handler.desktop
 x-scheme-handler/chrome=firefox.desktop
 application/x-extension-htm=firefox.desktop
@@ -64,3 +64,4 @@ image/png=google-chrome.desktop;com.google.Chrome.desktop;
 image/webp=google-chrome.desktop;com.google.Chrome.desktop;
 text/html=google-chrome.desktop;com.google.Chrome.desktop;
 text/xml=google-chrome.desktop;com.google.Chrome.desktop;
+

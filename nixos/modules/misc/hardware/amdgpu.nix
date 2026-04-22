@@ -1,7 +1,14 @@
-{ pkgs, config, lib, ... }:
+{
+  pkgs,
+  config,
+  lib,
+  ...
+}:
 
 {
-  options = { amdgpu.enable = lib.mkEnableOption "enables amdgpu"; };
+  options = {
+    amdgpu.enable = lib.mkEnableOption "enables amdgpu";
+  };
 
   config = lib.mkIf config.amdgpu.enable {
     # enable overdrive for lact

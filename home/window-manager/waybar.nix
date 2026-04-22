@@ -15,7 +15,8 @@ in
 
       settings = [
         {
-          layer = "top";
+          layer = "bottom";
+          exclusive = "false";
 
           modules-left = [
             "hyprland/workspaces"

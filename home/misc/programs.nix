@@ -44,6 +44,7 @@
       # multimedia
       playerctl
       jellyfin-mpv-shim
+      # jellyfin-desktop
       crosspipe
       qview
       gimp

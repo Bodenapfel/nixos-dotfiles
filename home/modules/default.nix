@@ -10,6 +10,7 @@
     ../misc/mpv.nix
     ../misc/vivaldi.nix
     ../misc/vscode.nix
+    ../misc/jellyfin-mpv-shim.nix
     ../misc/flatpak.nix
     ../misc/xdg/xdg.nix
     ../misc/programs.nix
@@ -34,6 +35,7 @@
   mpv.enable = lib.mkDefault true;
   vivaldi.enable = lib.mkDefault true;
   vscode.enable = lib.mkDefault true;
+  jellyfin-mpv-shim.enable = lib.mkDefault true;
   flatpak.enable = lib.mkDefault true;
   portals.enable = lib.mkDefault true;
   apps.enable = lib.mkDefault true;

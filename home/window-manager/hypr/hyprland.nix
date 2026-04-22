@@ -183,9 +183,9 @@ in
             $mainMod, PRINT, exec, grimblast save output - | satty --filename - --output-filename $HOME/Pictures/Screenshots/$(date +%F_%H-%M-%S).png
           ''
 
-          ", F21, exec, ~/Scripts/hue-dunkler.sh"
-          ", F22, exec, ~/Scripts/hue-heller.sh"
-          ", F13, exec, ~/Scripts/hue-aus.sh"
+          ", F21, exec, bash ~/Scripts/hue-dunkler.sh"
+          ", F22, exec, bash ~/Scripts/hue-heller.sh"
+          ", F13, exec, bash ~/Scripts/hue-aus.sh"
           "SUPER_CONTROL, SPACE, exec, switchkb"
 
           ", F24, exec, ddcutil --bus=12 --sleep-multiplier=0.1 setvcp 10 + 10"

@@ -1,7 +1,14 @@
-{ pkgs, config, lib, ... }:
+{
+  pkgs,
+  config,
+  lib,
+  ...
+}:
 
 {
-  options = { printing.enable = lib.mkEnableOption "enables printing"; };
+  options = {
+    printing.enable = lib.mkEnableOption "enables printing";
+  };
 
   config = lib.mkIf config.printing.enable {
     # printing setup

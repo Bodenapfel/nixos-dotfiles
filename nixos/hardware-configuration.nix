@@ -19,6 +19,8 @@
     "ahci"
     "xhci_pci"
     "usbhid"
+    "usb_storage"
+    "sd_mod"
   ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];

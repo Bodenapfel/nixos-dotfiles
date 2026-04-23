@@ -91,7 +91,7 @@ in
           "rounding 0, match:float 0, match:workspace w[tv1]"
           "border_size 0, match:float 0, match:workspace f[1]"
           "rounding 0, match:float 0, match:workspace f[1]"
-          "renderunfocused yes, match:class mpv"
+          "render_unfocused yes, match:class mpv"
         ];
 
         dwindle = {

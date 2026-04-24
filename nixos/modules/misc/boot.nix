@@ -27,7 +27,6 @@
     boot.loader.timeout = 30;
     boot.loader.efi.canTouchEfiVariables = true;
 
-    # Use latest kernel.
-    boot.kernelPackages = pkgs.linuxPackages_latest;
+    boot.kernelPackages = pkgs.linuxPackages_zen;
   };
 }

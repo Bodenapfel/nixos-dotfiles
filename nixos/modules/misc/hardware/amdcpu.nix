@@ -11,7 +11,7 @@
   };
 
   config = lib.mkIf config.amdcpu.enable {
-    # AMD CPU microcode / firmware
     hardware.cpu.amd.updateMicrocode = true;
+    # powerManagement.cpuFreqGovernor = "performance";
   };
 }

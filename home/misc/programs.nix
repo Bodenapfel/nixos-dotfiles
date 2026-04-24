@@ -13,7 +13,10 @@
 
   config = lib.mkIf config.apps.enable {
     programs = {
-      firefox.enable = true;
+      firefox = {
+        enable = true;
+        configPath = "${config.xdg.configHome}/mozilla/firefox";
+      };
       git = {
         enable = true;
         settings = {

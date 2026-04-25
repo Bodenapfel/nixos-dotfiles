@@ -25,9 +25,8 @@
     #     }];
     #   };
     # };
-    services.awww = {
+    services.swww = {
       enable = true;
-      package = pkgs.awww;
     };
   };
 }

@@ -86,12 +86,18 @@ in
           "w[tv1], gapsout:0, gapsin:0"
           "f[1], gapsout:0, gapsin:0"
         ];
-        windowrule = [
-          "border_size 0, match:float 0, match:workspace w[tv1]"
-          "rounding 0, match:float 0, match:workspace w[tv1]"
-          "border_size 0, match:float 0, match:workspace f[1]"
-          "rounding 0, match:float 0, match:workspace f[1]"
-          "render_unfocused yes, match:class mpv"
+        windowrulev2 = [
+          "bordersize 0, floating:0, onworkspace:w[tv1]"
+          "rounding 0, floating:0, onworkspace:w[tv1]"
+          "bordersize 0, floating:0, onworkspace:f[1]"
+          "rounding 0, floating:0, onworkspace:f[1]"
+          "renderunfocused, class:mpv"
+
+          "suppressevent maximize, class:.*"
+          "immediate, class:cs2"
+          "nofocus, class:^$, title:^$, xwayland:1, floating:1, fullscreen:0, pinned:0"
+          "float, class:hyprland-run"
+          "move 20 100%-120, class:hyprland-run"
         ];
 
         dwindle = {
@@ -135,7 +141,7 @@ in
           "$terminal -e zsh -c 'fastfetch; NO_COWSAY=1 zsh'"
           "sleep 3 && steam -silent"
           "jellyfin-mpv-shim --no-gui"
-          "awww img ~/.local/share/wallpapers/mojave.jpg"
+          "swww img ~/.local/share/wallpapers/mojave.jpg"
         ];
         env = [
           "NIXOS_OZONE_WL,1"
@@ -150,8 +156,8 @@ in
           "XDG_SESSION_DESKTOP,Hyprland"
 
           # could break some things
-          "SDL_VIDEODRIVER,wayland"
-          "CLUTTER_BACKEND,wayland"
+          # "SDL_VIDEODRIVER,wayland"
+          # "CLUTTER_BACKEND,wayland"
         ];
         bind = [
           "$mainMod, A, exec, $terminal"
@@ -171,8 +177,8 @@ in
           "$mainMod, period, exec, rofi -modi emoji -show emoji"
           "$mainMod, comma, exec, rofi -show calc -modi calc -no-show-match -no-sort -automatic-save-to-history"
           "$mainMod, R, exec, systemctl --user restart waybar"
-          "$mainMod CTRL, S, exec, awww img ~/.local/share/wallpapers/mojave.jpg"
-          "$mainMod CTRL SHIFT, S, exec, awww img ~/.local/share/wallpapers/skeleton.gif --transition-type=none"
+          "$mainMod CTRL, S, exec, swww img ~/.local/share/wallpapers/mojave.jpg"
+          "$mainMod CTRL SHIFT, S, exec, swww img ~/.local/share/wallpapers/skeleton.gif --transition-type=none"
 
           ", F16, exec, pactl set-source-mute @DEFAULT_SOURCE@ toggle"
           "$mainMod, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"
@@ -257,33 +263,6 @@ in
           ", XF86AudioPrev, exec, playerctl previous"
         ];
       };
-      extraConfig = ''
-        windowrule {
-            name = suppress-maximize-events
-            match:class = .*
-            suppress_event = maximize
-        }
-
-        windowrule = match:class cs2, immediate yes
-
-        windowrule {
-            name = fix-xwayland-drags
-            match:class = ^$
-            match:title = ^$
-            match:xwayland = true
-            match:float = true
-            match:fullscreen = false
-            match:pin = false
-            no_focus = true
-        }
-
-        windowrule {
-            name = move-hyprland-run
-            match:class = hyprland-run
-            move = 20 monitor_h-120
-            float = yes
-        }
-      '';
     };
   };
 }

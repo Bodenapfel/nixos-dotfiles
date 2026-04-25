@@ -2,13 +2,13 @@
   description = "NixOS configuration";
 
   inputs = {
-    # newest nixpkgs unstable channel
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    # stable nixpkgs channel
-    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.11";
+    # stable nixpkgs channel (default)
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
+    # unstable nixpkgs for packages that need it
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     # home-manager, used for managing user configuration
     home-manager = {
-      url = "github:nix-community/home-manager/master";
+      url = "github:nix-community/home-manager/release-25.11";
       # The `follows` keyword in inputs is used for inheritance.
       # Here, `inputs.nixpkgs` of home-manager is kept consistent with
       # the `inputs.nixpkgs` of the current flake,
@@ -23,16 +23,16 @@
   outputs =
     inputs@{
       nixpkgs,
+      nixpkgs-unstable,
       home-manager,
       nix-flatpak,
-      nixpkgs-stable,
       nix-colors,
       claude-code,
       ...
     }:
     let
       system = "x86_64-linux";
-      pkgs-stable = import nixpkgs-stable {
+      pkgs-unstable = import nixpkgs-unstable {
         system = system;
         config.allowUnfree = true;
       };
@@ -40,7 +40,7 @@
     {
       nixosConfigurations = {
         nixbtw = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit pkgs-stable; };
+          specialArgs = { inherit pkgs-unstable; };
           modules = [
             ./nixos/configuration.nix
             nix-flatpak.nixosModules.nix-flatpak
@@ -49,7 +49,7 @@
               home-manager = {
                 useGlobalPkgs = true;
                 useUserPackages = true;
-                extraSpecialArgs = { inherit pkgs-stable; };
+                extraSpecialArgs = { inherit pkgs-unstable; };
                 users = {
                   dk = {
                     imports = [

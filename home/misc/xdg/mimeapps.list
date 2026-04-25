@@ -53,6 +53,7 @@ application/x-extension-xht=firefox.desktop
 application/x-zerosize=userapp-kitty nvim-D4G3N3.desktop
 x-scheme-handler/wootwoot=wootility.desktop
 x-scheme-handler/web+wootwoot=wootility.desktop
+x-scheme-handler/nxm=hd2arsenal.desktop
 
 [Removed Associations]
 application/pdf=google-chrome.desktop;com.google.Chrome.desktop;

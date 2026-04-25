@@ -16,8 +16,30 @@
              "${config.home.homeDirectory}/.config/mimeapps.list"
     '';
 
+    home.activation.createUserDirs = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+      mkdir -p \
+        "${config.home.homeDirectory}/Pictures/Screenshots" \
+        "${config.home.homeDirectory}/Pictures/Wallpapers"
+    '';
+
     xdg = {
       enable = true;
+
+      userDirs = {
+        enable = true;
+        createDirectories = true;
+        desktop = "${config.home.homeDirectory}/Desktop";
+        download = "${config.home.homeDirectory}/Downloads";
+        templates = "${config.home.homeDirectory}/Templates";
+        publicShare = "${config.home.homeDirectory}/Public";
+        documents = "${config.home.homeDirectory}/Documents";
+        music = "${config.home.homeDirectory}/Music";
+        pictures = "${config.home.homeDirectory}/Pictures";
+        videos = "${config.home.homeDirectory}/Videos";
+        extraConfig = {
+          XDG_SCREENSHOTS_DIR = "${config.home.homeDirectory}/Pictures/Screenshots";
+        };
+      };
 
       portal = {
         enable = true;

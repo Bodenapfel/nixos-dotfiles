@@ -24,7 +24,7 @@
       nixpkgs-fmt
       nil
       pkg-config
-      nodejs_25
+      nodejs_22
       jdk21
       jdk17
       jdk8
@@ -58,7 +58,7 @@
       wl-clip-persist
       cliphist
       cifs-utils
-      davfs2
+      # davfs2 # broken build in current nixpkgs
       gh # github cli
       # kdePackages.kwallet
       # kdePackages.kwalletmanager
@@ -101,7 +101,7 @@
 
     programs.thunar = {
       enable = true;
-      plugins = with pkgs; [
+      plugins = with pkgs.xfce; [
         thunar-archive-plugin
         thunar-media-tags-plugin
         thunar-vcs-plugin

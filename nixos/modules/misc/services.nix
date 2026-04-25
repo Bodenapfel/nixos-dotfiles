@@ -46,8 +46,8 @@
 
     services.dbus.enable = true;
 
-    # davfs2
-    services.davfs2.enable = true;
+    # davfs2 disabled: broken build in current nixpkgs (missing m4 dir in autoreconf)
+    # services.davfs2.enable = true;
 
   };
 }

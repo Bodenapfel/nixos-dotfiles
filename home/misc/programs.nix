@@ -1,7 +1,7 @@
 {
   config,
   pkgs,
-  pkgs-stable,
+  pkgs-unstable,
   lib,
   ...
 }:
@@ -48,10 +48,10 @@
       playerctl
       jellyfin-mpv-shim
       # jellyfin-desktop
-      crosspipe
+      pkgs-unstable.crosspipe
       qview
       gimp
-      pkgs-stable.krita
+      krita
       kdePackages.gwenview
 
       # gui apps
@@ -86,7 +86,7 @@
       microsoft-edge
 
       # vpn
-      proton-vpn # ProtonVPN GUI client
+      protonvpn-gui # ProtonVPN GUI client
 
       # archives
       zip

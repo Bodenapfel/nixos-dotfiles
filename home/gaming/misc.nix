@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  pkgs-unstable,
   lib,
   ...
 }:
@@ -15,8 +16,9 @@
       prismlauncher
       beyond-all-reason
       heroic
-      vesktop
+      (pkgs-unstable.discord.override { withVencord = true; })
       teamspeak6-client
+      pkgs-unstable.steamtinkerlaunch
     ];
   };
 }

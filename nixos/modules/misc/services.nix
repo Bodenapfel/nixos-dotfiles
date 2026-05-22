@@ -11,13 +11,6 @@
   };
 
   config = lib.mkIf config.services.enable {
-    # openrgb
-    services.hardware.openrgb = {
-      enable = true;
-      package = pkgs.openrgb-with-all-plugins;
-      motherboard = "amd";
-    };
-
     # for thunar
     services.gvfs.enable = true; # Mount, trash, and other functionalities
     services.tumbler.enable = true; # Thumbnail support for images
@@ -40,7 +33,6 @@
 
     # udev rules
     services.udev.packages = [
-      pkgs.openrgb
       pkgs.wooting-udev-rules
     ];
 

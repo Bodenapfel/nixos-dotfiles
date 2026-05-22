@@ -1,5 +1,6 @@
 {
   pkgs,
+  pkgs-unstable,
   config,
   lib,
   ...
@@ -15,7 +16,7 @@
       file-roller
       wget
       vim
-      neovim
+      pkgs-unstable.neovim
       ncdu
       clang
       cmake
@@ -29,18 +30,19 @@
       jdk17
       jdk8
       python3
+      lua5_1
       rustup
       markdownlint-cli
-      lact
+      pkgs-unstable.lact
       sbctl
       ddcutil
       brightnessctl
       efibootmgr
       bash
       i2c-tools
-      protonup-qt
-      protontricks
-      gamescope
+      pkgs-unstable.protonup-qt
+      pkgs-unstable.protontricks
+      pkgs-unstable.gamescope
       wineWow64Packages.stable
       winetricks
       wireguard-tools
@@ -88,11 +90,12 @@
 
     programs.steam = {
       enable = true;
+      package = pkgs-unstable.steam;
       remotePlay.openFirewall = true;
       dedicatedServer.openFirewall = true;
       localNetworkGameTransfers.openFirewall = true;
       gamescopeSession.enable = true;
-      extraCompatPackages = [ pkgs.proton-ge-bin ];
+      extraCompatPackages = [ pkgs-unstable.proton-ge-bin ];
     };
 
     programs.gamemode.enable = true;

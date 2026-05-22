@@ -15,6 +15,7 @@
     programs = {
       firefox = {
         enable = true;
+        package = pkgs-unstable.firefox;
         configPath = "${config.xdg.configHome}/mozilla/firefox";
       };
       git = {
@@ -26,12 +27,14 @@
         };
       };
     };
-
     home.packages = with pkgs; [
 
+      zenity
+
       # communication
-      ferdium
+      pkgs-unstable.ferdium
       element-desktop
+      mumble
 
       # hyprland utils
       hyprpolkitagent
@@ -57,11 +60,11 @@
       # gui apps
       blueman
       wootility
-      qbittorrent
+      pkgs-unstable.qbittorrent
       onlyoffice-desktopeditors
       kdePackages.kdeconnect-kde
       owncloud-client
-      obs-studio
+      pkgs-unstable.obs-studio
       ffmpeg
       waypaper
 

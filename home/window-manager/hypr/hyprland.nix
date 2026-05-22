@@ -134,7 +134,7 @@ in
           "wl-paste --type image --watch cliphist store"
           "wl-clip-persist --clipboard regular"
           "hyprsunset-auto"
-          "sleep 3 && vesktop --start-minimized"
+          "sleep 3 && discord --start-minimized"
           "sleep 2 && owncloud"
           "sleep 1 && ferdium --ozone-platform=wayland --enable-features=WaylandWindowDecorations --ozone-platform-hint=auto"
           "dbus-update-activation-environment --systemd --all"

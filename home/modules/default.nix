@@ -44,7 +44,7 @@
   swaync.enable = lib.mkDefault true;
   wmServices.enable = lib.mkDefault true;
   hyprScripts.enable = lib.mkDefault true;
-  hypridle.enable = lib.mkDefault true;
+  hypridle.enable = lib.mkDefault false;
   hyprlock.enable = lib.mkDefault true;
   wallpaper.enable = lib.mkDefault true;
   hyprland.enable = lib.mkDefault true;

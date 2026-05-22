@@ -18,6 +18,7 @@
     # don't stall when the Wayland compositor throttles frame callbacks.
     home.file.".config/jellyfin-mpv-shim/mpv.conf".text = ''
       vd-queue-enable=yes
+      target-colorspace-hint=no
     '';
 
     home.file.".config/jellyfin-mpv-shim/conf.json".text = builtins.toJSON {

@@ -30,6 +30,7 @@
     home.packages = with pkgs; [
 
       zenity
+      bubblewrap
 
       # communication
       pkgs-unstable.ferdium
@@ -84,6 +85,7 @@
       cmatrix
       cava
       claude-code
+      pkgs-unstable.codex
       pavucontrol
       google-chrome
       microsoft-edge

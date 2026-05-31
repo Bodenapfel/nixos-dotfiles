@@ -27,6 +27,6 @@
     boot.loader.timeout = 30;
     boot.loader.efi.canTouchEfiVariables = true;
 
-    boot.kernelPackages = pkgs.linuxPackages_zen;
+    # boot.kernelPackages = pkgs.linuxPackages_zen;
   };
 }

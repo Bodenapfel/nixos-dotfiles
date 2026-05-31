@@ -1,4 +1,4 @@
-{ config, lib, ... }:
+{ config, lib, pkgs-unstable, ... }:
 
 let
   c = config.colorScheme.palette;
@@ -11,6 +11,7 @@ in
   config = lib.mkIf config.waybar.enable {
     programs.waybar = {
       enable = true;
+      package = pkgs-unstable.waybar;
       systemd.enable = true;
 
       settings = [
@@ -78,7 +79,7 @@ in
             format = "<span color='#${c.base0c}'>󰃰 </span> {:%d.%m.%Y %H:%M:%S}";
             tooltip = true;
             tooltip-format = "{calendar}";
-            on-click = "vivaldi -e vivaldi://calendar";
+            on-click = "firefox";
             calendar = {
               mode = "month";
               weeks-pos = "right";

@@ -1,4 +1,10 @@
-{ config, lib, pkgs-unstable, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  pkgs-unstable,
+  ...
+}:
 
 let
   c = config.colorScheme.palette;
@@ -9,10 +15,22 @@ in
   };
 
   config = lib.mkIf config.waybar.enable {
+    systemd.user.services.playerctld = {
+      Unit = {
+        Description = "MPRIS playerctld";
+        PartOf = [ "graphical-session.target" ];
+      };
+
+      Service = {
+        ExecStart = "${pkgs.playerctl}/bin/playerctld";
+        Restart = "on-failure";
+      };
+    };
+
     programs.waybar = {
       enable = true;
       package = pkgs-unstable.waybar;
-      systemd.enable = true;
+      systemd.enable = false;
 
       settings = [
         {
@@ -21,7 +39,7 @@ in
 
           modules-left = [
             "hyprland/workspaces"
-            "mpris"
+            "custom/mpris"
           ];
           modules-center = [ "hyprland/window" ];
           modules-right = [
@@ -61,17 +79,38 @@ in
             tooltip-format-enumerate-connected = "{device_alias} {device_battery_percentage}%";
           };
 
-          mpris = {
-            format = "{player_icon}{title}";
-            format-paused = "{status_icon}{title}";
-            player-icons = {
-              default = "<span foreground='#${c.base0c}'> </span>";
-            };
-            status-icons = {
-              paused = "<span foreground='#${c.base0c}'> </span>";
-            };
-            tooltip-format = "{dynamic}";
+          "custom/mpris" = {
+            exec = "${pkgs.writeShellScript "waybar-mpris" ''
+              status="$(${pkgs.playerctl}/bin/playerctl -p playerctld status 2>/dev/null)" || exit 0
+              [ "$status" = "Stopped" ] && exit 0
+
+              title="$(${pkgs.playerctl}/bin/playerctl -p playerctld metadata title 2>/dev/null || true)"
+              artist="$(${pkgs.playerctl}/bin/playerctl -p playerctld metadata artist 2>/dev/null || true)"
+              album="$(${pkgs.playerctl}/bin/playerctl -p playerctld metadata album 2>/dev/null || true)"
+              [ -z "$title$artist$album" ] && exit 0
+
+              icon="<span foreground='#${c.base0c}'> </span>"
+              [ "$status" = "Paused" ] && icon="<span foreground='#${c.base0c}'> </span>"
+
+              text="$icon$title"
+              tooltip="$title"
+              [ -n "$artist" ] && tooltip="$tooltip - $artist"
+              [ -n "$album" ] && tooltip="$tooltip - $album"
+
+              ${pkgs.jq}/bin/jq -cn \
+                --arg text "$text" \
+                --arg tooltip "$tooltip" \
+                --arg class "$(printf '%s' "$status" | tr '[:upper:]' '[:lower:]')" \
+                '{text: $text, tooltip: $tooltip, class: $class}'
+            ''}";
+            return-type = "json";
+            format = "{text}";
+            hide-empty-text = true;
             max-length = 50;
+            interval = 3;
+            on-click = "${pkgs.playerctl}/bin/playerctl -p playerctld play-pause";
+            on-click-middle = "${pkgs.playerctl}/bin/playerctl -p playerctld previous";
+            on-click-right = "${pkgs.playerctl}/bin/playerctl -p playerctld next";
           };
 
           clock = {
@@ -228,7 +267,7 @@ in
         #bluetooth,
         #pulseaudio,
         #cpu,
-        #mpris,
+        #custom-mpris,
         #mode,
         #clock,
         #battery,

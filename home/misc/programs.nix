@@ -52,11 +52,12 @@
       playerctl
       jellyfin-mpv-shim
       # jellyfin-desktop
-      pkgs-unstable.crosspipe
+      crosspipe
       qview
       gimp
       krita
       kdePackages.gwenview
+      pkgs-unstable.spotify
 
       # gui apps
       blueman

@@ -5,6 +5,7 @@
 -- Or execute your favorite apps at launch like this:
 --
 hl.on("hyprland.start", function()
+	hl.exec_cmd("systemctl --user start playerctld.service && waybar")
 	hl.exec_cmd("hyprctl setcursor Breeze_Light 24")
 	hl.exec_cmd("systemctl --user start hyprpolkitagent.service")
 	hl.exec_cmd("wl-paste --type text --watch cliphist store")

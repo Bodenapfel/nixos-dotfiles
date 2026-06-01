@@ -13,7 +13,7 @@
 
   config = lib.mkIf config.gaming.enable {
     home.packages = with pkgs; [
-      prismlauncher
+      pkgs-unstable.prismlauncher
       beyond-all-reason
       heroic
       (pkgs-unstable.discord.override { withVencord = true; })

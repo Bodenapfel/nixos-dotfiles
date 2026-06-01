@@ -36,8 +36,9 @@
         music = "${config.home.homeDirectory}/Music";
         pictures = "${config.home.homeDirectory}/Pictures";
         videos = "${config.home.homeDirectory}/Videos";
+        setSessionVariables = false;
         extraConfig = {
-          XDG_SCREENSHOTS_DIR = "${config.home.homeDirectory}/Pictures/Screenshots";
+          SCREENSHOTS = "${config.home.homeDirectory}/Pictures/Screenshots";
         };
       };
 

@@ -13,6 +13,8 @@
 
   config = lib.mkIf config.programs.enable {
     environment.systemPackages = with pkgs; [
+      # for codex
+      bubblewrap
       file-roller
       wget
       vim
@@ -104,7 +106,7 @@
 
     programs.thunar = {
       enable = true;
-      plugins = with pkgs.xfce; [
+      plugins = with pkgs; [
         thunar-archive-plugin
         thunar-media-tags-plugin
         thunar-vcs-plugin

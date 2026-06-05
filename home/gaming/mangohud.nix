@@ -18,9 +18,9 @@ in
     programs.mangohud = {
       enable = true;
 
-      # Optional: makes MangoHud start for apps that support it (you still have "no_display"
-      # in the config, so it will start hidden until your toggle key).
-      enableSessionWide = true;
+      # MangoHud 0.8.3 can make the Steam overlay invisible while still
+      # capturing input. Keep MangoHud opt-in per game with `mangohud %command%`.
+      enableSessionWide = false;
     };
 
     # Optional (for editing MangoHud config via GUI like you did on Arch)

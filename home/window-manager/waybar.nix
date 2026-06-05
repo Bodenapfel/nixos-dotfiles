@@ -107,7 +107,7 @@ in
             format = "{text}";
             hide-empty-text = true;
             max-length = 50;
-            interval = 3;
+            interval = 1;
             on-click = "${pkgs.playerctl}/bin/playerctl -p playerctld play-pause";
             on-click-middle = "${pkgs.playerctl}/bin/playerctl -p playerctld previous";
             on-click-right = "${pkgs.playerctl}/bin/playerctl -p playerctld next";

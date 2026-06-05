@@ -57,7 +57,6 @@
       gimp
       krita
       kdePackages.gwenview
-      pkgs-unstable.spotify
 
       # gui apps
       blueman

@@ -33,7 +33,7 @@ hl.bind(
 hl.bind("F16", hl.dsp.exec_cmd("pactl set-source-mute @DEFAULT_SOURCE@ toggle"))
 hl.bind(mainMod .. " + V", hl.dsp.exec_cmd("cliphist list | rofi -dmenu | cliphist decode | wl-copy"))
 
-hl.bind("Print", hl.dsp.exec_cmd([[grimblast -n copysave area $HOME/Pictures/Screenshots/$(date +%F_%H-%M-%S).png]]))
+hl.bind("Print", hl.dsp.exec_cmd([[grimblast -n -f copysave area $HOME/Pictures/Screenshots/$(date +%F_%H-%M-%S).png]]))
 hl.bind(
 	mainMod .. " + Print",
 	hl.dsp.exec_cmd(

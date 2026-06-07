@@ -85,7 +85,7 @@
       cmatrix
       cava
       claude-code
-      pkgs-unstable.codex
+      codex
       pavucontrol
       google-chrome
       microsoft-edge

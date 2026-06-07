@@ -26,8 +26,14 @@
         "root"
         "dk"
       ];
-      substituters = [ "https://claude-code.cachix.org" ];
-      trusted-public-keys = [ "claude-code.cachix.org-1:YeXf2aNu7UTX8Vwrze0za1WEDS+4DuI2kVeWEE4fsRk=" ];
+      substituters = [
+        "https://claude-code.cachix.org"
+        "https://codex-cli.cachix.org"
+      ];
+      trusted-public-keys = [
+        "claude-code.cachix.org-1:YeXf2aNu7UTX8Vwrze0za1WEDS+4DuI2kVeWEE4fsRk="
+        "codex-cli.cachix.org-1:1Br3H1hHoRYG22n//cGKJOk3cQXgYobUel6O8DgSing="
+      ];
     };
     gc = {
       automatic = true;

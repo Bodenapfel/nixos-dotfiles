@@ -1,4 +1,4 @@
-{ claude-code }:
+{ claude-code, codex-cli }:
 {
   config,
   lib,
@@ -9,6 +9,7 @@
   # weird cmake bug
   nixpkgs.overlays = [
     claude-code.overlays.default
+    codex-cli.overlays.default
     (final: prev: {
 
       lager = prev.lager.overrideAttrs (old: {

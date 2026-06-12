@@ -65,7 +65,10 @@ in
           "host"
           "kernel"
           "uptime"
-          "packages"
+          {
+            type = "packages";
+            format = "{appimage} (app), {flatpak-system} (fp-s), {flatpak-user} (fp-u), {nix-system} (nix-s), {nix-user} (nix-u)";
+          }
           "shell"
           "display"
           "de"

@@ -16,7 +16,10 @@
       pkgs-unstable.prismlauncher
       beyond-all-reason
       heroic
-      (pkgs-unstable.discord.override { withVencord = true; })
+      (pkgs-unstable.discord.override {
+        withVencord = true;
+        withOpenASAR = true;
+      })
       teamspeak6-client
       pkgs-unstable.steamtinkerlaunch
     ];

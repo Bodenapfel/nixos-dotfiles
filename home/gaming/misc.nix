@@ -22,6 +22,7 @@
       })
       teamspeak6-client
       pkgs-unstable.steamtinkerlaunch
+      kdePackages.kmines
     ];
   };
 }

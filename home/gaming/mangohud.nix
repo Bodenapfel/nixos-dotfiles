@@ -21,7 +21,7 @@ in
 
       # MangoHud 0.8.3 can make the Steam overlay invisible while still
       # capturing input. Keep MangoHud opt-in per game with `mangohud %command%`.
-      enableSessionWide = false;
+      enableSessionWide = true;
     };
 
     xdg.configFile."MangoHud/MangoHud.conf".text = ''

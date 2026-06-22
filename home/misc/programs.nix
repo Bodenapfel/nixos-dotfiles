@@ -50,7 +50,7 @@
 
       # multimedia
       playerctl
-      jellyfin-mpv-shim
+      pkgs-unstable.jellyfin-mpv-shim
       # jellyfin-desktop
       crosspipe
       qview
@@ -62,7 +62,7 @@
       blueman
       wootility
       pkgs-unstable.qbittorrent
-      onlyoffice-desktopeditors
+      pkgs-unstable.onlyoffice-desktopeditors
       kdePackages.kdeconnect-kde
       owncloud-client
       pkgs-unstable.obs-studio

@@ -18,6 +18,7 @@
         "org.xonotic.Xonotic"
         "org.upscayl.Upscayl"
         "com.spotify.Client"
+        "org.localsend.localsend_app"
       ];
       overrides = {
         global = {

@@ -2,8 +2,8 @@
 ---- MONITORS ----
 ------------------
 
-require("hyprland/monitor")
 -- See https://wiki.hypr.land/Configuring/Basics/Monitors/
+require("hyprland/monitor")
 
 -------------------
 ---- AUTOSTART ----

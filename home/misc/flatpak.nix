@@ -19,6 +19,7 @@
         "org.upscayl.Upscayl"
         "com.spotify.Client"
         "org.localsend.localsend_app"
+        "org.nickvision.tubeconverter"
       ];
       overrides = {
         global = {

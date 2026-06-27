@@ -19,6 +19,7 @@
     nix-colors.url = "github:misterio77/nix-colors";
     claude-code.url = "github:sadjow/claude-code-nix";
     codex-cli.url = "github:sadjow/codex-cli-nix";
+    firefox-nightly.url = "github:nix-community/flake-firefox-nightly";
   };
 
   outputs =
@@ -30,6 +31,7 @@
       nix-colors,
       claude-code,
       codex-cli,
+      firefox-nightly,
       ...
     }:
     let
@@ -51,7 +53,7 @@
               home-manager = {
                 useGlobalPkgs = true;
                 useUserPackages = true;
-                extraSpecialArgs = { inherit pkgs-unstable; };
+                extraSpecialArgs = { inherit pkgs-unstable firefox-nightly; };
                 users = {
                   dk = {
                     imports = [

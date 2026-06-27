@@ -1,7 +1,7 @@
 local mainMod = "SUPER"
 local terminal = "kitty"
 local fileManager = "thunar"
-local browser = "firefox"
+local browser = "firefox-nightly"
 local menu = "rofi -show drun"
 
 hl.bind(mainMod .. " + A", hl.dsp.exec_cmd(terminal))
@@ -23,7 +23,7 @@ hl.bind(
 	mainMod .. " + comma",
 	hl.dsp.exec_cmd("rofi -show calc -modi calc -no-show-match -no-sort -automatic-save-to-history")
 )
-hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("systemctl --user restart waybar"))
+-- hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("systemctl --user restart waybar"))
 hl.bind(mainMod .. " + CONTROL + S", hl.dsp.exec_cmd("awww img ~/.local/share/wallpapers/mojave.jpg"))
 hl.bind(
 	mainMod .. " + CONTROL + SHIFT + S",

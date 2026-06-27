@@ -2,6 +2,7 @@
   config,
   pkgs,
   pkgs-unstable,
+  firefox-nightly,
   lib,
   ...
 }:
@@ -89,6 +90,7 @@
       pavucontrol
       google-chrome
       microsoft-edge
+      firefox-nightly.packages.${pkgs.stdenv.hostPlatform.system}.firefox-nightly-bin
 
       # vpn
       proton-vpn # ProtonVPN GUI client

@@ -27,12 +27,12 @@
       nixpkgs-fmt
       nil
       pkg-config
-      nodejs_22
+      nodejs
       jdk21
       jdk17
       jdk8
       python3
-      lua5_1
+      lua
       rustup
       markdownlint-cli
       pkgs-unstable.lact

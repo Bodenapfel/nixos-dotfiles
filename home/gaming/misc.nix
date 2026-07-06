@@ -15,7 +15,7 @@
     home.packages = with pkgs; [
       pkgs-unstable.prismlauncher
       beyond-all-reason
-      heroic
+      pkgs-unstable.heroic
       (pkgs-unstable.discord.override {
         withVencord = true;
         withOpenASAR = true;

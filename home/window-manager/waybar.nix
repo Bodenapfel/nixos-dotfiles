@@ -8,6 +8,18 @@
 
 let
   c = config.colorScheme.palette;
+  waybarLuaDispatchFix = pkgs-unstable.waybar.overrideAttrs (old: {
+    version = "0.15.0";
+    src = pkgs-unstable.fetchFromGitHub {
+      owner = "Alexays";
+      repo = "Waybar";
+      rev = "97917db59369b66ef412a87f90cfdbda3ad55225";
+      hash = "sha256-wqM3tVP4P6UWZzQo2Ufm3/Rja+fc8GbyraGZAFGlbDg=";
+    };
+    mesonFlags =
+      builtins.filter (flag: flag != "-Dcava=enabled") (old.mesonFlags or [ ])
+      ++ [ "-Dcava=disabled" ];
+  });
 in
 {
   options = {
@@ -29,7 +41,7 @@ in
 
     programs.waybar = {
       enable = true;
-      package = pkgs-unstable.waybar;
+      package = waybarLuaDispatchFix;
       systemd.enable = false;
 
       settings = [

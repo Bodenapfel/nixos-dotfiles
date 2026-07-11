@@ -67,7 +67,7 @@
       };
       desktopEntries.firefox-pdf = {
         name = "Firefox (PDF Window)";
-        exec = "firefox --new-window %f";
+        exec = "firefox-nightly --new-window %f";
         type = "Application";
       };
     };

@@ -16,7 +16,8 @@
     programs = {
       firefox = {
         enable = true;
-        package = pkgs-unstable.firefox;
+        # package = pkgs-unstable.firefox;
+        package = firefox-nightly.packages.${pkgs.stdenv.hostPlatform.system}.firefox-nightly-bin;
         configPath = "${config.xdg.configHome}/mozilla/firefox";
       };
       git = {
@@ -90,7 +91,6 @@
       pavucontrol
       google-chrome
       microsoft-edge
-      firefox-nightly.packages.${pkgs.stdenv.hostPlatform.system}.firefox-nightly-bin
 
       # vpn
       proton-vpn # ProtonVPN GUI client

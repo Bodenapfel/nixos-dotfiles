@@ -20,12 +20,14 @@
         "com.spotify.Client"
         "org.localsend.localsend_app"
         "org.nickvision.tubeconverter"
+        "com.ktechpit.whatsie"
       ];
       overrides = {
         global = {
           Environment = {
             XCURSOR_PATH = "run/host/user-share/icons:/run/host/share/icons";
             GTK_THEME = "Graphite-Dark";
+            TZ = "Europe/Berlin";
           };
           Filesystem.allow = [
             "home"

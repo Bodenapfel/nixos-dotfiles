@@ -14,13 +14,14 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd("hyprsunset-auto")
 	hl.exec_cmd("sleep 3 && discord --start-minimized")
 	hl.exec_cmd("sleep 2 && owncloud")
-	hl.exec_cmd(
-		"sleep 1 && ferdium --ozone-platform=wayland --enable-features=WaylandWindowDecorations --ozone-platform-hint=auto"
-	)
+	-- hl.exec_cmd(
+	-- 	"sleep 1 && ferdium --ozone-platform=wayland --enable-features=WaylandWindowDecorations --ozone-platform-hint=auto"
+	-- )
+	hl.exec_cmd("sleep 1 && flatpak run com.ktechpit.whatsie")
 	hl.exec_cmd("systemctl --user restart pipewire pipewire-pulse wireplumber")
 	hl.exec_cmd("dbus-update-activation-environment --systemd --all")
 	hl.exec_cmd("kitty -e zsh -c 'fastfetch; NO_COWSAY=1 zsh'")
-	hl.exec_cmd("sleep 15 && steam -silent")
+	hl.exec_cmd("sleep 5 && steam -silent")
 	hl.exec_cmd("jellyfin-mpv-shim --no-gui")
 	hl.exec_cmd("awww img ~/.local/share/wallpapers/mojave.jpg")
 end)

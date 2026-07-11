@@ -57,7 +57,7 @@ in
           modules-right = [
             "cpu"
             "memory"
-            "bluetooth"
+            # "bluetooth"
             "pulseaudio"
             "clock"
             "tray"

@@ -35,7 +35,7 @@
       bubblewrap
 
       # communication
-      pkgs-unstable.ferdium
+      # pkgs-unstable.ferdium
       element-desktop
       mumble
 
